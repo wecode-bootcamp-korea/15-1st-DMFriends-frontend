@@ -1,21 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Main from "./Pages/chaebinhan/Main/Main";
-import MainDetail from "./Pages/chaebinhan/Main/MainDetail";
-import CartList from "./Pages/daehoim/CartList/CartList";
-import ProductDetail from "./Pages/daehoim/ProductDetail/ProductDetail";
-import Checkbox from "./Pages/haiinkim/Checkbox/Checkbox";
-import Login from "./Pages/haiinkim/Login/Login";
-import Signup from "./Pages/haiinkim/Signup/Signup";
-import Category from "./Pages/taejinlim/Category/Category";
-import NewProducts from "./Pages/taejinlim/NewProducts/NewProducts";
+import Main from "./Pages/Main/Main";
+import MainDetail from "./Pages/Main/MainDetail";
+import CartList from "./Pages/CartList/CartList";
+import ProductDetail from "./Pages/ProductDetail/ProductDetail";
+import Checkbox from "./Pages/Checkbox/Checkbox";
+import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Signup/Signup";
+import Category from "./Pages/Category/Category";
+import NewProducts from "./Pages/NewProducts/NewProducts";
 
 class Routes extends React.Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path="/Main" component={Main} />
+          <Route exact path="/" component={Main} />
           <Route exact path="/MainDetail" component={MainDetail} />
           <Route exact path="/CartList" component={CartList} />
           <Route exact path="/ProductDetail" component={ProductDetail} />
