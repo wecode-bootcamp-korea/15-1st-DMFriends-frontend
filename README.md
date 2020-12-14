@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# DM Friends
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br><br>
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ⛩ DM Friends ( 동묘앞 프렌즈 )
 
-### `npm start`
+- [DM Friends](https://store.kakaofriends.com/kr/index) 사이트
+- 소개: 카카오프렌즈는 일상의 즐거움이 가득한 카카오프렌즈 캐릭터 상품들을 다양하게 만나는 공간입니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 👨‍👩‍👧‍👦 팀원
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+세계 최고의 거리. 스포티(sporty)함과 캐주얼의 경계를 넘나드는 과감한 믹스매치 정신을 본받기위해 **동묘앞 프렌즈**가 모였다!
 
-### `npm test`
+- Front-end: 임대호, 임태진, 김해인, 한채빈
+- Back-end: 우혁준, 이승연(PM), 유하람
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📅 개발 기간
 
-### `npm run build`
+- 기간: 2020.12.14 ~ 2020.12.24 (11일)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧑‍💻 적용 기술
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Front-end: React.js(Class), React-router, SASS
+- Back-end: Django, Python, MySQL, jwt, bcrypt
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 💁‍♀️ 구현 기능
 
-### `npm run eject`
+## 🎥 영상
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 💿 개인 역할
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> front-end
+> `임대호` > `임태진` > `김해인` > `한채빈`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> back-end
+> `우혁준` > `이승연` > `유하람`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 💰 소감 및 후기
 
-## Learn More
+- 임대호:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 임태진:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 김해인:
 
-### Code Splitting
+- 한채빈:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 우혁준:
 
-### Analyzing the Bundle Size
+- 이승연:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 유하람:
 
-### Making a Progressive Web App
+## 💎 레퍼런스
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 이 프로젝트는 [Kakao Friends](https://store.kakaofriends.com/kr/index) 사이트를 참조하여 학습목적으로 만들었습니다.
+- 실무수준의 프로젝트이지만 학습용으로 만들었기 때문에 이 코드를 활용하여 이득을 취하거나 무단 배포할 경우 법적으로 문제될 수 있습니다.
+- 이 프로젝트에서 사용하고 있는 사진 대부분은 위코드에서 구매한 것이므로 해당 프로젝트 외부인이 사용할 수 없습니다.
