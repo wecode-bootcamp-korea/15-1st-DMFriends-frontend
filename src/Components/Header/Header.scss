@@ -1,0 +1,83 @@
+.Header {
+  width: 100vw;
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .HeaderContainer {
+    width: 640px;
+    height: 47px;
+    display: flex;
+    justify-content: space-between;
+    .LeftIcon {
+      width: 80px;
+      height: 47px;
+      .hamBtn {
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 15px;
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+        img {
+          width: 18px;
+          height: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+    .CenterLogo {
+      width: 147px;
+      height: 47;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        width: 147px;
+        height: 24px;
+        text-align: center;
+        background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/mobile/new-logo-mo.png");
+        background-size: 147px 24px;
+        color: transparent;
+      }
+    }
+    .RightIcon {
+      width: 80px;
+      height: 47px;
+      .SearchBtn {
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 8px;
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      .TransBtn {
+        width: 30px;
+        height: 30px;
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}
