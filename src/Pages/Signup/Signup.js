@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import AgreementForm from "./components/AgreementForm";
 import "./Signup.scss";
 
 class Signup extends React.Component {
@@ -12,7 +13,23 @@ class Signup extends React.Component {
       nickName: "",
       emailAlert: true,
       pwAlert: true,
+      checkbox1: false,
+      checkbox2: false,
+      checkbox3: false,
+      checkbox4: false,
+      checkbox5: false,
+      policies: [],
     };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/data.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          policies: res.policies,
+        });
+      });
   }
 
   handleInputValue = (e) => {
@@ -25,17 +42,11 @@ class Signup extends React.Component {
   isEmailValidate = (e) => {
     e.preventDefault();
     const { email } = this.state;
-    const checkEmail = email.indexOf("@") !== -1 && email.indexOf(".") !== -1;
+    const checkEmail = email.includes("@") && email.includes(".");
 
-    if (!checkEmail) {
-      this.setState({
-        emailAlert: checkEmail,
-      });
-    } else {
-      this.setState({
-        emailAlert: checkEmail,
-      });
-    }
+    this.setState({
+      emailAlert: checkEmail ? true : false,
+    });
   };
 
   isRepwValidate = (e) => {
@@ -43,20 +54,31 @@ class Signup extends React.Component {
     const { pw, rePw } = this.state;
     const checkPw = pw === rePw;
 
-    if (!checkPw) {
-      this.setState({
-        pwAlert: checkPw,
-      });
-    } else {
-      this.setState({
-        pwAlert: checkPw,
-      });
-    }
+    this.setState({
+      pwAlert: checkPw ? true : false,
+    });
   };
 
+  handleAllChecked = () => {
+    const { checkbox1 } = this.state;
+
+    this.setState({
+      checkbox1: !checkbox1,
+      checkbox2: !checkbox1,
+      checkbox3: !checkbox1,
+      checkbox4: !checkbox1,
+      checkbox5: !checkbox1,
+    });
+  };
+
+  // handleChecked = (i) => {
+  //   this.setState({
+  //     [`checkbox${i}`]: !this.state[`checkbox${i}`],
+  //   });
+  // };
+
   render() {
-    console.log(this.state);
-    const { emailAlert, pwAlert, nickName } = this.state;
+    const { emailAlert, pwAlert, nickName, policies } = this.state;
 
     return (
       <div className="Signup">
@@ -102,40 +124,43 @@ class Signup extends React.Component {
             />
           </form>
           <span className="formPolicy">약관 동의</span>
-          <ul>
+          {/* <ul>
             <li>
-              <input type="checkbox" id="c1" />
+              <input type="checkbox" id="c1" checked={checkEmail ? true : false} onClick={this.handleAllChecked} />
               <label for="c1">
                 <span></span>
                 전체동의
               </label>
             </li>
             <div className="formPolicyBar"></div>
-            <li className="checkboxes">
-              <input type="checkbox" id="c2" />
+            {policies.map((policy) => {
+              <AgreementForm />;
+            })}
+            <li>
+              <input type="checkbox" id="c2" checked={checkEmail ? true : false} onClick={this.handleChecked(2)} />
               <label for="c2">
                 <span></span>만 14세 이상입니다.(필수)
               </label>
             </li>
-            <li className="checkboxes">
-              <input type="checkbox" id="c3" />
+            <li>
+              <input type="checkbox" id="c3" checked={checkEmail ? true : false} onClick={this.handleChecked(3)} />
               <label for="c3">
                 <span></span>이용약관(필수)
               </label>
             </li>
-            <li className="checkboxes">
-              <input type="checkbox" id="c4" />
+            <li>
+              <input type="checkbox" id="c4" checked={checkEmail ? true : false} onClick={this.handleChecked(4)} />
               <label for="c4">
                 <span></span>개인정보처리방침(필수)
               </label>
             </li>
-            <li className="checkboxes">
-              <input type="checkbox" id="c5" />
+            <li>
+              <input type="checkbox" id="c5" checked={checkEmail ? true : false} onClick={this.handleChecked(5)} />
               <label for="c5">
                 <span></span>이벤트, 프로모션 알림 메일 및 SMS 수신
               </label>
             </li>
-          </ul>
+          </ul> */}
           <button className="nextBtn">다음</button>
         </div>
         <footer>
