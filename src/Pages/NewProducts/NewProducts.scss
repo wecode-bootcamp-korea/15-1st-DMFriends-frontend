@@ -1,0 +1,113 @@
+.NewProducts {
+  width: 100vw;
+  height: 100vh;
+
+  .ImgContainer {
+    width: 100vw;
+    height: 360.09px;
+
+    .ImgBox {
+      width: 100vw;
+      height: 360.09px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 640px;
+        height: 360.09px;
+      }
+    }
+  }
+  article {
+    width: 100vw;
+    height: 100vw;
+
+    .ProductsContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 640px;
+      height: 100vh;
+      margin: 0px auto;
+      border-top: 10px solid rgb(235, 235, 235);
+
+      .ProductsList {
+        width: 570px;
+        height: 100vh;
+        margin-top: 100px;
+
+        p {
+          font-size: 15px;
+          font-weight: 400;
+          color: #9a9a9e;
+        }
+        h3 {
+          font-size: 28px;
+          font-weight: bold;
+          color: #000000;
+          margin-top: 10px;
+        }
+        .ProductsCardGrid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          width: 100%;
+          height: 100vh;
+
+          .Product {
+            width: 275px;
+            height: 401px;
+            margin-top: 18px;
+            text-decoration: none;
+
+            img {
+              width: 275px;
+              height: 275px;
+              border-radius: 1%;
+            }
+            .ProductText {
+              display: flex;
+              justify-content: space-between;
+              width: 275px;
+              height: 35px;
+
+              span {
+                width: 220px;
+                height: 20px;
+                margin-top: 10px;
+                color: #777777;
+              }
+              button {
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+                background-color: Transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                overflow: hidden;
+                outline: none;
+                img {
+                  width: 20px;
+                  height: 20px;
+                  margin-right: 10px;
+                }
+              }
+            }
+            .ProductPrice {
+              width: 275px;
+              height: 20px;
+
+              p {
+                font-size: 17px;
+                font-weight: bold;
+                color: #000000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
