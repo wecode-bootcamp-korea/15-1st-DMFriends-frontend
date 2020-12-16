@@ -1,1 +1,13 @@
-@import "reset";
+* {
+  box-sizing: border-box;
+  font-family: "Apple SD Gothic Neo", "helvetica neue", Roboto, Helvetica, Arial, sans-serif;
+}
+
+$border-color: rgb(227, 229, 232);
+$letter-color: rgb(51, 51, 51);
+$description-letter-color: rgb(154, 154, 158);
+
+%flex-jus-center {
+  display: flex;
+  justify-content: center;
+}
