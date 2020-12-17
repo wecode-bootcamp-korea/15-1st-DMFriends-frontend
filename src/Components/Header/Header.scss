@@ -1,28 +1,43 @@
-.Header {
-  width: 100vw;
-  height: 47px;
+%FlexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+%FlexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+%BtnForm {
+  border: none;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.Header {
+  @extend %FlexCenter;
+  width: 100vw;
+  height: 47px;
+
   .HeaderContainer {
+    @extend %FlexBetween;
     width: 640px;
     height: 47px;
-    display: flex;
-    justify-content: space-between;
-    .LeftIcon {
+
+    .HamburgerBox {
       width: 80px;
       height: 47px;
-      .hamBtn {
+
+      .HamBtn {
         width: 30px;
         height: 30px;
-        margin-top: 10px;
-        margin-left: 15px;
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
+        margin: 10px 0 0 15px;
+        @extend %BtnForm;
+
         img {
           width: 18px;
           height: 18px;
@@ -31,11 +46,10 @@
       }
     }
     .CenterLogo {
+      @extend %FlexCenter;
       width: 147px;
       height: 47;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
       a {
         width: 147px;
         height: 24px;
@@ -45,20 +59,16 @@
         color: transparent;
       }
     }
-    .RightIcon {
+    .SearchBox {
       width: 80px;
       height: 47px;
+
       .SearchBtn {
         width: 30px;
         height: 30px;
-        margin-top: 10px;
-        margin-left: 8px;
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
+        margin: 10px 0 0 8px;
+        @extend %BtnForm;
+
         img {
           width: 18px;
           height: 18px;
@@ -67,12 +77,8 @@
       .TransBtn {
         width: 30px;
         height: 30px;
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
+        @extend %BtnForm;
+
         img {
           width: 18px;
           height: 18px;
