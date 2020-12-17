@@ -9,6 +9,7 @@ import ProductReview from "./Components/ProductReview";
 import Recommended from "./Components/Recommended";
 import RecentlyViewed from "./Components/RecentlyViewed";
 import Footer from "../../Components/Footer/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 import "./ProductDetail.scss";
 
 export class ProductDetail extends Component {
@@ -25,6 +26,7 @@ export class ProductDetail extends Component {
         <Recommended />
         <RecentlyViewed />
         <Footer />
+        <ScrollToTop />
       </>
     );
   }
