@@ -5,11 +5,7 @@ import "./ProductDetail.scss";
 
 export class ProductDetail extends Component {
   render() {
-    return (
-      <>
-        <DetailPageHeader />
-      </>
-    );
+    return <DetailPageHeader />;
   }
 }
 
