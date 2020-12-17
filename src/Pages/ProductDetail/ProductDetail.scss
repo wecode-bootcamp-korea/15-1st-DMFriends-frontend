@@ -1,0 +1,480 @@
+@import "../../styles/common.scss";
+.DetailPageProductImg {
+  display: inline-block;
+  width: 100%;
+  height: 675px;
+  margin: 47px auto 0px;
+
+  .imgWrap {
+    @extend %flex-jus-center;
+    width: 1080px;
+    height: 675px;
+    margin: 0px auto;
+
+    div {
+      width: 675px;
+
+      img {
+        width: 675px;
+        height: 675px;
+      }
+    }
+  }
+  .productNameAndPrice {
+    display: block;
+    position: relative;
+    width: 1080px;
+    margin: 30px auto 0px;
+
+    .productName {
+      margin: 60px 0px 35px;
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .productPrice {
+      margin: 15px 0px 0px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333333;
+    }
+    .productReviewStar {
+      @extend %flex-jus-center;
+      width: 1080px;
+      height: 23px;
+      margin-top: 11px;
+
+      .ReviewStarImg {
+        span {
+          margin-right: 9px;
+        }
+      }
+
+      .totalCount {
+        position: relative;
+        font-size: 14px;
+        margin-left: 6px;
+        top: 8px;
+      }
+    }
+
+    .shareLinks {
+      display: flex;
+      position: absolute;
+      right: 0px;
+      top: 6px;
+
+      img {
+        width: 37px;
+        margin-left: 5px;
+        padding: 8px;
+        border: 1px solid #ededed;
+        border-radius: 30px;
+        background-color: white;
+      }
+    }
+  }
+}
+
+.DetailPageContents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+
+  h3 {
+    margin-bottom: 12px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  article {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  img {
+    width: 1080px;
+    height: 810px;
+  }
+
+  .thinHr {
+    height: 30px;
+    visibility: hidden;
+  }
+
+  .thickHr {
+    height: 60px;
+    visibility: hidden;
+  }
+
+  .userGuide {
+    width: 1080px;
+  }
+}
+
+.ProductInfo {
+  margin: 0 auto;
+  border-top: 1px solid $border-color;
+  width: 1080px;
+
+  h3 {
+    padding: 38px 0px 10px;
+    font-size: 28px;
+    line-height: 1.5;
+  }
+
+  article {
+    padding: 0px 0px 100px;
+    font-size: 15px;
+    line-height: 24px;
+    color: $letter-color;
+
+    ul {
+      list-style: none;
+
+      li {
+        position: relative;
+        padding-left: 8px;
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+        color: $letter-color;
+        &:before {
+          position: absolute;
+          top: 9.75px;
+          left: 0px;
+          content: "";
+          width: 2.5px;
+          height: 2.5px;
+          background-color: $letter-color;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.Shipping {
+  margin: 0 auto;
+  border-top: 1px solid $border-color;
+  width: 1080px;
+
+  .shippingOrRefund {
+    display: flex;
+    align-items: baseline;
+
+    h3 {
+      padding: 38px 0px 10px;
+      font-size: 28px;
+      line-height: 1.5;
+    }
+
+    p {
+      margin-left: 15px;
+      color: $description-letter-color;
+    }
+  }
+  .shippingDestination {
+    display: flex;
+    height: 40px;
+    padding: 0px;
+    margin: 40px 0px 0px;
+
+    .localOrForeign {
+      text-align: center;
+      width: 450px;
+      height: 31px;
+      padding-bottom: 16px;
+      margin-right: 90px;
+      border-bottom: 1px solid black;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 15px;
+    }
+  }
+  .shippingInfo {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      width: 50%;
+      margin-bottom: 20px;
+      padding-right: 90px;
+
+      div {
+        width: 540px;
+
+        p {
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 24px;
+          letter-spacing: -0.2px;
+          margin-top: 20px;
+        }
+
+        ul {
+          list-style: none;
+
+          li {
+            position: relative;
+            padding-left: 8px;
+            font-size: 15px;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            color: $letter-color;
+            &:before {
+              position: absolute;
+              top: 9.75px;
+              left: 0px;
+              content: "";
+              width: 2.5px;
+              height: 2.5px;
+              background-color: $letter-color;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.GetHelp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1080px;
+  height: 135px;
+  margin: 0 auto;
+  border-top: 1px solid $border-color;
+
+  h3 {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  button {
+    @extend %flex-jus-center;
+    align-items: center;
+    width: 152px;
+    height: 38px;
+    border: 1px solid $border-color;
+    color: rgb(102, 102, 102);
+    background-color: white;
+    outline: none;
+
+    img {
+      width: 18px;
+      height: 18px;
+      margin-right: 3px;
+      opacity: 0.4;
+    }
+  }
+}
+
+.ProductReview {
+  width: 1080px;
+  margin: 0 auto;
+  border-top: 1px solid $border-color;
+  padding: 36px 0px 0px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+      align-items: flex-start;
+
+      h3 {
+        height: 35px;
+        margin-right: 23px;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .reviewTotalRate {
+        display: flex;
+
+        img {
+          width: 22px;
+          height: 20px;
+          margin: 0px 3.5px 3px;
+        }
+      }
+    }
+    .reviewBtn {
+      @extend %flex-jus-center;
+      align-items: center;
+      width: 270px;
+      height: 52px;
+      font-size: 15px;
+      right: 100px;
+      color: white;
+      background-color: #3c414b;
+
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+        filter: invert(100%);
+      }
+    }
+  }
+
+  .reviewComment {
+    display: block;
+    margin-top: 81px;
+
+    .filterling {
+      display: flex;
+      justify-content: left;
+
+      button {
+        width: 64px;
+        height: 30px;
+        margin-right: 6px;
+        border: 1px solid #8d93a2;
+        border-bottom: 1px solid $border-color;
+        border-radius: 8vw;
+        font-size: 13px;
+        color: white;
+        background-color: #8d93a2;
+        line-height: 0;
+        outline: none;
+      }
+    }
+
+    ul {
+      margin-top: 4vw;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 0px;
+        border-top: 1px solid $border-color;
+
+        div {
+          display: flex;
+          flex-direction: column;
+
+          .userName {
+            font-size: 17px;
+            font-weight: bold;
+          }
+
+          .userReviewRate {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: baseline;
+            margin: 6px 0px 12px;
+
+            span {
+              img {
+                width: 14.3px;
+                height: 13px;
+                margin: 0px 2.25px;
+              }
+            }
+
+            p {
+              font-size: 13px;
+              height: 13px;
+              margin-left: 8px;
+              color: $description-letter-color;
+            }
+          }
+        }
+
+        .userReviewComment {
+          font-size: 15px;
+          max-width: 680px;
+          line-height: 1.5;
+        }
+
+        .seeMore {
+          height: 17px;
+          margin: 12px 0px 0px;
+          padding: 0;
+          border: none;
+          background-color: white;
+          font-size: 15px;
+          line-height: 17px;
+          cursor: pointer;
+          outline: none;
+        }
+      }
+
+      .reviewLike {
+        display: flex;
+
+        button {
+          width: 134px;
+          height: 44px;
+          font-size: 13px;
+          border-radius: 3px;
+          border: 1px solid $border-color;
+          background-color: white;
+          border-radius: 3px;
+          background-size: 24px;
+          color: $description-letter-color;
+        }
+
+        p {
+          width: 134px;
+          text-align: center;
+          right: 0px;
+          margin-top: 8px;
+          font-size: 13px;
+          color: $description-letter-color;
+        }
+      }
+    }
+
+    .CommentPagination {
+      @extend %flex-jus-center;
+      span {
+        width: 37px;
+        height: 30px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.Recommended {
+  width: 1080px;
+  margin: 60px auto 0px;
+  border-top: 1px solid $border-color;
+  padding: 38px 0px 0px;
+
+  h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+  }
+}
+
+.RecentlyViewed {
+  width: 1080px;
+  margin: 60px auto 0px;
+  border-top: 1px solid $border-color;
+  padding: 38px 0px 0px;
+
+  h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+  }
+}
