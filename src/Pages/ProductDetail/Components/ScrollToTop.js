@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as configs from "../../../config.js";
 
-class scrollToTop extends Component {
+export default class scrollToTop extends Component {
   scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -21,5 +21,3 @@ class scrollToTop extends Component {
     );
   }
 }
-
-export default scrollToTop;

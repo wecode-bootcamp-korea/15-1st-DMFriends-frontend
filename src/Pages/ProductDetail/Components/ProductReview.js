@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactStars from "react-stars";
 import * as configs from "../../../config.js";
 
-export class ProductReview extends Component {
+export default class ProductReview extends Component {
   constructor() {
     super();
     this.state = {
@@ -11,7 +11,7 @@ export class ProductReview extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/ProductReview.json")
+    fetch("data/ProductReview.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -89,5 +89,3 @@ export class ProductReview extends Component {
     );
   }
 }
-
-export default ProductReview;

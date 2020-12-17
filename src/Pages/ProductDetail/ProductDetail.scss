@@ -267,6 +267,7 @@
     color: rgb(102, 102, 102);
     background-color: white;
     outline: none;
+    cursor: pointer;
 
     img {
       width: 18px;
@@ -316,6 +317,7 @@
       right: 100px;
       color: white;
       background-color: #3c414b;
+      cursor: pointer;
 
       img {
         width: 20px;
@@ -346,6 +348,7 @@
         background-color: #8d93a2;
         line-height: 0;
         outline: none;
+        cursor: pointer;
       }
     }
 
@@ -424,6 +427,7 @@
           border-radius: 3px;
           background-size: 24px;
           color: $description-letter-color;
+          cursor: pointer;
         }
 
         p {
@@ -474,6 +478,93 @@
     font-size: 24px;
     font-weight: bold;
     line-height: 28px;
+  }
+}
+
+.BottomBar {
+  display: flex;
+  position: fixed;
+  width: 1080px;
+  height: 51px;
+  bottom: 0px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  border: 1px solid rgb(227, 229, 232);
+  // background-color: yellow;
+
+  .optionsWrap {
+    display: flex;
+    align-items: center;
+    flex: 2 1 0%;
+    background-color: white;
+
+    .quantities {
+      display: flex;
+      justify-content: space-between;
+      flex: 1 1 0%;
+      height: 50px;
+
+      button {
+        width: 50px;
+        height: 50px;
+        border: 1px solid rgb(227, 229, 232);
+        font-size: 22px;
+        background-color: white;
+        cursor: pointer;
+        outline: none;
+      }
+
+      input {
+        text-align: center;
+        width: 73%;
+        border: 1px solid rgb(227, 229, 232);
+        font-size: 15px;
+        outline: none;
+
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+
+    .totalPrice {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 1 0%;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 0 20px;
+
+      .total {
+        font-size: 13px;
+        color: #9a9a9e;
+      }
+    }
+  }
+
+  .purchase {
+    @extend %flex-jus-center;
+    align-items: center;
+    flex: 1 1 0%;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #fb3c4f;
+
+    img {
+      position: relative;
+      width: 20px;
+      right: 130px;
+      filter: invert(100%);
+      cursor: pointer;
+    }
+
+    span {
+      cursor: pointer;
+    }
   }
 }
 

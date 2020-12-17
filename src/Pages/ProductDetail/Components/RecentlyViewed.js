@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class RecentlyViewed extends Component {
+export default class RecentlyViewed extends Component {
   render() {
     return (
       <section className="Recommended">
@@ -13,5 +13,3 @@ export class RecentlyViewed extends Component {
     );
   }
 }
-
-export default RecentlyViewed;

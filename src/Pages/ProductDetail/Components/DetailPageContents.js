@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class DetailPageContents extends Component {
+export default class DetailPageContents extends Component {
   render() {
     return (
       <section className="DetailPageContents">
@@ -32,5 +32,3 @@ export class DetailPageContents extends Component {
     );
   }
 }
-
-export default DetailPageContents;

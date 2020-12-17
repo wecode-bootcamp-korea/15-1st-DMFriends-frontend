@@ -8,8 +8,9 @@ import Gethelp from "./Components/GetHelp";
 import ProductReview from "./Components/ProductReview";
 import Recommended from "./Components/Recommended";
 import RecentlyViewed from "./Components/RecentlyViewed";
-import Footer from "../../Components/Footer/Footer";
+import BottomBar from "./Components/BottomBar";
 import ScrollToTop from "./Components/ScrollToTop";
+import Footer from "../../Components/Footer/Footer";
 import "./ProductDetail.scss";
 
 export class ProductDetail extends Component {
@@ -25,8 +26,9 @@ export class ProductDetail extends Component {
         <ProductReview />
         <Recommended />
         <RecentlyViewed />
-        <Footer />
+        <BottomBar />
         <ScrollToTop />
+        <Footer />
       </>
     );
   }

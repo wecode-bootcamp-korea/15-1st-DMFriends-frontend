@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class ProductInfo extends Component {
+export default class ProductInfo extends Component {
   constructor() {
     super();
     this.state = {
@@ -9,7 +9,7 @@ export class ProductInfo extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/ProductInfo.json")
+    fetch("data/ProductInfo.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -50,5 +50,3 @@ export class ProductInfo extends Component {
     );
   }
 }
-
-export default ProductInfo;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class Recommended extends Component {
+export default class Recommended extends Component {
   render() {
     return (
       <section className="Recommended">
@@ -12,5 +12,3 @@ export class Recommended extends Component {
     );
   }
 }
-
-export default Recommended;

@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import ReactStars from "react-stars";
 import * as configs from "../../../../config.js";
 
-export class DetailPageProductImg extends Component {
+export default class DetailPageProductImg extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,7 +12,7 @@ export class DetailPageProductImg extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/ProductDetail.json")
+    fetch("data/ProductDetail.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -81,5 +81,3 @@ const settings = {
   autoplay: true,
   autoplaySpeed: 2750,
 };
-
-export default DetailPageProductImg;
