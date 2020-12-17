@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactStars from "react-stars";
 import * as configs from "../../../config.js";
 
 export class ProductReview extends Component {
@@ -9,21 +10,17 @@ export class ProductReview extends Component {
           <div>
             <h3>리뷰 1개</h3>
             <div className="reviewTotalRate">
-              <span>
-                <img src={configs.rateStar} alt="ReviewStarImg" />
-              </span>
-              <span>
-                <img src={configs.nonColorRateStar} alt="ReviewStarImg" />
-              </span>
-              <span>
-                <img src={configs.nonColorRateStar} alt="ReviewStarImg" />
-              </span>
-              <span>
-                <img src={configs.nonColorRateStar} alt="ReviewStarImg" />
-              </span>
-              <span>
-                <img src={configs.nonColorRateStar} alt="ReviewStarImg" />
-              </span>
+              <ReactStars
+                className="ReactStars"
+                count={5}
+                value={1}
+                size={24}
+                half={true}
+                edit={false}
+                color1={"#D5D7E0"}
+                color2={"#FF6582"}
+                // onChange={}
+              />
             </div>
           </div>
           <button className="reviewBtn">
@@ -40,21 +37,17 @@ export class ProductReview extends Component {
               <div>
                 <div className="userName">이*연</div>
                 <div className="userReviewRate">
-                  <span>
-                    <img src={configs.rateStar} alt="ReviewStarImg" />
-                  </span>
-                  <span>
-                    <img src={configs.nonColorRateStar} alt="ReviewStarImg" />
-                  </span>
-                  <span>
-                    <img src={configs.nonColorRateStar} alt="ReviewStarImg" />
-                  </span>
-                  <span>
-                    <img src={configs.nonColorRateStar} alt="ReviewStarImg" />
-                  </span>
-                  <span>
-                    <img src={configs.nonColorRateStar} alt="ReviewStarImg" />
-                  </span>
+                  <ReactStars
+                    className="ReactStars"
+                    count={5}
+                    value={1}
+                    size={18}
+                    half={true}
+                    edit={false}
+                    color1={"#D5D7E0"}
+                    color2={"#FF6582"}
+                    // onChange={}
+                  />
                   <p>2020-12-12</p>
                 </div>
                 <div className="userReviewComment">

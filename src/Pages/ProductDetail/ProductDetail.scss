@@ -54,8 +54,8 @@
       .totalCount {
         position: relative;
         font-size: 14px;
-        margin-left: 6px;
-        top: 8px;
+        margin-left: 0px;
+        top: 7px;
       }
     }
 
@@ -302,10 +302,8 @@
       .reviewTotalRate {
         display: flex;
 
-        img {
-          width: 22px;
-          height: 20px;
-          margin: 0px 3.5px 3px;
+        span {
+          margin-right: 10px;
         }
       }
     }
@@ -373,15 +371,15 @@
           .userReviewRate {
             display: flex;
             flex-direction: row;
-            justify-content: left;
+            // justify-content: left;
             align-items: baseline;
             margin: 6px 0px 12px;
 
-            span {
-              img {
-                width: 14.3px;
-                height: 13px;
-                margin: 0px 2.25px;
+            div {
+              display: flex;
+              flex-direction: row;
+              span {
+                margin-right: 4px;
               }
             }
 
