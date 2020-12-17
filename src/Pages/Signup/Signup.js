@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import AgreementForm from "./components/AgreementForm";
 import "./Signup.scss";
 
 class Signup extends React.Component {
@@ -12,7 +13,24 @@ class Signup extends React.Component {
       nickName: "",
       emailAlert: true,
       pwAlert: true,
+      checkAllValue: false,
+      checkAllBoxes: false,
+      check0: false,
+      check1: false,
+      check2: false,
+      check3: false,
+      policies: [],
     };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/Signup.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          policies: res.policies,
+        });
+      });
   }
 
   handleInputValue = (e) => {
@@ -22,53 +40,58 @@ class Signup extends React.Component {
     });
   };
 
-  isEmailValidate = (e) => {
-    e.preventDefault();
-    const { email } = this.state;
-    const checkEmail = email.indexOf("@") !== -1 && email.indexOf(".") !== -1;
-
-    if (!checkEmail) {
-      this.setState({
-        emailAlert: checkEmail,
-      });
-    } else {
-      this.setState({
-        emailAlert: checkEmail,
-      });
-    }
+  handleAllCheckedBoxes = () => {
+    const { checkAllBoxes } = this.state;
+    this.setState({
+      checkAllBoxes: !checkAllBoxes,
+      check0: !checkAllBoxes,
+      check1: !checkAllBoxes,
+      check2: !checkAllBoxes,
+      check3: !checkAllBoxes,
+    });
   };
 
-  isRepwValidate = (e) => {
+  handleCheckedBox = (ind) => {
+    this.setState(
+      {
+        [`check${ind}`]: !this.state[`check${ind}`],
+      },
+      () => {
+        const { check0, check1, check2, check3 } = this.state;
+        this.setState({
+          checkAllBoxes: check0 && check1 && check2 && check3,
+        });
+      },
+    );
+  };
+
+  validateAllSignUpValue = (e) => {
     e.preventDefault();
-    const { pw, rePw } = this.state;
+    const { email, pw, rePw, checkAllBoxes } = this.state;
+    const checkEmail = email.includes("@") && email.includes(".");
     const checkPw = pw === rePw;
 
-    if (!checkPw) {
-      this.setState({
-        pwAlert: checkPw,
-      });
-    } else {
-      this.setState({
-        pwAlert: checkPw,
-      });
-    }
+    this.setState({
+      emailAlert: checkEmail ? true : false,
+      pwAlert: checkPw ? true : false,
+      checkAllValue: checkAllBoxes,
+    });
   };
 
   render() {
-    console.log(this.state);
-    const { emailAlert, pwAlert, nickName } = this.state;
+    const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, checkAllValue } = this.state;
 
     return (
       <div className="Signup">
         <div className="title">kakao</div>
         <div className="frame">
           <div className="frameTitle">회원가입</div>
-          <form className="formEmail">
+          <form className="formEmail" onClick={this.handleLogin}>
             <span>이메일주소</span>
             <input id="email" placeholder="이메일 주소 입력" onChange={this.handleInputValue} />
             <span className={emailAlert ? "formEmailAlert" : "activate"}>이메일 형식이 올바르지 않습니다.</span>
             <div>
-              <button onClick={this.isEmailValidate}>인증메일 발송</button>
+              <button onClick={this.validateAllSignUpValue}>인증메일 발송</button>
             </div>
           </form>
           <form className="formPw">
@@ -86,7 +109,7 @@ class Signup extends React.Component {
               type="password"
               placeholder="비밀번호 재입력"
               onChange={this.handleInputValue}
-              onKeyUp={this.isRepwValidate}
+              onKeyUp={this.validateAllSignUpValue}
             />
             <span className={pwAlert ? "formPwAlert" : "activate"}>비밀번호가 같지 않습니다.</span>
           </form>
@@ -104,39 +127,27 @@ class Signup extends React.Component {
           <span className="formPolicy">약관 동의</span>
           <ul>
             <li>
-              <input type="checkbox" id="c1" />
-              <label for="c1">
+              <input type="checkbox" id="checkAllBoxes" onClick={this.handleAllCheckedBoxes} checked={checkAllBoxes} />
+              <label htmlFor="checkAllBoxes">
                 <span></span>
                 전체동의
               </label>
             </li>
             <div className="formPolicyBar"></div>
-            <li className="checkboxes">
-              <input type="checkbox" id="c2" />
-              <label for="c2">
-                <span></span>만 14세 이상입니다.(필수)
-              </label>
-            </li>
-            <li className="checkboxes">
-              <input type="checkbox" id="c3" />
-              <label for="c3">
-                <span></span>이용약관(필수)
-              </label>
-            </li>
-            <li className="checkboxes">
-              <input type="checkbox" id="c4" />
-              <label for="c4">
-                <span></span>개인정보처리방침(필수)
-              </label>
-            </li>
-            <li className="checkboxes">
-              <input type="checkbox" id="c5" />
-              <label for="c5">
-                <span></span>이벤트, 프로모션 알림 메일 및 SMS 수신
-              </label>
-            </li>
+            {policies.map((policy, ind) => {
+              return (
+                <AgreementForm
+                  policy={policy}
+                  key={ind}
+                  checked={this.state[policy.name]}
+                  onClick={() => this.handleCheckedBox(ind)}
+                />
+              );
+            })}
           </ul>
-          <button className="nextBtn">다음</button>
+          <button className={checkAllValue ? "activateBtn" : ""} onClick={this.validateAllSignUpValue}>
+            다음
+          </button>
         </div>
         <footer>
           <span>
