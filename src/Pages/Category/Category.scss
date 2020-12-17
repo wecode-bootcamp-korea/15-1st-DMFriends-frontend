@@ -13,11 +13,18 @@
   letter-spacing: -0.19px;
   cursor: pointer;
 }
-
-.Category {
+%FlexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+%FlexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Category {
+  @extend %FlexCenter;
   width: 100vw;
   height: 100vh;
   background-color: #ffffff;
@@ -110,21 +117,17 @@
       }
     }
     .ProductsHeader {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @extend %FlexCenter;
       width: 100%;
       height: 86px;
 
       .HeaderText {
-        display: flex;
-        justify-content: space-between;
+        @extend %FlexBetween;
         width: 100%;
         height: 45px;
 
         .HeaderLeft {
-          display: flex;
-          justify-content: space-between;
+          @extend %FlexBetween;
           width: 891px;
           height: 30px;
           margin-top: 7px;
@@ -134,22 +137,21 @@
             height: 24px;
             margin-top: 9px;
 
-            .LeftOne {
+            .LeftAmount {
               font-size: 16px;
             }
-            .LeftTwo {
+            .LeftNumber {
               font-weight: bold;
               font-size: 15px;
             }
-            .LeftThree {
+            .LeftText {
               font-size: 16px;
             }
           }
           img {
             width: 20px;
             height: 20px;
-            margin-top: 6px;
-            margin-left: 600px;
+            margin: 6px 0 0 600px;
           }
           .GlobalProducts {
             width: 195px;
@@ -169,14 +171,12 @@
             width: 70px;
             height: 24px;
             color: #111111;
-            margin-top: 15px;
-            margin-left: 15px;
+            margin: 15px 0 0 15px;
           }
           img {
             width: 18px;
             height: 18px;
-            margin-top: 12px;
-            margin-left: 150px;
+            margin: 12px 0 0 150px;
           }
         }
       }
@@ -199,8 +199,7 @@
           border-radius: 1%;
         }
         .ProductText {
-          display: flex;
-          justify-content: space-between;
+          @extend %FlexBetween;
           width: 255px;
           height: 35px;
 
