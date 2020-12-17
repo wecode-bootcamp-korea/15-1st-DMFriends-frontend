@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-//import Slider from "react-slick";
-//import * as configs from "../../config.js";
 //import Header from "../../Components/Header/Header"; 컴포넌트 사용예정
 //import Nav from "../../Components/Nav/Nav";
 import ItemBox from "./Components/ItemBox/ItemBox";
-//import ItemSliderImg from "./Components/ItemSliderImg/ItemSliderImg";
 import SliderBox from "./Components/SliderBox/SliderBox";
 import "./NewProducts.scss";
 
@@ -56,16 +53,5 @@ class NewProducts extends Component {
     );
   }
 }
-// const settings = {
-//   dots: false,
-//   arrows: true,
-//   infinite: true,
-//   speed: 500,
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   autoplay: true,
-//   autoplaySpeed: 3000,
-//   pauseOnHover: true,
-//   className: "imgslide",
-// };
+
 export default NewProducts;
