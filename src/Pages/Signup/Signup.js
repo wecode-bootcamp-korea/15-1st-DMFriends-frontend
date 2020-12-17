@@ -13,11 +13,11 @@ class Signup extends React.Component {
       nickName: "",
       emailAlert: true,
       pwAlert: true,
-      checkbox1: false,
-      checkbox2: false,
-      checkbox3: false,
-      checkbox4: false,
-      checkbox5: false,
+      checkAll: false,
+      check0: false,
+      check1: false,
+      check2: false,
+      check3: false,
       policies: [],
     };
   }
@@ -60,32 +60,53 @@ class Signup extends React.Component {
   };
 
   handleAllChecked = () => {
-    const { checkbox1 } = this.state;
-
+    const { checkAll } = this.state;
     this.setState({
-      checkbox1: !checkbox1,
-      checkbox2: !checkbox1,
-      checkbox3: !checkbox1,
-      checkbox4: !checkbox1,
-      checkbox5: !checkbox1,
+      checkAll: !checkAll,
+      check0: !checkAll,
+      check1: !checkAll,
+      check2: !checkAll,
+      check3: !checkAll,
     });
   };
 
-  // handleChecked = (i) => {
-  //   this.setState({
-  //     [`checkbox${i}`]: !this.state[`checkbox${i}`],
-  //   });
+  // handleLogin = () => {
+  //   fetch("http://192.168.0.22:8000/user/signup", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: this.state.email,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((result) => console.log("결과 :", result))
+  //     .catch((e) => console.log("에러 :", e));
   // };
 
+  handleChecked = (ind) => {
+    console.log(ind);
+    const { check0, check1, check2, check3 } = this.state;
+    this.setState(
+      {
+        [`check${ind}`]: !this.state[`check${ind}`],
+      },
+      () => {
+        this.setState({
+          allchecked: check0 && check1 && check2 && check3,
+        });
+      },
+    );
+  };
+
   render() {
-    const { emailAlert, pwAlert, nickName, policies } = this.state;
+    console.log(this.state);
+    const { emailAlert, pwAlert, nickName, checkAll, policies } = this.state;
 
     return (
       <div className="Signup">
         <div className="title">kakao</div>
         <div className="frame">
           <div className="frameTitle">회원가입</div>
-          <form className="formEmail">
+          <form className="formEmail" onClick={this.handleLogin}>
             <span>이메일주소</span>
             <input id="email" placeholder="이메일 주소 입력" onChange={this.handleInputValue} />
             <span className={emailAlert ? "formEmailAlert" : "activate"}>이메일 형식이 올바르지 않습니다.</span>
@@ -124,43 +145,26 @@ class Signup extends React.Component {
             />
           </form>
           <span className="formPolicy">약관 동의</span>
-          {/* <ul>
+          <ul>
             <li>
-              <input type="checkbox" id="c1" checked={checkEmail ? true : false} onClick={this.handleAllChecked} />
-              <label for="c1">
+              <input type="checkbox" id="checkAll" onClick={this.handleAllChecked} defaultChecked={checkAll} />
+              <label for="checkAll">
                 <span></span>
                 전체동의
               </label>
             </li>
             <div className="formPolicyBar"></div>
-            {policies.map((policy) => {
-              <AgreementForm />;
+            {policies.map((policy, ind) => {
+              return (
+                <AgreementForm
+                  policy={policy}
+                  key={ind}
+                  defaultChecked={this.state[policy.name]}
+                  onClick={() => this.handleChecked(ind)}
+                />
+              );
             })}
-            <li>
-              <input type="checkbox" id="c2" checked={checkEmail ? true : false} onClick={this.handleChecked(2)} />
-              <label for="c2">
-                <span></span>만 14세 이상입니다.(필수)
-              </label>
-            </li>
-            <li>
-              <input type="checkbox" id="c3" checked={checkEmail ? true : false} onClick={this.handleChecked(3)} />
-              <label for="c3">
-                <span></span>이용약관(필수)
-              </label>
-            </li>
-            <li>
-              <input type="checkbox" id="c4" checked={checkEmail ? true : false} onClick={this.handleChecked(4)} />
-              <label for="c4">
-                <span></span>개인정보처리방침(필수)
-              </label>
-            </li>
-            <li>
-              <input type="checkbox" id="c5" checked={checkEmail ? true : false} onClick={this.handleChecked(5)} />
-              <label for="c5">
-                <span></span>이벤트, 프로모션 알림 메일 및 SMS 수신
-              </label>
-            </li>
-          </ul> */}
+          </ul>
           <button className="nextBtn">다음</button>
         </div>
         <footer>

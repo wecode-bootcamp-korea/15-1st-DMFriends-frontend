@@ -1,18 +1,19 @@
-// import React from "react";
+import React from "react";
 
-// class AgreementForm extends React.Component {
-//   render() {
-//     const { feed } = this.props;
+class AgreementForm extends React.Component {
+  render() {
+    const { policy, defaultChecked, onClick } = this.props;
+    console.log(this.props);
+    return (
+      <li>
+        <input type="checkbox" id={policy.id} defaultChecked={defaultChecked} onClick={onClick} />
+        <label for={policy.id}>
+          <span></span>
+          {policy.title}
+        </label>
+      </li>
+    );
+  }
+}
 
-//     return (
-//       <li>
-//         <input type="checkbox" id="c2" checked={checkEmail ? true : false} onClick={this.handleChecked(2)} />
-//         <label for="c2">
-//           <span></span>만 14세 이상입니다.(필수)
-//         </label>
-//       </li>
-//     );
-//   }
-// }
-
-// export default AgreementForm;
+export default AgreementForm;
