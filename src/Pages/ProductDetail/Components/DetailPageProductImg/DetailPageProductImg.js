@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import ReactStars from "react-stars";
-import * as configs from "../../../config.js";
+import * as configs from "../../../../config.js";
 
 export class DetailPageProductImg extends Component {
   constructor() {
