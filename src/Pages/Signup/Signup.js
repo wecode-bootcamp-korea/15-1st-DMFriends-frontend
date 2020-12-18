@@ -24,7 +24,7 @@ class Signup extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/Signup.json")
+    fetch("/data/Signup.json")
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -83,7 +83,7 @@ class Signup extends React.Component {
 
     return (
       <div className="Signup">
-        <div className="title">kakao</div>
+        <div className="title">DM Friends</div>
         <div className="frame">
           <div className="frameTitle">회원가입</div>
           <form className="formEmail" onClick={this.handleLogin}>
