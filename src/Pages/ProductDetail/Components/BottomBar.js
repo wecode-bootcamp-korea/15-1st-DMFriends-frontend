@@ -21,7 +21,7 @@ class BottomBar extends Component {
       });
   }
 
-  handleMinus = () => {
+  handleDecrease = () => {
     this.setState({
       quantityValue: Number(this.state.quantityValue - 1),
     });
@@ -31,7 +31,7 @@ class BottomBar extends Component {
     });
   };
 
-  handlePlus = () => {
+  handleIncrease = () => {
     this.setState({
       quantityValue: this.state.quantityValue + 1,
     });
@@ -49,18 +49,18 @@ class BottomBar extends Component {
 
   render() {
     const { quantityValue, totalPrice, productPrice } = this.state;
-    const { handleMinus, handlePlus, goToCart, addToCart } = this;
+    const { handleDecrease, handleIncrease, goToCart, addToCart } = this;
     const onlyNaturalNum = quantityValue > 1;
     let whichNum = totalPrice === "" ? productPrice : totalPrice;
     return (
       <section className="BottomBar">
         <div className="optionsWrap">
           <div className="quantities">
-            <button className="minusBtn" onClick={handleMinus} disabled={!onlyNaturalNum}>
+            <button className="minusBtn" onClick={handleDecrease} disabled={!onlyNaturalNum}>
               -
             </button>
             <input type="number" value={quantityValue} />
-            <button className="plusBtn" onClick={handlePlus}>
+            <button className="plusBtn" onClick={handleIncrease}>
               +
             </button>
           </div>
