@@ -76,17 +76,36 @@ class Signup extends React.Component {
       pwAlert: checkPw ? true : false,
       checkAllValue: checkAllBoxes,
     });
+
+    this.isValidEmail();
   };
+
+  isValidEmail = () => {
+    console.log("되니?");
+    fetch("api주소", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.email,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log("결과: ", result));
+  };
+  // if(result.message === "success") {
+  //    alert("인증메일이 발송되었습니다.")
+  //} else {
+  //    alert("기존에 있는 이메일 주소 입니다.")
+  //}
 
   render() {
     const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, checkAllValue } = this.state;
 
     return (
       <div className="Signup">
-        <div className="title">DM Friends</div>
+        <div className="title">DM friends</div>
         <div className="frame">
           <div className="frameTitle">회원가입</div>
-          <form className="formEmail" onClick={this.handleLogin}>
+          <form className="formEmail">
             <span>이메일주소</span>
             <input id="email" placeholder="이메일 주소 입력" onChange={this.handleInputValue} />
             <span className={emailAlert ? "formEmailAlert" : "activate"}>이메일 형식이 올바르지 않습니다.</span>
