@@ -1,0 +1,16 @@
+{
+  "ProductData": [
+    {
+      "ProductId": 0,
+      "price": "12000"
+    },
+    {
+      "ProductId": 1,
+      "price": "15,000"
+    },
+    {
+      "ProductId": 2,
+      "price": "8,000"
+    }
+  ]
+}
