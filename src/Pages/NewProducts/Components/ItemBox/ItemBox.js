@@ -6,16 +6,16 @@ import "./ItemBox.scss";
 class ItemBox extends Component {
   render() {
     return (
-      <Link to="/NewProducts" className="ItemBox">
-        <img src={configs.products} alt="product" />
+      <Link to="/NewProducts" className="ItemBox" id={this.props.id}>
+        <img src={this.props.imgUrl} alt="product" />
         <div className="ProductText">
-          <span>윙크베이비필로우_라이언</span>
+          <span>{this.props.itemName}</span>
           <button>
             <img src={configs.basket} alt="basket" />
           </button>
         </div>
         <div className="ProductPrice">
-          <p>12,000원</p>
+          <p>{this.props.price}</p>
         </div>
       </Link>
     );
