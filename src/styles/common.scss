@@ -1,1 +1,26 @@
 @import "reset";
+
+$theme-color: blue;
+$bg-color: red;
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin btn_mix {
+  background-color: #fff;
+  border-color: #fff;
+  border-width: 0px;
+  outline: none;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// @include flex_center;

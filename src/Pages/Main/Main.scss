@@ -1,19 +1,11 @@
+@import "../../styles/common.scss";
+
 * {
   box-sizing: border-box;
 
-  .dmContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .active {
-      //선택한 메뉴
-      background-color: #fff;
-      color: black;
-      font-weight: bold;
-      // margin-top: -4px;
-      border-bottom: 4px solid black;
+  .Main {
+    body {
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .headerLine {
@@ -34,7 +26,6 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        // background-color: #333;
       }
 
       li {
@@ -65,6 +56,14 @@
         justify-content: space-around;
         align-items: center;
         border-bottom: 1px solid #f0f1f4;
+      }
+
+      .active {
+        //선택한 메뉴
+        background-color: #fff;
+        color: black;
+        font-weight: bold;
+        border-bottom: 4px solid black;
       }
     }
 
@@ -124,7 +123,7 @@
         justify-content: space-between;
         margin-top: 10px;
 
-        .feedIcon1 {
+        .feedIconLeft {
           display: flex;
           justify-content: flex-start;
 
@@ -140,11 +139,16 @@
           }
         }
 
-        .feedIcon2 {
+        .feedIconRight {
           display: flex;
           justify-content: flex-start;
 
+          .feedShareBtn {
+            @include btn_mix();
+          }
+
           .shareIcon {
+            background-color: #fff;
             height: 27px;
             width: 27px;
           }
