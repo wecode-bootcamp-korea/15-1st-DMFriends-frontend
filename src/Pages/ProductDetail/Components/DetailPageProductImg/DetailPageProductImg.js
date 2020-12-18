@@ -50,7 +50,6 @@ export default class DetailPageProductImg extends Component {
                 edit={false}
                 color1={"#D5D7E0"}
                 color2={"#FF6582"}
-                // onChange={}
               />
             </div>
             <span className="totalCount">(1)</span>
