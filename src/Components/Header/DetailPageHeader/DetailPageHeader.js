@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import "./DetailPageHeader.scss";
 import * as configs from "../../../config.js";
 
-export class DetailPageHeader extends Component {
+class DetailPageHeader extends Component {
   goToMain = () => {
     this.props.history.push("/");
   };
