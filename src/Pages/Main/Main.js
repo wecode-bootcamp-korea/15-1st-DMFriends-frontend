@@ -34,28 +34,6 @@ class Main extends React.Component {
     endNumber: 2,
   };
 
-  addReple = () => {
-    const newComment = document.getElementsByClassName("reple_input")[0].value;
-    if (newComment.length !== 0) {
-      const commentsArr = this.state.comments;
-      commentsArr.push({
-        id: commentsArr.length,
-        userId: "idjusam",
-        userCmt: newComment,
-        cmtLike: false,
-      });
-      this.setState({
-        comments: commentsArr,
-      });
-      document.getElementsByClassName("reple_input")[0].value = "";
-    } else {
-      alert("댓글을 입력해주세요!");
-    }
-    // 1. 함수가 실행되는지 확인하기 => alert("함수실행");
-    // 2. 댓글내용을 가져오는지 확인하기 => const newComment= document.getElementsByClassName('reple_input')[0].value;
-    // 3. 가져온 댓글내용 comments 안에 넣기
-  };
-
   componentDidMount() {
     this.getData();
     window.addEventListener("scroll", this.infiniteScroll);
