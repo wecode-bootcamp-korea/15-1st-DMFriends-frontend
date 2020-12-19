@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import "./Feeds.scss";
+import ShareModal from "../shareModal/ShareModal";
 
 class Feeds extends Component {
+  state = {
+    shareModal: [],
+  };
   render() {
     const { feeds } = this.props;
 
@@ -30,11 +34,7 @@ class Feeds extends Component {
                 <img className="likeIcon" src="images\chaebinhan\Main\like-black.png" alt="like" />
                 <img className="replyIcon" src="images\chaebinhan\Main\reply-black.png" alt="reply" />
               </div>
-              <div className="feedIconRight">
-                <button type="button" className="feedShareBtn" id="feedShareModalBtn">
-                  <img className="shareIcon" src="images\chaebinhan\Main\share-black.png" alt="share" />
-                </button>
-              </div>
+              <ShareModal shareModal={this.state.shareModal} />
             </section>
             <section className="bodyContentsBox">
               <div className="goodBox">
