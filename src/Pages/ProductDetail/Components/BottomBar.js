@@ -22,21 +22,17 @@ class BottomBar extends Component {
   }
 
   handleDecrease = () => {
+    const totalSubtraction = this.state.totalPrice - this.state.productPrice;
     this.setState({
-      quantityValue: Number(this.state.quantityValue - 1),
-    });
-    const totalSubtraction = this.state.totalPrice - Number(this.state.productPrice);
-    this.setState({
+      quantityValue: this.state.quantityValue - 1,
       totalPrice: totalSubtraction,
     });
   };
 
   handleIncrease = () => {
-    this.setState({
-      quantityValue: this.state.quantityValue + 1,
-    });
     const totalAdded = Number(this.state.productPrice) * this.state.quantityValue;
     this.setState({
+      quantityValue: this.state.quantityValue + 1,
       totalPrice: totalAdded + Number(this.state.productPrice),
     });
   };
@@ -51,7 +47,7 @@ class BottomBar extends Component {
     const { quantityValue, totalPrice, productPrice } = this.state;
     const { handleDecrease, handleIncrease, goToCart, addToCart } = this;
     const onlyNaturalNum = quantityValue > 1;
-    let whichNum = totalPrice === "" ? productPrice : totalPrice;
+    let whichPrice = totalPrice === "" ? productPrice : totalPrice;
     return (
       <section className="BottomBar">
         <div className="optionsWrap">
@@ -66,7 +62,7 @@ class BottomBar extends Component {
           </div>
           <div className="totalPrice">
             <span className="total">총 상품금액</span>
-            <span>{Number(whichNum).toLocaleString()}원</span>
+            <span>{Number(whichPrice).toLocaleString()}원</span>
           </div>
         </div>
         <div className="purchase">
