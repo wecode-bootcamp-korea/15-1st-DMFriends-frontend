@@ -318,6 +318,7 @@
       color: white;
       background-color: #3c414b;
       cursor: pointer;
+      outline: none;
 
       img {
         width: 20px;
@@ -374,7 +375,6 @@
           .userReviewRate {
             display: flex;
             flex-direction: row;
-            // justify-content: left;
             align-items: baseline;
             margin: 6px 0px 12px;
 
@@ -396,17 +396,25 @@
         }
 
         .userReviewComment {
+          display: block;
           font-size: 15px;
-          max-width: 680px;
+          width: 680px;
+          max-height: 4.5em;
           line-height: 1.5;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
         }
 
         .seeMore {
+          display: block;
           height: 17px;
           margin: 12px 0px 0px;
           padding: 0;
           border: none;
-          background-color: white;
+          background-color: red;
           font-size: 15px;
           line-height: 17px;
           cursor: pointer;
@@ -427,7 +435,54 @@
           border-radius: 3px;
           background-size: 24px;
           color: $description-letter-color;
+          outline: none;
           cursor: pointer;
+        }
+        .LoginModal {
+          position: fixed;
+          inset: 0px;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 10000;
+
+          .popUpMsg {
+            position: absolute;
+            top: 40%;
+            right: 0px;
+            left: 0px;
+            width: 350px;
+            height: 189px;
+            margin: auto;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 15px;
+            text-align: center;
+            line-height: 1.5;
+
+            .confirm {
+              height: 139px;
+              padding: 55px 25px 40px;
+              border-bottom: 1px solid $border-color;
+            }
+
+            .choose {
+              display: flex;
+              flex-direction: row;
+              width: 350px;
+              height: 50px;
+
+              button {
+                width: 100%;
+                padding: 0px;
+                border: none;
+                border-right: 1px solid $border-color;
+                border-radius: 4px;
+                font-weight: bold;
+                background-color: white;
+                cursor: pointer;
+                outline: none;
+              }
+            }
+          }
         }
 
         p {
@@ -491,7 +546,6 @@
   left: 0;
   right: 0;
   border: 1px solid rgb(227, 229, 232);
-  // background-color: yellow;
 
   .optionsWrap {
     display: flex;
@@ -587,7 +641,7 @@
     position: relative;
     top: 5px;
   }
-}
-.scrollHidden {
-  display: none;
+  .scrollHidden {
+    display: none;
+  }
 }

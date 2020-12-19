@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import * as configs from "../../../config.js";
 
-export class GetHelp extends Component {
+class GetHelp extends Component {
   goToSignup = () => {
     // if (response.message === "valid user") {
     //   this.props.history.push("/main");

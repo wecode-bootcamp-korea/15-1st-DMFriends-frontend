@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactStars from "react-stars";
+import LoginModal from "./LoginModal";
 import * as configs from "../../../config.js";
 
 export default class ProductReview extends Component {
@@ -7,6 +8,8 @@ export default class ProductReview extends Component {
     super();
     this.state = {
       reviews: [],
+      seeMore: false,
+      isModalOpen: false,
     };
   }
 
@@ -20,8 +23,21 @@ export default class ProductReview extends Component {
       });
   }
 
+  openModal = () => {
+    this.setState({ isModalOpen: true });
+  };
+
+  closeModal = () => {
+    this.setState({ isModalOpen: false });
+  };
+
+  handleShowMore = () => {
+    this.setState({ seeMore: !this.state.seeMore });
+  };
+
   render() {
     const { reviews } = this.state;
+    const { handleShowMore } = this;
     return (
       <section className="ProductReview">
         <div>
@@ -37,7 +53,6 @@ export default class ProductReview extends Component {
                 edit={false}
                 color1={"#D5D7E0"}
                 color2={"#FF6582"}
-                // onChange={}
               />
             </div>
           </div>
@@ -70,11 +85,14 @@ export default class ProductReview extends Component {
                         />
                         <p>{item.date}</p>
                       </div>
-                      <div className="userReviewComment">{item.comment}</div>
-                      <button className="seeMore">더보기</button>
+                      <p className="userReviewComment">{item.comment}</p>
+                      <button className="seeMore" onClick={handleShowMore}>
+                        {this.state.seeMore ? "접기" : "더보기"}
+                      </button>
                     </div>
                     <div className="reviewLike">
-                      <button>좋아요</button>
+                      <button onClick={this.openModal}>좋아요</button>
+                      <LoginModal isOpen={this.state.isModalOpen} close={this.closeModal} />
                       <p>{item.likedNum}명이 좋아했어요</p>
                     </div>
                   </li>
