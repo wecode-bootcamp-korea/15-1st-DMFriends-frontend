@@ -1,0 +1,88 @@
+%hundred {
+  width: 100%;
+  height: 100%;
+}
+
+%buttonStyle {
+  @extend %hundred;
+  border: 0 none;
+  outline: 0;
+  color: rgb(154, 154, 158);
+  background-color: transparent;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: -0.19px;
+  cursor: pointer;
+}
+
+.ProductCategory {
+  display: flex;
+  width: 100%;
+  height: 58px;
+  border-bottom: 1px solid #f2f2f2;
+
+  .ListOne {
+    width: 59.031px;
+    height: 58px;
+
+    button {
+      @extend %buttonStyle;
+    }
+  }
+  .ListTwo {
+    width: 94.453px;
+    height: 58px;
+
+    button {
+      @extend %buttonStyle;
+    }
+  }
+  .ListThree {
+    width: 94.453px;
+    height: 58px;
+
+    button {
+      @extend %buttonStyle;
+    }
+  }
+  .ListFour {
+    width: 88.063px;
+    height: 58px;
+
+    button {
+      @extend %buttonStyle;
+    }
+  }
+  .ListFive {
+    width: 123.484px;
+    height: 58px;
+
+    button {
+      @extend %buttonStyle;
+    }
+  }
+  .ListSix {
+    width: 123.484px;
+    height: 58px;
+
+    button {
+      @extend %buttonStyle;
+    }
+  }
+  .ListSeven {
+    width: 77.75px;
+    height: 58px;
+
+    button {
+      @extend %buttonStyle;
+    }
+  }
+  .ListEight {
+    width: 108.969px;
+    height: 58px;
+
+    button {
+      @extend %buttonStyle;
+    }
+  }
+}

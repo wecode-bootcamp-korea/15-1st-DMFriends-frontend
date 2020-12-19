@@ -1,0 +1,13 @@
+%hundred {
+  width: 100%;
+  height: 100%;
+}
+
+.ImgContainer {
+  width: 100%;
+  height: 220px;
+
+  img {
+    @extend %hundred;
+  }
+}
