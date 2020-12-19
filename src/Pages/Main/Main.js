@@ -48,7 +48,7 @@ class Main extends React.Component {
     fetch("/data/mainData.json") //백이랑 연결할 때 여기에 붙임
       .then((result) => result.json())
       .then((result) => {
-        console.log(result);
+        //console.log(result);
         const writeFeeds = result.feeds.slice(startNumber, endNumber);
         this.setState({
           feeds: [...feeds, ...writeFeeds],
