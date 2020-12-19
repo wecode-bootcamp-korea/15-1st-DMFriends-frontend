@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "./Feeds.scss";
 import ShareModal from "../shareModal/ShareModal";
+// import "~slick-carousel/slick/slick.css";
+// import "~slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 class Feeds extends Component {
   state = {
-    shareModal: [],
+    feedImgs: [],
   };
 
   modalOn = (e) => {
@@ -57,9 +60,28 @@ class Feeds extends Component {
     //모달 띄우는 함수 구현예정
   };
 
+  // imgNextArrow = () => {
+  //   const { className, style, onClick } = this.props;
+  //   return <div className={className} style={{ ...style, display: "block", background: "red" }} onClick={onClick} />;
+  // };
+
+  // imgPrevArrow = () => {
+  //   const { className, style, onClick } = this.props;
+  //   return <div className={className} style={{ ...style, display: "block", background: "red" }} onClick={onClick} />;
+  // };
+
   render() {
     const { feeds } = this.props;
-
+    const settings = {
+      dots: true,
+      // nextArrow: <imgNextArrow />,
+      // prevArrow: <imgPrevArrow />,
+      arrows: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
     return (
       <>
         {feeds.map((feed) => (
@@ -77,7 +99,13 @@ class Feeds extends Component {
             </section>
             <section className="mainFeed">
               <div className="feedImgbox">
-                <img className="feedImg" src={feed.usrFeedSrc} alt="profile" />
+                <Slider {...settings}>
+                  {feed.usrFeedSrc.map((img) => (
+                    <div>
+                      <img className="feedImg" src={img} alt="profile" />
+                    </div>
+                  ))}
+                </Slider>
               </div>
             </section>
             <section className="feedIconBox">
@@ -105,7 +133,7 @@ class Feeds extends Component {
               <div id="myModal" className="myModal">
                 <div className="modal-content">
                   <div className="modalSectionHight">
-                    <div className="shareText">공유하기--{feed.id}</div>
+                    <div className="shareText">공유하기</div>
                     <div className="modalSectiondawn">
                       <img className="shareIconItem" src="images\chaebinhan\Main\sns-kakao-talk-60.png" alt="kakao" />
                       <img className="shareIconItem" src="images\chaebinhan\Main\sns-facebook-60.png" alt="facebook" />

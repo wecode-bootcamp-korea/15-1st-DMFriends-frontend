@@ -1,4 +1,12 @@
 @import "../../../styles/common.scss";
+
+.slick-next:before,
+.slick-prev:before {
+  color: #888;
+  font-size: 27px;
+  margin-left: -3px;
+}
+
 .feedShareBtn {
   @include btn_mix();
 }
