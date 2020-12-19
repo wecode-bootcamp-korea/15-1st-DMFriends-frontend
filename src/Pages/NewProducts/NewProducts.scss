@@ -8,84 +8,9 @@
   width: 100vw;
   height: 5000px;
 
-  .SliderContainer {
-    width: 640px;
-    height: 360.09px;
-    margin: auto;
-  }
-
   article {
     width: 100vw;
     height: 1850px;
-
-    .ProductsContainer {
-      @extend %flexCenter;
-      width: 640px;
-      height: 100vh;
-      margin: 0px auto;
-      border-top: 10px solid rgb(235, 235, 235);
-
-      .ProductsList {
-        width: 570px;
-        height: 100vh;
-        margin-top: 100px;
-
-        .theme {
-          font-size: 15px;
-          font-weight: 400;
-          color: #9a9a9e;
-        }
-        h3 {
-          font-size: 28px;
-          font-weight: bold;
-          color: #000000;
-          margin-top: 10px;
-        }
-        .ProductsCardGrid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
-          width: 100%;
-          height: 100vh;
-        }
-      }
-    }
-  }
-
-  .ViewMoreContainer {
-    @extend %flexCenter;
-    width: 100vw;
-    height: 52px;
-
-    .ViewMoreBar {
-      position: relative;
-      width: 341px;
-      height: 52px;
-      border: 1px solid #e6e6e6;
-
-      .goToNewBtn {
-        width: 341px;
-        height: 52px;
-        background-color: Transparent;
-        background-repeat: no-repeat;
-        border: none;
-        cursor: pointer;
-        overflow: hidden;
-        outline: none;
-
-        span {
-          font-size: 15px;
-        }
-      }
-    }
-
-    img {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      margin-left: 31px;
-      padding-bottom: 5px;
-    }
   }
 
   .SpaceContainer {
