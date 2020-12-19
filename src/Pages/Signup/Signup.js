@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import AgreementForm from "./components/AgreementForm";
+import { API } from "../../config";
 import "./Signup.scss";
 
 class Signup extends React.Component {
@@ -82,7 +83,7 @@ class Signup extends React.Component {
 
   isValidEmail = () => {
     console.log("되니?");
-    fetch("api주소", {
+    fetch(`${API}/user/signup`, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
