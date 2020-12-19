@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+// import configs from "../../../config";
+import "./ReviewModal.scss";
 
-class LoginModal extends Component {
+class ReviewModal extends Component {
   goToLogin = () => {
     this.props.history.push("/Login");
   };
-
-  componentDidMount() {
-    if (this.props.isOpen) {
-      document.body.style.overflow = "hidden";
-    }
-  }
-
-  componentWillUnmount() {
-    document.body.style.overflow = "unset";
-  }
 
   render() {
     const { isOpen, close } = this.props;
@@ -22,14 +14,14 @@ class LoginModal extends Component {
     return (
       <>
         {isOpen ? (
-          <div className="LoginModal">
+          <div className="ReviewModal" onClick={close}>
             <div className="popUpMsg">
-              <div className="confirm">
-                좋아요를 이용하시려면 로그인 하셔야 합니다. 로그인 화면으로 이동하시겠습니까?
+              <div className="confirm" onClick={isOpen}>
+                <p>리뷰는 구매 확정 후 14일 이내에만 작성 가능하며, 이후에는 작성이 불가합니다</p>
               </div>
               <div className="choose">
                 <button onClick={close}>취소</button>
-                <button onClick={goToLogin}>확인</button>
+                <button onClick={goToLogin}>구매확정 하러가기</button>
               </div>
             </div>
           </div>
@@ -39,4 +31,4 @@ class LoginModal extends Component {
   }
 }
 
-export default withRouter(LoginModal);
+export default withRouter(ReviewModal);

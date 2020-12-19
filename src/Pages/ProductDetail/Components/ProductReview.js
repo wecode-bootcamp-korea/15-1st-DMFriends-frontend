@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactStars from "react-stars";
 import LoginModal from "./LoginModal";
+import ReviewModal from "./ReviewModal";
 import * as configs from "../../../config.js";
 
 export default class ProductReview extends Component {
@@ -8,8 +9,8 @@ export default class ProductReview extends Component {
     super();
     this.state = {
       reviews: [],
-      seeMore: false,
       isModalOpen: false,
+      isReviewModalOpen: false,
     };
   }
 
@@ -24,23 +25,35 @@ export default class ProductReview extends Component {
   }
 
   openModal = () => {
-    this.setState({ isModalOpen: true });
+    this.setState({ isModalOpen: true }, () => {
+      document.body.style.overflow = "hidden";
+    });
   };
 
   closeModal = () => {
-    this.setState({ isModalOpen: false });
+    this.setState({ isModalOpen: false }, () => {
+      document.body.style.overflow = "unset";
+    });
   };
 
-  handleShowMore = () => {
-    this.setState({ seeMore: !this.state.seeMore });
+  openReviewModal = () => {
+    this.setState({ isReviewModalOpen: true }, () => {
+      document.body.style.overflow = "hidden";
+    });
+  };
+
+  closeReviewModal = () => {
+    this.setState({ isReviewModalOpen: false }, () => {
+      document.body.style.overflow = "unset";
+    });
   };
 
   render() {
-    const { reviews } = this.state;
-    const { handleShowMore } = this;
+    const { reviews, isModalOpen, isReviewModalOpen } = this.state;
+    const { openModal, closeModal, openReviewModal, closeReviewModal } = this;
     return (
       <section className="ProductReview">
-        <div>
+        <div className="reviewHeader">
           <div>
             <h3>리뷰 1개</h3>
             <div className="reviewTotalRate">
@@ -56,9 +69,10 @@ export default class ProductReview extends Component {
               />
             </div>
           </div>
-          <button className="reviewBtn">
+          <button className="reviewBtn" onClick={openReviewModal}>
             <img src={configs.pencil} alt="reviewIcon" /> 리뷰를 남겨주세요
           </button>
+          <ReviewModal isOpen={isReviewModalOpen} close={closeReviewModal} />
         </div>
         <div className="reviewComment">
           <div className="filterling">
@@ -86,13 +100,10 @@ export default class ProductReview extends Component {
                         <p>{item.date}</p>
                       </div>
                       <p className="userReviewComment">{item.comment}</p>
-                      <button className="seeMore" onClick={handleShowMore}>
-                        {this.state.seeMore ? "접기" : "더보기"}
-                      </button>
                     </div>
                     <div className="reviewLike">
-                      <button onClick={this.openModal}>좋아요</button>
-                      <LoginModal isOpen={this.state.isModalOpen} close={this.closeModal} />
+                      <button onClick={openModal}>좋아요</button>
+                      <LoginModal isOpen={isModalOpen} close={closeModal} />
                       <p>{item.likedNum}명이 좋아했어요</p>
                     </div>
                   </li>

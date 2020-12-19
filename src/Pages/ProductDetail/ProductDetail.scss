@@ -1,4 +1,5 @@
 @import "../../styles/common.scss";
+
 .DetailPageProductImg {
   display: inline-block;
   width: 100%;
@@ -284,7 +285,7 @@
   border-top: 1px solid $border-color;
   padding: 36px 0px 0px;
 
-  div {
+  .reviewHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -325,6 +326,70 @@
         height: 20px;
         margin-right: 7px;
         filter: invert(100%);
+      }
+    }
+    .ReviewModal {
+      position: fixed;
+      inset: 0px;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 10000;
+
+      .popUpMsg {
+        display: flex;
+        flex-direction: column;
+        top: 40%;
+        width: 310px;
+        height: 275px;
+        margin: auto;
+        border-radius: 4px;
+        background-color: white;
+        font-size: 15px;
+        text-align: center;
+        line-height: 1.5;
+        background-image: url(https://img2.quasarzone.com/editor/2020/08/06/c4bb91b077b2964c559693b491e9a7d1.png);
+        background-repeat: no-repeat;
+        background-size: 180px;
+        background-position: 100px 20px;
+        .confirm {
+          height: 225px;
+          border-bottom: 1px solid $border-color;
+          font-size: 16px;
+          letter-spacing: -0.21px;
+
+          img {
+            position: relative;
+            width: 0px;
+          }
+
+          p {
+            position: relative;
+            top: 150px;
+            padding: 0 25px;
+            line-height: 1.4;
+          }
+        }
+
+        .choose {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          text-align: center;
+
+          button {
+            width: 100%;
+            height: 50px;
+            padding: 0px;
+            border: none;
+            border-right: 1px solid $border-color;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            outline: none;
+          }
+        }
       }
     }
   }
@@ -406,19 +471,6 @@
           -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
           text-overflow: ellipsis;
-        }
-
-        .seeMore {
-          display: block;
-          height: 17px;
-          margin: 12px 0px 0px;
-          padding: 0;
-          border: none;
-          background-color: red;
-          font-size: 15px;
-          line-height: 17px;
-          cursor: pointer;
-          outline: none;
         }
       }
 
