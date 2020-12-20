@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactStars from "react-stars";
-import LoginModal from "./LoginModal";
 import ReviewModal from "./ReviewModal";
+import ReviewList from "./ProductReview/ReviewList";
 import * as configs from "../../../config.js";
 
 export default class ProductReview extends Component {
@@ -9,8 +9,8 @@ export default class ProductReview extends Component {
     super();
     this.state = {
       reviews: [],
-      isModalOpen: false,
       isReviewModalOpen: false,
+      filteringState: "likeView",
     };
   }
 
@@ -24,18 +24,6 @@ export default class ProductReview extends Component {
       });
   }
 
-  openModal = () => {
-    this.setState({ isModalOpen: true }, () => {
-      document.body.style.overflow = "hidden";
-    });
-  };
-
-  closeModal = () => {
-    this.setState({ isModalOpen: false }, () => {
-      document.body.style.overflow = "unset";
-    });
-  };
-
   openReviewModal = () => {
     this.setState({ isReviewModalOpen: true }, () => {
       document.body.style.overflow = "hidden";
@@ -48,14 +36,30 @@ export default class ProductReview extends Component {
     });
   };
 
+  changeFilter = (filteringState) => {
+    this.setState({ filteringState });
+  };
+
+  listFilter = (value) => {
+    const arrList = {
+      likeView: () => this.state.reviews.sort((a, b) => a.likedNum - b.likedNum),
+      latestView: () => this.state.reviews.sort((a, b) => a.date - b.data),
+    };
+    console.log(arrList[value]);
+    return arrList[value]();
+  };
+
   render() {
-    const { reviews, isModalOpen, isReviewModalOpen } = this.state;
-    const { openModal, closeModal, openReviewModal, closeReviewModal } = this;
+    const { reviews, isReviewModalOpen, filteringState } = this.state;
+    const { openReviewModal, closeReviewModal } = this;
+    // lastPage =
+    // let firstPage =
+    // const currentReviewPage = this.listFilter(filteringState).slice(idx, last);
     return (
       <section className="ProductReview">
         <div className="reviewHeader">
           <div>
-            <h3>리뷰 1개</h3>
+            <h3>리뷰 {reviews.length}개</h3>
             <div className="reviewTotalRate">
               <ReactStars
                 className="ReactStars"
@@ -76,43 +80,20 @@ export default class ProductReview extends Component {
         </div>
         <div className="reviewComment">
           <div className="filterling">
-            <button>좋아요순</button>
-            <button>최신순</button>
+            <button
+              className={`${filteringState === "likeView" && "clicked"}`}
+              onClick={() => this.changeFilter("likeView")}
+            >
+              좋아요순
+            </button>
+            <button
+              className={`${filteringState === "latestView" && "clicked"}`}
+              onClick={() => this.changeFilter("latestView")}
+            >
+              최신순
+            </button>
           </div>
-          <ul>
-            {reviews &&
-              reviews.map((item, idx) => {
-                return (
-                  <li key={idx}>
-                    <div>
-                      <div className="userName">{item.userName}</div>
-                      <div className="userReviewRate">
-                        <ReactStars
-                          className="ReactStars"
-                          count={5}
-                          value={item.rateValue}
-                          size={18}
-                          half={true}
-                          edit={false}
-                          color1={"#D5D7E0"}
-                          color2={"#FF6582"}
-                        />
-                        <p>{item.date}</p>
-                      </div>
-                      <p className="userReviewComment">{item.comment}</p>
-                    </div>
-                    <div className="reviewLike">
-                      <button onClick={openModal}>좋아요</button>
-                      <LoginModal isOpen={isModalOpen} close={closeModal} />
-                      <p>{item.likedNum}명이 좋아했어요</p>
-                    </div>
-                  </li>
-                );
-              })}
-          </ul>
-          <div className="CommentPageNum">
-            <span>1</span>
-          </div>
+          <ReviewList reviewList={reviews} />
         </div>
       </section>
     );
