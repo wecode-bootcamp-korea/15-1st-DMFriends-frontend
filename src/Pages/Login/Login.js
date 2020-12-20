@@ -18,23 +18,23 @@ class Login extends React.Component {
     });
   };
 
-  loginCheck = () => {
-    const { email, pw } = this.state;
-    fetch("https://jsonplaceholder.typicode.com/posts", {
+  loginCheck = (e) => {
+    e.preventDefault();
+    fetch("http://192.168.0.46:8000/user/login", {
       method: "POST",
       body: JSON.stringify({
-        email: email, //키값은 백앤드가 가지고 있는 키값
-        password: pw,
+        email: this.state.email,
+        password: this.state.pw,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.token) {
-          //백앤드에서 주는 이름이 토큰인지 메세지인지 확인
-          localStorage.setItem("UserEmail", result.token);
+        console.log(result);
+        if (result.message === "SUCCESS_LOGIN") {
+          localStorage.setItem("Token", result.token);
           this.props.history.push("/");
         } else {
-          alert("회원정보에서 찾을 수 없습니다.");
+          alert("회원정보를 찾을 수 없습니다.");
           this.props.history.push("/Signup");
         }
       });
