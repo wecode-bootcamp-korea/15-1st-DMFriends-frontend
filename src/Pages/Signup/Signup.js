@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import AgreementForm from "./components/AgreementForm";
-import { API } from "../../config";
+//import { API } from "../../config";
 import "./Signup.scss";
 
 class Signup extends React.Component {
@@ -83,7 +83,7 @@ class Signup extends React.Component {
 
   isValidEmail = () => {
     console.log("되니?");
-    fetch(`${API}/user/signup`, {
+    fetch("http://192.168.0.46:8000//user/signup", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -92,7 +92,7 @@ class Signup extends React.Component {
       .then((response) => response.json())
       .then((result) => console.log("결과: ", result));
   };
-  // if(result.message === "success") {
+  // if(result.message === "SUCCESS_LOGIN") {
   //    alert("인증메일이 발송되었습니다.")
   //} else {
   //    alert("기존에 있는 이메일 주소 입니다.")
