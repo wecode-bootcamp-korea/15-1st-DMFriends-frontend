@@ -13,7 +13,7 @@
       justify-content: center;
       width: 100%;
 
-      p {
+      s p {
         line-height: 1.6;
       }
 
@@ -56,6 +56,9 @@
         justify-content: space-around;
         align-items: center;
         border-bottom: 1px solid #f0f1f4;
+        position: fixed;
+        background-color: #fff;
+        z-index: 99999;
       }
 
       .active {
@@ -68,7 +71,7 @@
     }
 
     .feed {
-      padding: 20px 20px 30px;
+      padding: 65px 20px 30px;
       max-width: 640px;
       margin: 0px auto;
       width: 640px;
