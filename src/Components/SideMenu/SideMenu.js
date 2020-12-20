@@ -8,7 +8,6 @@ class SideMenu extends React.Component {
     super();
     this.state = {
       menuList: [],
-      showMenu: true,
     };
   }
 
@@ -23,25 +22,26 @@ class SideMenu extends React.Component {
       });
   }
 
-  showSideMenu = () => {
-    this.setState({
-      showMenu: false,
-    });
-  };
+  // showSideMenu = () => {
+  //   this.setState({
+  //     showMenu: false,
+  //   });
+  // };
 
-  hideSideMenu = () => {
-    this.setState({
-      showMenu: true,
-    });
-  };
+  // hideSideMenu = () => {
+  //   this.setState({
+  //     showMenu: true,
+  //   });
+  // };
 
   render() {
-    const { menuList, showMenu } = this.state;
+    const { menuList } = this.state;
+    const { showMenu } = this.props;
+    console.log(this.props);
     return (
       <div className="SideMenu">
-        <button onClick={this.showSideMenu}>Menu</button>
         <div className="menuFrame">
-          <div className={showMenu ? "menu" : "menu active"}>
+          <div className={showMenu ? "menu active" : "menu"}>
             <article>
               <div>
                 <Link to="Login">
@@ -62,7 +62,6 @@ class SideMenu extends React.Component {
               <Link to="Login">로그인</Link>
             </div>
           </div>
-          <div className={showMenu ? "overLay" : "overLay active"} onClick={this.hideSideMenu}></div>
         </div>
       </div>
     );

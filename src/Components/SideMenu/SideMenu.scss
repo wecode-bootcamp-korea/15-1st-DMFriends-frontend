@@ -6,18 +6,11 @@
 }
 
 .SideMenu {
-  width: 100%;
-  height: 1000vh;
-  background-color: rosybrown;
-
-  button {
-    position: fixed;
-    right: 0;
-  }
-
+  width: 0;
   .menuFrame {
     width: 400px;
     height: 414px;
+    background-color: white;
 
     .menu {
       width: 400px;
@@ -33,6 +26,7 @@
 
       &.active {
         left: 0;
+        transition: all 0.3s;
       }
 
       article {
@@ -141,6 +135,7 @@
 
     &.active {
       display: block;
+      transition: all 0.3s;
     }
   }
 }

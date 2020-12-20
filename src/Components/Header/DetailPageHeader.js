@@ -5,13 +5,24 @@ import SideMenu from "../SideMenu/SideMenu";
 import "./DetailPageHeader.scss";
 
 class DetailPageHeader extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showSideMenu: false,
+      showMenu: false,
+    };
+  }
+
   goToPrev = () => {
     this.props.history.goBack();
   };
 
   goToCategory = () => {
-    this.render(<SideMenu />);
-    // this.props.history.push("/SideMenu");
+    console.log("aa");
+    this.setState({
+      showSideMenu: true,
+      showMenu: true,
+    });
   };
 
   goToMain = () => {
@@ -26,10 +37,19 @@ class DetailPageHeader extends Component {
     this.props.history.push("/CartList");
   };
 
+  hideSideMenu = () => {
+    this.setState({
+      showMenu: true,
+    });
+  };
+
   render() {
     const { goToMain, goToPrev, goToSearch, goToCategory, goToCart } = this;
+    const { showSideMenu, showMenu } = this.state;
     return (
       <div className="DetailPageHeader">
+        {showSideMenu ? <SideMenu showMenu={showMenu} hideSideMenu={this.hideSideMenu} /> : ""}
+        <div className={showMenu ? "overLay active" : "overLay"} onClick={this.hideSideMenu}></div>
         <div className="headerWrap">
           <div>
             <button onClick={goToPrev}>
