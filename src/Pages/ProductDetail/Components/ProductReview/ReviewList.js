@@ -30,8 +30,8 @@ class ReviewList extends Component {
     });
   };
 
-  scrollToReview = () => {
-    window.scrollY < 4200 ? window.scrollTo({ top: 0 }) : window.scrollTo({ top: 4300, behavior: "smooth" });
+  scrollToReview = (e) => {
+    window.scrollTo({ top: 4300, behavior: "smooth" }); // 렌더시 onclick event가 스스로 실행됨.
   };
 
   render() {

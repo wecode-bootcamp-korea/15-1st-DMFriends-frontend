@@ -37,24 +37,22 @@ export default class ProductReview extends Component {
   };
 
   changeFilter = (filteringState) => {
-    this.setState({ filteringState });
-  };
-
-  listFilter = (value) => {
-    const arrList = {
-      likeView: () => this.state.reviews.sort((a, b) => a.likedNum - b.likedNum),
-      latestView: () => this.state.reviews.sort((a, b) => a.date - b.data),
-    };
-    console.log(arrList[value]);
-    return arrList[value]();
+    // 두번 눌러야 상태가 바뀜, 비동기 처리 때문인듯
+    this.setState(
+      { filteringState },
+      filteringState === "likeView"
+        ? () => {
+            this.state.reviews.sort((a, b) => (b.likedNum < a.likedNum ? -1 : 1));
+          }
+        : () => {
+            this.state.reviews.sort((a, b) => (new Date(b.date).getTime() < new Date(a.date).getTime() ? -1 : 1));
+          },
+    );
   };
 
   render() {
     const { reviews, isReviewModalOpen, filteringState } = this.state;
     const { openReviewModal, closeReviewModal } = this;
-    // lastPage =
-    // let firstPage =
-    // const currentReviewPage = this.listFilter(filteringState).slice(idx, last);
     return (
       <section className="ProductReview">
         <div className="reviewHeader">
