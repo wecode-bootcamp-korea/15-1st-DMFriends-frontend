@@ -45,9 +45,14 @@ class Login extends React.Component {
     return (
       <div className="Login">
         <div className="loginMain">
-          <div className="logo">로고</div>
+          <div className="logo">
+            <span>동묘앞프렌즈 하나로 충분합니다.</span>
+            <span>세계 최고의 거리. 스포티(sporty)함과 캐주얼의 경계를 넘나드는</span>
+            <span>과감한 믹스매치 정신을 본받기위해 동묘앞프렌즈가 모였다!</span>
+            <img src="images/haiinkim/Login.png" alt="loginImage"></img>
+          </div>
           <div className="frame">
-            <div className="title">DM Friends</div>
+            <div className="title">동묘앞프렌즈</div>
             <form>
               <input id="email" type="email" placeholder="이메일주소" onChange={this.handleInputValue} />
               <input id="pw" type="password" placeholder="비밀번호" onChange={this.handleInputValue} />
