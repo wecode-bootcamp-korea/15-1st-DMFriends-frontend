@@ -14,6 +14,7 @@ class Signup extends React.Component {
       nickName: "",
       emailAlert: true,
       pwAlert: true,
+      pwLengthAlert: true,
       checkAllValue: false,
       checkAllBoxes: false,
       check0: false,
@@ -66,24 +67,16 @@ class Signup extends React.Component {
     );
   };
 
-  validateAllSignUpValue = (e) => {
+  isValidEmail = (e) => {
     e.preventDefault();
-    const { email, pw, rePw, checkAllBoxes } = this.state;
+    const { email } = this.state;
     const checkEmail = email.includes("@") && email.includes(".");
-    const checkPw = pw === rePw;
 
     this.setState({
       emailAlert: checkEmail ? true : false,
-      pwAlert: checkPw ? true : false,
-      checkAllValue: checkAllBoxes,
     });
 
-    this.isValidEmail();
-  };
-
-  isValidEmail = () => {
-    console.log("되니?");
-    fetch("http://192.168.0.46:8000//user/signup", {
+    fetch("http://192.168.0.46:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -98,12 +91,39 @@ class Signup extends React.Component {
   //    alert("기존에 있는 이메일 주소 입니다.")
   //}
 
+  isValidPw = (e) => {
+    e.preventDefault();
+    const { pw, rePw } = this.state;
+    const checkSamePw = pw === rePw;
+
+    this.setState({
+      pwAlert: checkSamePw ? true : false,
+    });
+  };
+
+  isValidNickName = (e) => {
+    e.preventDefault();
+
+    fetch("http://192.168.0.46:8000/user/signup", {
+      method: "POST",
+      body: JSON.stringify({
+        nickname: this.state.nickName,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log("결과: ", result));
+  };
+
+  // if(result.message !== "SUCCESS") {
+  //    alert("중복된 닉네임입니다.")
+  // }
+
   render() {
     const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, checkAllValue } = this.state;
-
+    console.log(this.state);
     return (
       <div className="Signup">
-        <div className="title">DM friends</div>
+        <div className="title">동묘앞프렌즈</div>
         <div className="frame">
           <div className="frameTitle">회원가입</div>
           <form className="formEmail">
@@ -111,7 +131,7 @@ class Signup extends React.Component {
             <input id="email" placeholder="이메일 주소 입력" onChange={this.handleInputValue} />
             <span className={emailAlert ? "formEmailAlert" : "activate"}>이메일 형식이 올바르지 않습니다.</span>
             <div>
-              <button onClick={this.validateAllSignUpValue}>인증메일 발송</button>
+              <button onClick={this.isValidEmail}>인증메일 발송</button>
             </div>
           </form>
           <form className="formPw">
@@ -129,7 +149,7 @@ class Signup extends React.Component {
               type="password"
               placeholder="비밀번호 재입력"
               onChange={this.handleInputValue}
-              onKeyUp={this.validateAllSignUpValue}
+              onKeyUp={this.isValidPw}
             />
             <span className={pwAlert ? "formPwAlert" : "activate"}>비밀번호가 같지 않습니다.</span>
           </form>
@@ -143,6 +163,9 @@ class Signup extends React.Component {
               maxLength="20"
               onChange={this.handleInputValue}
             />
+            <div>
+              <button onClick={this.isValidNickName}>닉네임 중복확인</button>
+            </div>
           </form>
           <span className="formPolicy">약관 동의</span>
           <ul>
