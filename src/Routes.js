@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./Pages/Main/Main";
-// import MainDetail from "./Pages/MainDetail/MainDetail";
+import MainDetail from "./Pages/MainDetail/MainDetail";
 import CartList from "./Pages/CartList/CartList";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Checkbox from "./Pages/Checkbox/Checkbox";
