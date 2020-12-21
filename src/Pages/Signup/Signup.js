@@ -83,13 +83,14 @@ class Signup extends React.Component {
       }),
     })
       .then((response) => response.json())
-      .then((result) => console.log("결과: ", result));
+      .then((result) => {
+        if (result.message === "SUCCESS_LOGIN") {
+          alert("인증메일이 발송되었습니다.");
+        } else {
+          alert("기존에 있는 이메일 주소 입니다. 다른 이메일 주소를 입력하세요.");
+        }
+      });
   };
-  // if(result.message === "SUCCESS_LOGIN") {
-  //    alert("인증메일이 발송되었습니다.")
-  //} else {
-  //    alert("기존에 있는 이메일 주소 입니다.")
-  //}
 
   isValidPw = (e) => {
     e.preventDefault();
@@ -111,12 +112,12 @@ class Signup extends React.Component {
       }),
     })
       .then((response) => response.json())
-      .then((result) => console.log("결과: ", result));
+      .then((result) => {
+        if (result.message !== "SUCCESS") {
+          alert("중복된 닉네임입니다. 다른 닉네임을 시도하세요.");
+        }
+      });
   };
-
-  // if(result.message !== "SUCCESS") {
-  //    alert("중복된 닉네임입니다.")
-  // }
 
   render() {
     const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, checkAllValue } = this.state;
