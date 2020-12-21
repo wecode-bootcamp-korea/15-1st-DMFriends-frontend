@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import AgreementForm from "./components/AgreementForm";
-//import { API } from "../../config";
+import { API } from "../../config";
 import "./Signup.scss";
 
 class Signup extends React.Component {
@@ -14,6 +14,7 @@ class Signup extends React.Component {
       nickName: "",
       emailAlert: true,
       pwAlert: true,
+      nickNameAlert: true,
       pwLengthAlert: true,
       checkAllValue: false,
       checkAllBoxes: false,
@@ -76,7 +77,7 @@ class Signup extends React.Component {
       emailAlert: checkEmail ? true : false,
     });
 
-    fetch("http://192.168.0.46:8000/user/signup", {
+    fetch(`${API}/user/signup`, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -84,11 +85,10 @@ class Signup extends React.Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message === "SUCCESS_LOGIN") {
-          alert("인증메일이 발송되었습니다.");
-        } else {
-          alert("기존에 있는 이메일 주소 입니다. 다른 이메일 주소를 입력하세요.");
-        }
+        console.log(result);
+        result.message === "SUCCESS"
+          ? alert("인증메일이 발송되었습니다.")
+          : alert("기존에 있는 이메일 주소 입니다. 다른 이메일 주소를 입력하세요.");
       });
   };
 
@@ -105,7 +105,7 @@ class Signup extends React.Component {
   isValidNickName = (e) => {
     e.preventDefault();
 
-    fetch("http://192.168.0.46:8000/user/signup", {
+    fetch(`${API}/user/signup`, {
       method: "POST",
       body: JSON.stringify({
         nickname: this.state.nickName,
@@ -115,12 +115,16 @@ class Signup extends React.Component {
       .then((result) => {
         if (result.message !== "SUCCESS") {
           alert("중복된 닉네임입니다. 다른 닉네임을 시도하세요.");
+          this.setState({
+            nickNameAlert: true,
+          });
         }
       });
   };
 
   render() {
-    const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, checkAllValue } = this.state;
+    const { emailAlert, pwAlert, nickNameAlert, nickName, policies, checkAllBoxes } = this.state;
+    const checkAllValueBtn = emailAlert && pwAlert && nickNameAlert;
     console.log(this.state);
     return (
       <div className="Signup">
@@ -178,20 +182,18 @@ class Signup extends React.Component {
               </label>
             </li>
             <div className="formPolicyBar"></div>
-            {policies.map((policy, ind) => {
+            {policies.map((policy, index) => {
               return (
                 <AgreementForm
                   policy={policy}
-                  key={ind}
+                  key={index}
                   checked={this.state[policy.name]}
-                  onClick={() => this.handleCheckedBox(ind)}
+                  onClick={() => this.handleCheckedBox(index)}
                 />
               );
             })}
           </ul>
-          <button className={checkAllValue ? "activateBtn" : ""} onClick={this.validateAllSignUpValue}>
-            다음
-          </button>
+          <button className={checkAllValueBtn ? "activateBtn" : ""}>다음</button>
         </div>
         <footer>
           <span>
