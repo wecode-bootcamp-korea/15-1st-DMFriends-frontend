@@ -86,7 +86,8 @@ class Signup extends React.Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message === "SUCCESS") {
+        console.log(result);
+        if (result.email === "SENT") {
           alert("인증메일이 발송되었습니다. 번호를 확인해주세요.");
           this.setState({ validCode: false });
         } else {
@@ -117,7 +118,7 @@ class Signup extends React.Component {
       .then((result) => {
         if (result.code !== "CORRECT") {
           alert("인증번호가 확인되었습니다.");
-          this.setState({ validCode: false });
+          this.setState({ validCode: true });
         }
       });
   };
@@ -136,7 +137,16 @@ class Signup extends React.Component {
             <span>이메일주소</span>
             <input id="email" placeholder="이메일 주소 입력" onChange={this.handleInputValue} />
             <span className={emailAlert ? "formEmailAlert" : "activate"}>이메일 형식이 올바르지 않습니다.</span>
-            {validCode ? "" : <input id="validationCode" placeholder="인증번호 입력" onClick={this.isValidCode} />}
+            {validCode ? (
+              ""
+            ) : (
+              <input
+                id="validationCode"
+                placeholder="인증번호 입력"
+                onChange={this.handleInputValue}
+                onClick={this.isValidCode}
+              />
+            )}
             <div>
               {validCode ? <button onClick={this.isValidEmail}> 인증메일 발송</button> : ""}
               {validCode ? "" : <button onClick={this.isValidCode}>인증번호 확인</button>}
