@@ -1,0 +1,275 @@
+@import "../../styles/common.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.Signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 140px;
+
+  .title {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+
+  .frame {
+    @include flexColumnFlexCenter;
+    width: 590px;
+    height: 940px;
+    border: $greyBorder;
+    border-radius: 5px;
+    padding: 70px;
+
+    .frameTitle {
+      font-size: 26px;
+      margin-bottom: 50px;
+    }
+
+    .formEmail {
+      @include flexColumnFlexCenter;
+      width: 100%;
+
+      span {
+        font-size: 13px;
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      input:focus {
+        outline: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+      }
+
+      input::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+      }
+
+      .formEmailAlert {
+        display: none;
+      }
+
+      .activate {
+        margin-top: 10px;
+        color: #e65f3e;
+        font-size: 13px;
+      }
+
+      div {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        button {
+          width: 120px;
+          height: 33px;
+          margin-top: 10px;
+          border: $greyBorder;
+          border-radius: 35px;
+          background-color: white;
+          font-size: 14px;
+
+          :active {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .formPw {
+      @include flexColumnFlexCenter;
+      width: 100%;
+      margin-top: 20px;
+
+      span {
+        font-size: 13px;
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        letter-spacing: 10px;
+        margin-bottom: 10px;
+      }
+
+      input:focus {
+        outline: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+      }
+
+      input::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        letter-spacing: 0px;
+      }
+
+      .formPwAlert {
+        display: none;
+      }
+
+      .activate {
+        color: #e65f3e;
+        font-size: 13px;
+      }
+    }
+
+    .formNick {
+      @include flexColumnFlexCenter;
+      position: relative;
+      width: 100%;
+      margin-top: 30px;
+
+      span {
+        font-size: 13px;
+      }
+
+      span:nth-child(2) {
+        position: absolute;
+        top: 28px;
+        left: 415px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.2);
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      input:focus {
+        outline: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+      }
+
+      input::placeholder {
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+      }
+
+      div {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        button {
+          width: 120px;
+          height: 33px;
+          margin-top: 10px;
+          border: $greyBorder;
+          border-radius: 35px;
+          background-color: white;
+          font-size: 14px;
+
+          :active {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .formPolicy {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    ul {
+      width: 100%;
+      height: 200px;
+      border: $greyBorder;
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 20px;
+
+      li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 15px 0px;
+
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        input[type="checkbox"] + label {
+          color: rgba(0, 0, 0, 0.8);
+          font-size: 15px;
+        }
+
+        input[type="checkbox"] + label span {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border: $greyBorder;
+          border-radius: 100%;
+          vertical-align: middle;
+          margin: -2px 10px 0 0;
+          background: white;
+          cursor: pointer;
+        }
+
+        input[type="checkbox"]:checked + label span {
+          width: 16px;
+          height: 16px;
+          border-radius: 100%;
+          background: white;
+          border: 5px solid $kakaoYellow;
+        }
+      }
+
+      div {
+        width: 100%;
+        height: 1px;
+        margin: 10px 0px;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    button {
+      width: 100%;
+      height: 45px;
+      margin-top: 40px;
+      border: white;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .activateBtn {
+      background-color: $kakaoYellow;
+    }
+  }
+
+  footer {
+    @include flexColumnCenter;
+    margin-top: 40px;
+
+    span {
+      margin-bottom: 10px;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    div {
+      .dmFriends {
+        font-weight: 800;
+      }
+    }
+  }
+}
