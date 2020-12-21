@@ -1,7 +1,230 @@
-.MyPageHeadTapWrap {
-  position: fixed;
-  .mainTapList {
-    display: flex;
+@import "../../styles/common.scss";
+.CartList {
+  position: relative;
+  top: 91px;
+  .MyPageHeadTapWrap {
+    display: block;
+    width: 640px;
+    height: 44px;
     margin: 0 auto;
+    .mainTapList {
+      position: fixed;
+      display: flex;
+      justify-content: space-around;
+      height: 44px;
+      padding: 0 12px;
+      margin: 0 auto;
+      border-top: 1px solid rgb(227, 229, 232);
+      background-color: #f8f8f8;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 145px;
+        margin: 0 4.5px;
+        text-decoration: none;
+        color: rgb(155, 155, 155);
+        font-size: 14px;
+        outline: none;
+
+        &.selected {
+          color: black;
+          font-weight: bold;
+          .numOfCart {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 18px;
+            height: 18px;
+            margin-left: 2px;
+            border: 0;
+            border-radius: 15px;
+            color: white;
+            background-color: rgb(255, 85, 117);
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .ItemList {
+    display: block;
+    width: 640px;
+    height: 54px;
+    margin: 0 auto;
+
+    .totalItem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 640px;
+      height: 55px;
+      margin: 0 auto;
+      padding: 0 20px;
+      top: 135px;
+      line-height: 1.5;
+      .selectItems {
+        input {
+          position: relative;
+          top: 3px;
+          width: 25px;
+          height: 20px;
+          padding: 0px;
+          margin: 0px;
+        }
+        span {
+          margin-left: 12px;
+        }
+      }
+      .removeItems {
+        color: #666666;
+
+        .removeBtn {
+          position: relative;
+          top: 2px;
+          width: 19px;
+          margin-left: 10px;
+          filter: invert(30%);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .AddedItems {
+    display: block;
+    width: 640px;
+    height: 150px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(240, 240, 240);
+
+    .allItemContainer {
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 190px;
+      width: 640px;
+      margin: 0 auto;
+      border-top: 10px solid rgb(247, 247, 247);
+
+      .basketItem {
+        display: flex;
+        width: 100%;
+        padding: 20px 0;
+        margin: 0px 16px 0px 20px;
+        border-bottom: 1px solid $greyBorder;
+
+        input {
+          width: 25px;
+          height: 20px;
+          margin: 0px 10px 0px 0px;
+          margin-right: 10px;
+          padding: 0;
+        }
+
+        .itemImg {
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          margin-right: 14px;
+          background-color: black;
+        }
+
+        .itemInfo {
+          display: inline-block;
+          width: 191px;
+          padding-top: 6px;
+
+          .itemName {
+            padding-bottom: 6.5px;
+            font-size: 16px;
+            line-height: 18.5px;
+
+            .deleteItem {
+              position: absolute;
+              right: 8px;
+              background-color: white;
+              border: 0;
+              outline: none;
+              cursor: pointer;
+
+              img {
+                width: 12px;
+                height: 12px;
+                filter: invert(80%);
+              }
+            }
+          }
+
+          .price {
+            padding-bottom: 10px;
+          }
+
+          .quantity {
+            width: 191px;
+            height: 34px;
+            padding: 5px;
+            margin-top: 10px;
+            border-color: rgb(227, 229, 232);
+            border-radius: 4px;
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+  .payment {
+    display: block;
+    width: 640px;
+    padding: 40px 20px 123px;
+    margin: 0 auto;
+    .shipping {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      margin-bottom: 23px;
+      select {
+        width: 200px;
+        height: 33px;
+        padding: 5px;
+        border-color: rgb(227, 229, 232);
+        border-radius: 4px;
+      }
+    }
+    div {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      font-size: 16px;
+    }
+    .totalPrice {
+      height: 45px;
+      font-weight: bolder;
+      .totalPrice2 {
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.goToPay {
+  display: block;
+  margin: 0 auto;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 640px;
+  height: 80px;
+  color: white;
+  background-color: rgba(251, 46, 69, 0.95);
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  span {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
   }
 }
