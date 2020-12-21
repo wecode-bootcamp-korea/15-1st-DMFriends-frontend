@@ -1,5 +1,3 @@
-// export default API;
-
 import { configs } from "eslint-plugin-prettier";
 
 export const API = "http://192.168.0.22:8000/";
