@@ -9,7 +9,7 @@ class NewItemContainer extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/NewProducts.json")
+    fetch("/data/NewProducts.json")
       .then((res) => res.json())
       .then((res) => this.setState({ productsList: res.data }));
   }
