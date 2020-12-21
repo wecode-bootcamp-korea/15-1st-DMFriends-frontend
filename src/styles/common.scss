@@ -18,3 +18,9 @@ $greyBorder: 1px solid rgba(0, 0, 0, 0.1);
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
