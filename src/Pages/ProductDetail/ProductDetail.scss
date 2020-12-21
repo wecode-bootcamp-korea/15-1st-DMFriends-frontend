@@ -698,9 +698,78 @@
       filter: invert(100%);
       cursor: pointer;
     }
-
     span {
       cursor: pointer;
+    }
+  }
+}
+.addedModal {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+
+  .active {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 45px;
+    padding: 3px 17.5px 0;
+    background-color: rgba(46, 46, 46, 0.95);
+    border-radius: 22.5px;
+    font-size: 15px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    bottom: 7em;
+    z-index: 100;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+
+    span {
+      margin: 0 8px;
+    }
+
+    img {
+      width: 12px;
+      filter: invert(100%);
+    }
+
+    .check {
+      width: 20px;
+    }
+  }
+  .modalbox {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 45px;
+    padding: 3px 17.5px 0;
+    background-color: rgba(46, 46, 46, 0.95);
+    border-radius: 22.5px;
+    font-size: 15px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    bottom: -7em;
+    z-index: 100;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+
+    span {
+      margin: 0 8px;
+    }
+
+    img {
+      width: 12px;
+      filter: invert(100%);
+    }
+
+    .check {
+      width: 20px;
     }
   }
 }
