@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import API from "../../config";
 import "./Login.scss";
 
 class Login extends React.Component {
@@ -20,7 +21,7 @@ class Login extends React.Component {
 
   loginCheck = (e) => {
     e.preventDefault();
-    fetch("http://192.168.0.46:8000/user/login", {
+    fetch(`${API}/user/login`, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -29,7 +30,6 @@ class Login extends React.Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         if (result.message === "SUCCESS_LOGIN") {
           localStorage.setItem("Token", result.token);
           this.props.history.push("/");
@@ -41,7 +41,6 @@ class Login extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="Login">
         <div className="loginMain">
