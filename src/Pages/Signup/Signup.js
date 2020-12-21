@@ -107,16 +107,17 @@ class Signup extends React.Component {
   isValidCode = (e) => {
     e.preventDefault();
 
-    fetch(`${API}/user/echeck`, {
+    fetch(`${API}/user/vcode`, {
       method: "POST",
       body: JSON.stringify({
-        validationCode: this.state.validationCode,
+        random_token: this.state.validationCode,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message !== "SUCCESS") {
+        if (result.code !== "CORRECT") {
           alert("인증번호가 확인되었습니다.");
+          this.setState({ validCode: false });
         }
       });
   };
@@ -137,7 +138,8 @@ class Signup extends React.Component {
             <span className={emailAlert ? "formEmailAlert" : "activate"}>이메일 형식이 올바르지 않습니다.</span>
             {validCode ? "" : <input id="validationCode" placeholder="인증번호 입력" onClick={this.isValidCode} />}
             <div>
-              <button onClick={this.isValidEmail}>{validCode ? "인증메일 발송" : "인증번호 확인"}</button>
+              {validCode ? <button onClick={this.isValidEmail}> 인증메일 발송</button> : ""}
+              {validCode ? "" : <button onClick={this.isValidCode}>인증번호 확인</button>}
             </div>
           </form>
           <form className="formPw">
