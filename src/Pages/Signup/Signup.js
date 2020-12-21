@@ -54,10 +54,10 @@ class Signup extends React.Component {
     });
   };
 
-  handleCheckedBox = (ind) => {
+  handleCheckedBox = (index) => {
     this.setState(
       {
-        [`check${ind}`]: !this.state[`check${ind}`],
+        [`check${index}`]: !this.state[`check${index}`],
       },
       () => {
         const { check0, check1, check2, check3 } = this.state;
