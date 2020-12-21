@@ -86,7 +86,6 @@ class Signup extends React.Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         if (result.email === "SENT") {
           alert("인증메일이 발송되었습니다. 번호를 확인해주세요.");
           this.setState({ validCode: false });
@@ -95,6 +94,7 @@ class Signup extends React.Component {
         }
       });
   };
+
   isValidPw = (e) => {
     e.preventDefault();
     const { pw, rePw } = this.state;
@@ -116,17 +116,31 @@ class Signup extends React.Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.code !== "CORRECT") {
-          alert("인증번호가 확인되었습니다.");
-          this.setState({ validCode: true });
-        }
+        result.code === "CORRECT" && alert("인증번호가 확인되었습니다.");
+        this.setState({ validCode: true });
+      });
+  };
+
+  isAllValid = (e) => {
+    e.preventDefault();
+
+    fetch(`${API}/user/signup`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.pw,
+        nickname: this.state.nickName,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        result.message === "SUCCESS" && this.props.history.push("/");
       });
   };
 
   render() {
     const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, validCode } = this.state;
     const checkAllValueBtn = emailAlert && pwAlert;
-    console.log(this.state);
 
     return (
       <div className="Signup">
@@ -140,12 +154,7 @@ class Signup extends React.Component {
             {validCode ? (
               ""
             ) : (
-              <input
-                id="validationCode"
-                placeholder="인증번호 입력"
-                onChange={this.handleInputValue}
-                onClick={this.isValidCode}
-              />
+              <input id="validationCode" placeholder="인증번호 입력" onChange={this.handleInputValue} />
             )}
             <div>
               {validCode ? <button onClick={this.isValidEmail}> 인증메일 발송</button> : ""}
@@ -203,7 +212,9 @@ class Signup extends React.Component {
               );
             })}
           </ul>
-          <button className={checkAllValueBtn ? "activateBtn" : ""}>다음</button>
+          <button onClick={this.isAllValid} className={checkAllValueBtn ? "activateBtn" : ""}>
+            다음
+          </button>
         </div>
         <footer>
           <span>
