@@ -7,7 +7,7 @@ export default class DetailPageProductImg extends Component {
   constructor() {
     super();
     this.state = {
-      slideImages: [],
+      data: [],
     };
   }
 
@@ -16,18 +16,29 @@ export default class DetailPageProductImg extends Component {
       .then((res) => res.json())
       .then((res) => {
         this.setState({
-          slideImages: res.slideImgData,
+          data: res.slideImgData,
         });
       });
   }
+
+  // componentDidMount() {
+  //   fetch(`http://192.168.0.27:8000/product/detail/1`)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       // console.log("결과: ", res.result[0]);
+  //       // console.log(this.state.res);
+  //       this.setState({ data: res.result });
+  //     });
+  // }
   render() {
-    const { slideImages } = this.state;
+    console.log(this.state.data);
+    const { data } = this.state;
     return (
       <div className="DetailPageProductImg">
         <div className="imgWrap">
           <Slider {...settings}>
-            {slideImages &&
-              slideImages.map((item, idx) => {
+            {data &&
+              data.map((item, idx) => {
                 return (
                   <div key={idx} id={item.id}>
                     <img className="slideImg" src={item.src} alt={item.alt} />
@@ -37,14 +48,14 @@ export default class DetailPageProductImg extends Component {
           </Slider>
         </div>
         <div className="productNameAndPrice">
-          <div className="productName">젤 안대 리틀튜브</div>
-          <div className="productPrice">12,000원</div>
+          <div className="productName">{data.name}</div>
+          <div className="productPrice">{data.price}원</div>
           <div className="productReviewStar">
             <div className="ReviewStarImg">
               <ReactStars
                 className="ReactStars"
                 count={5}
-                value={1}
+                value={data.star_rating}
                 size={24}
                 half={true}
                 edit={false}
