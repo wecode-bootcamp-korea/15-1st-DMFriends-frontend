@@ -30,9 +30,9 @@ class ReviewList extends Component {
     });
   };
 
-  // scrollToReview = (e) => {
-  //   window.scrollTo({ top: 4300, behavior: "smooth" }); // 렌더시 onclick event가 스스로 실행됨.
-  // };
+  scrollToReview = (e) => {
+    window.scrollTo({ top: 4300, behavior: "smooth" }); // 렌더시 onclick event가 스스로 실행됨.
+  };
 
   render() {
     const { isModalOpen, page, perPage } = this.state;
@@ -75,7 +75,7 @@ class ReviewList extends Component {
             })}
         </ul>
         <Pagination
-          // onClick={this.scrollToReview()}
+          onClick={this.scrollToReview()}
           totalItemsCount={reviewList.length}
           onChange={(number) => this.setPage(number)}
           itemsCountPerPage={perPage}

@@ -31,10 +31,10 @@ class BottomBar extends Component {
   };
 
   handleIncrease = () => {
-    const totalAdded = Number(this.state.productPrice) * this.state.quantityValue;
+    const totalAdded = +this.state.productPrice * this.state.quantityValue;
     this.setState({
       quantityValue: this.state.quantityValue + 1,
-      totalPrice: totalAdded + Number(this.state.productPrice),
+      totalPrice: +this.state.productPrice + totalAdded,
     });
   };
 
