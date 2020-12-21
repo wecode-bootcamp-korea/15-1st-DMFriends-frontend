@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import DetailPageHeader from "../../Components/Header/DetailPageHeader/DetailPageHeader";
+import DetailPageHeader from "../../Components/Header/DetailPageHeader/DetailPageHeader";
 import DetailPageProductImg from "./Components/DetailPageProductImg/DetailPageProductImg";
 import DetailPageContents from "./Components/DetailPageContents";
 import ProductInfo from "./Components/ProductInfo";
@@ -17,7 +17,7 @@ export class ProductDetail extends Component {
   render() {
     return (
       <>
-        {/* <DetailPageHeader /> */}
+        <DetailPageHeader />
         <DetailPageProductImg />
         <DetailPageContents />
         <ProductInfo />
