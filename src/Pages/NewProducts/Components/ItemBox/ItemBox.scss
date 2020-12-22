@@ -1,0 +1,50 @@
+.ItemBox {
+  width: 275px;
+  height: 401px;
+  margin-top: 18px;
+  text-decoration: none;
+  img {
+    width: 275px;
+    height: 275px;
+    border-radius: 1%;
+  }
+  .ProductText {
+    display: flex;
+    justify-content: space-between;
+    width: 275px;
+    height: 35px;
+
+    span {
+      width: 220px;
+      height: 20px;
+      margin-top: 10px;
+      color: #777777;
+    }
+    button {
+      width: 30px;
+      height: 30px;
+      margin: 1px 5px 0 0;
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .ProductPrice {
+    width: 275px;
+    height: 20px;
+
+    p {
+      font-size: 17px;
+      font-weight: bold;
+      color: #000000;
+    }
+  }
+}

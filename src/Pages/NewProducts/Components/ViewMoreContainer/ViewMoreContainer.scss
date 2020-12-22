@@ -1,0 +1,41 @@
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ViewMoreContainer {
+  @extend %flexCenter;
+  width: 100vw;
+  height: 52px;
+
+  .ViewMoreBar {
+    position: relative;
+    width: 341px;
+    height: 52px;
+    border: 1px solid #e6e6e6;
+
+    .goToNewBtn {
+      width: 341px;
+      height: 52px;
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      outline: none;
+
+      span {
+        font-size: 15px;
+      }
+    }
+  }
+
+  img {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin-left: 31px;
+    padding-bottom: 5px;
+  }
+}
