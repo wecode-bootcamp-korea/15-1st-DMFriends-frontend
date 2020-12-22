@@ -214,7 +214,7 @@
         justify-content: flex-start;
 
         .feedShareBtn {
-          @include btn_mix();
+          @include btn_mix;
         }
 
         .shareIcon {
