@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import * as configs from "../../../../config";
 import "./ViewMoreContainer.scss";
 
@@ -6,11 +7,11 @@ class ViewMoreContainer extends Component {
   render() {
     return (
       <div className="ViewMoreContainer">
-        <div className="ViewMoreBar">
-          <button to="/Category" className="goToNewBtn">
+        <Link to="/Category" className="ViewMoreBar">
+          <button className="goToNewBtn">
             <span>더 보기</span>
           </button>
-        </div>
+        </Link>
         <img src={configs.Plus} alt="plus" />
       </div>
     );

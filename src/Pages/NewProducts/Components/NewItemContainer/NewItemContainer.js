@@ -9,27 +9,29 @@ class NewItemContainer extends Component {
   };
 
   componentDidMount() {
-    fetch("/data/NewProducts.json")
+    fetch("http://192.168.0.27:8000/product/category/new?category=7&sort=-price")
       .then((res) => res.json())
-      .then((res) => this.setState({ productsList: res.data }));
+      .then((res) => this.setState({ productsList: res.result }));
   }
 
   render() {
+    const { productsList } = this.state;
+
     return (
       <div className="NewItemContainer">
         <div className="ProductsList">
           <p className="theme">추천 신규 테마</p>
           <h3>리빙</h3>
           <div className="ProductsCardGrid">
-            {this.state.productsList &&
-              this.state.productsList.map((productList, idx) => {
+            {productsList &&
+              productsList.map((productList, idx) => {
                 return (
                   <ItemBox
                     key={idx}
                     id={productList.id}
-                    itemName={productList.itemName}
+                    itemName={productList.name}
                     price={productList.price}
-                    imgUrl={productList.imgUrl}
+                    imgUrl={productList.image_url}
                   />
                 );
               })}

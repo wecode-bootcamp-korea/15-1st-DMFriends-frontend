@@ -5,17 +5,19 @@ import "./ItemBox.scss";
 
 class ItemBox extends Component {
   render() {
+    const { id, imgUrl, itemName, price } = this.props;
+
     return (
-      <Link to="/NewProducts" className="ItemBox" id={this.props.id}>
-        <img src={this.props.imgUrl} alt="product" />
+      <Link to="/ProductDetail" className="ItemBox" id={id}>
+        <img src={imgUrl} alt="product" />
         <div className="ProductText">
-          <span>{this.props.itemName}</span>
+          <span>{itemName}</span>
           <button>
             <img src={configs.basket} alt="basket" />
           </button>
         </div>
         <div className="ProductPrice">
-          <p>{this.props.price}</p>
+          <p>{Number(price).toLocaleString()}원</p>
         </div>
       </Link>
     );
