@@ -75,7 +75,7 @@ class ReviewList extends Component {
             })}
         </ul>
         <Pagination
-          onClick={this.scrollToReview()}
+          // onClick={this.scrollToReview()}
           totalItemsCount={reviewList.length}
           onChange={(number) => this.setPage(number)}
           itemsCountPerPage={perPage}

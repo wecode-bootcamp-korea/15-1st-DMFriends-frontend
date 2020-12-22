@@ -47,7 +47,22 @@ class BottomBar extends Component {
     setTimeout(() => {
       this.cart.current.className = "modalbox";
     }, 3500);
+    this.addProduct();
   };
+
+  // addProduct = () => {
+  //   fetch(`http://192.168.0.27:8000/order/cart`, {
+  //     method: "post",
+  //     body: JSON.stringify({
+  //       quantity: this.state.quantityValue,
+  //       value: this.state.totalPrice,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       console.log("message", res);
+  //     });
+  // };
 
   render() {
     const { quantityValue, totalPrice, productPrice } = this.state;
