@@ -1,0 +1,89 @@
+%FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%FlexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+%BtnForm {
+  border: none;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.Header {
+  @extend %FlexCenter;
+  width: 100vw;
+  height: 47px;
+
+  .HeaderContainer {
+    @extend %FlexBetween;
+    width: 640px;
+    height: 47px;
+
+    .HamburgerBox {
+      width: 80px;
+      height: 47px;
+
+      .HamBtn {
+        width: 30px;
+        height: 30px;
+        margin: 10px 0 0 15px;
+        @extend %BtnForm;
+
+        img {
+          width: 18px;
+          height: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+    .CenterLogo {
+      @extend %FlexCenter;
+      width: 147px;
+      height: 47;
+
+      a {
+        width: 147px;
+        height: 24px;
+        text-align: center;
+        background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/mobile/new-logo-mo.png");
+        background-size: 147px 24px;
+        color: transparent;
+      }
+    }
+    .SearchBox {
+      width: 80px;
+      height: 47px;
+
+      .SearchBtn {
+        width: 30px;
+        height: 30px;
+        margin: 10px 0 0 8px;
+        @extend %BtnForm;
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      .TransBtn {
+        width: 30px;
+        height: 30px;
+        @extend %BtnForm;
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}
