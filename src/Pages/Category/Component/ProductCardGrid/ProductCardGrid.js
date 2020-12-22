@@ -4,32 +4,15 @@ import ItemBoxSmall from "../ItemBoxSmall/ItemBoxSmall";
 import "./ProductCardGrid.scss";
 
 class ProductCardGrid extends Component {
-  state = {
-    CategorysItemList: [],
-    CategorysItemValue: "",
-  };
-
-  componentDidMount() {
-    fetch("http://192.168.0.27:8000/product/category?category=7&sort=created_at")
-      .then((res) => res.json())
-      .then((res) => this.setState({ CategorysItemList: res.result }));
-  }
   render() {
-    // console.log(this.state.CategorysItemList);
-    const { CategorysItemList } = this.state;
-
+    const { productList } = this.props;
+    console.log(this.props.productList);
     return (
       <article className="ProductCardGrid">
-        {CategorysItemList &&
-          CategorysItemList.map((CategoryList, idx) => {
+        {productList &&
+          productList.map((item, idx) => {
             return (
-              <ItemBoxSmall
-                key={idx}
-                id={CategoryList.id}
-                itemName={CategoryList.name}
-                price={CategoryList.price}
-                imgUrl={CategoryList.image_url[0]}
-              />
+              <ItemBoxSmall key={idx} id={item.id} itemName={item.name} price={item.price} imgUrl={item.image_url[0]} />
             );
           })}
       </article>

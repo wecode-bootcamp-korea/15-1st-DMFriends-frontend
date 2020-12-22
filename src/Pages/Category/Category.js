@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 //import Header from "../../Components/Header/Header";
 import ImgContainer from "./Component/ImgContainer/ImgContainer";
 import ProductCategory from "./Component/ProductCategory/ProductCategory";
@@ -15,39 +14,36 @@ class Category extends Component {
     super();
     this.state = {
       isHidden: true,
+      productList: [],
+      totalCount: 0,
     };
   }
-
-  changeOrder = (path = "", option = "") => {
-    this.setState(
-      {
-        // productList: [],
-        // items: 10,
-        preItems: 0,
-        totalCount: 0,
-      },
-      () => {
-        const { preItems, items, productList } = this.state;
-        fetch("http://192.168.0.27:8000/product/category?category=7&sort=price" + path + option)
-          .then((res) => res.json())
-          .then((res) => {
-            const result = res.data_list.slice(preItems, items);
-            this.setState({
-              // productList: [...productList, ...result],
-              totalCount: result[0].total_count,
-            });
-          });
-      },
-    );
+  //filter
+  changeOrder = (option = "") => {
+    fetch("http://192.168.0.27:8000/product/category" + option)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          productList: res.result,
+          totalCount: res.result.length,
+        });
+      });
   };
+
+  componentDidMount() {
+    fetch("http://192.168.0.27:8000/product/category?category=7&sort=created_at")
+      .then((res) => res.json())
+      .then((res) => this.setState({ productList: res.result }));
+  }
 
   toggleHidden = () => {
     this.setState({
       isHidden: !this.state.isHidden,
     });
   };
+
   render() {
-    const { isHidden, changeOrder, totalCount } = this.state;
+    const { isHidden, totalCount, productList } = this.state;
     return (
       <>
         <div className="Category">
@@ -57,7 +53,7 @@ class Category extends Component {
             <ProductCategory />
             <ProductsHeader toggleHidden={this.toggleHidden} totalCount={totalCount} />
             {!isHidden && <ProductListHidden changeOrder={this.changeOrder} />}
-            <ProductCardGrid />
+            <ProductCardGrid productList={productList} />
             <PageNumContainer />
           </div>
         </div>

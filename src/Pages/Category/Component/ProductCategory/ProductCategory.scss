@@ -23,8 +23,10 @@
 
   .ListOne {
     width: 59.031px;
+    border-bottom: 1px solid #000000;
 
     button {
+      color: #000000;
       @extend %buttonStyle;
     }
   }

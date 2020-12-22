@@ -7,7 +7,7 @@ class ProductListHidden extends Component {
     return (
       <div className="ProductListHidden">
         <div className="NewItem">
-          <span>신상품순</span>
+          <span onClick={() => changeOrder("?category=7&sort=created_at")}>신상품순</span>
         </div>
         <div className="SellItem">
           <span>판매량순</span>
