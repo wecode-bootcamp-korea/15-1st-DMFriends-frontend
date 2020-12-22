@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Feeds.scss";
-// import ShareModal from "../shareModal/ShareModal";
 import Slider from "react-slick";
 import "../Main.scss";
 
@@ -31,28 +30,12 @@ class Feeds extends Component {
 
   changeHeart = (e) => {
     const feedArr = this.props;
-    console.log(feedArr); // 피드에 대한 데이터 건네받은걸 어떤식으로건네줬는지 확인해보고
     const currentLike = feedArr.feed.feedLike;
-    console.log(currentLike); //그중에서 하트 체크여부인 feedLike의 값만 어떻게 빼내는지 확인해보고
-    feedArr.feed.feedLike = !currentLike; //빼낸값을 반대로바꾸도록 바꾼다음에
+    feedArr.feed.feedLike = !currentLike;
 
     this.setState({
       feed: feedArr,
-    }); //feedLike 바꾼값이 들어있는 json을 setState를 이용해서 기존꺼랑 바꿔주면 바뀐하트상태로 표시되서 바뀐다
-
-    // fetch("하트상태바꾸는주소", {
-    //   method: "post",
-    //   body: JSON.stringify({
-    //     userId: "chaebinzzang",
-    //     feed: feedArr,
-    //   }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((res) => {
-    //     this.setState({
-    //       feed: res,
-    //     });
-    //   }); //만약에 백이랑 연결한다면 이렇게..?!
+    });
   };
 
   render() {
