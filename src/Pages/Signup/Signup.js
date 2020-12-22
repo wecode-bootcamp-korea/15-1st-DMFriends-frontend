@@ -12,9 +12,10 @@ class Signup extends React.Component {
       pw: "",
       rePw: "",
       nickName: "",
+      validationCode: "",
+      validCode: true,
       emailAlert: true,
       pwAlert: true,
-      nickNameAlert: true,
       pwLengthAlert: true,
       checkAllValue: false,
       checkAllBoxes: false,
@@ -77,7 +78,7 @@ class Signup extends React.Component {
       emailAlert: checkEmail ? true : false,
     });
 
-    fetch(`${API}/user/signup`, {
+    fetch(`${API}/user/echeck`, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -85,10 +86,12 @@ class Signup extends React.Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
-        result.message === "SUCCESS"
-          ? alert("인증메일이 발송되었습니다.")
-          : alert("기존에 있는 이메일 주소 입니다. 다른 이메일 주소를 입력하세요.");
+        if (result.email === "SENT") {
+          alert("인증메일이 발송되었습니다. 번호를 확인해주세요.");
+          this.setState({ validCode: false });
+        } else {
+          alert("기존에 있는 이메일 주소 입니다. 다른 이메일 주소를 입력하세요.");
+        }
       });
   };
 
@@ -102,29 +105,42 @@ class Signup extends React.Component {
     });
   };
 
-  isValidNickName = (e) => {
+  isValidCode = (e) => {
+    e.preventDefault();
+
+    fetch(`${API}/user/vcode`, {
+      method: "POST",
+      body: JSON.stringify({
+        random_token: this.state.validationCode,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        result.code === "CORRECT" && alert("인증번호가 확인되었습니다.");
+        this.setState({ validCode: true });
+      });
+  };
+
+  isAllValid = (e) => {
     e.preventDefault();
 
     fetch(`${API}/user/signup`, {
       method: "POST",
       body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.pw,
         nickname: this.state.nickName,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message !== "SUCCESS") {
-          alert("중복된 닉네임입니다. 다른 닉네임을 시도하세요.");
-          this.setState({
-            nickNameAlert: true,
-          });
-        }
+        result.message === "SUCCESS" && this.props.history.push("/");
       });
   };
 
   render() {
-    const { emailAlert, pwAlert, nickNameAlert, nickName, policies, checkAllBoxes } = this.state;
-    const checkAllValueBtn = emailAlert && pwAlert && nickNameAlert;
+    const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, validCode } = this.state;
+    const checkAllValueBtn = emailAlert && pwAlert;
 
     return (
       <div className="Signup">
@@ -135,8 +151,14 @@ class Signup extends React.Component {
             <span>이메일주소</span>
             <input id="email" placeholder="이메일 주소 입력" onChange={this.handleInputValue} />
             <span className={emailAlert ? "formEmailAlert" : "activate"}>이메일 형식이 올바르지 않습니다.</span>
+            {validCode ? (
+              ""
+            ) : (
+              <input id="validationCode" placeholder="인증번호 입력" onChange={this.handleInputValue} />
+            )}
             <div>
-              <button onClick={this.isValidEmail}>인증메일 발송</button>
+              {validCode ? <button onClick={this.isValidEmail}> 인증메일 발송</button> : ""}
+              {validCode ? "" : <button onClick={this.isValidCode}>인증번호 확인</button>}
             </div>
           </form>
           <form className="formPw">
@@ -168,9 +190,6 @@ class Signup extends React.Component {
               maxLength="20"
               onChange={this.handleInputValue}
             />
-            <div>
-              <button onClick={this.isValidNickName}>닉네임 중복확인</button>
-            </div>
           </form>
           <span className="formPolicy">약관 동의</span>
           <ul>
@@ -193,7 +212,9 @@ class Signup extends React.Component {
               );
             })}
           </ul>
-          <button className={checkAllValueBtn ? "activateBtn" : ""}>다음</button>
+          <button onClick={this.isAllValid} className={checkAllValueBtn ? "activateBtn" : ""}>
+            다음
+          </button>
         </div>
         <footer>
           <span>

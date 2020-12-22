@@ -167,20 +167,6 @@
         display: flex;
         justify-content: flex-end;
         width: 100%;
-
-        button {
-          width: 120px;
-          height: 33px;
-          margin-top: 10px;
-          border: $greyBorder;
-          border-radius: 35px;
-          background-color: white;
-          font-size: 14px;
-
-          :active {
-            outline: none;
-          }
-        }
       }
     }
 
