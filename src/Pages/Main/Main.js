@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Feeds from "./feeds/Feeds";
+import MainReply from "./mainReply/MainReply";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Main.scss";
@@ -30,12 +31,13 @@ class Main extends React.Component {
       },
     ],
     feeds: [],
-    startNumber: 0,
+    startNumber: 1,
     endNumber: 2,
   };
 
   componentDidMount() {
-    this.getData();
+    this.getfeedData();
+    // this.getData();
     window.addEventListener("scroll", this.infiniteScroll);
   }
 
@@ -43,12 +45,22 @@ class Main extends React.Component {
     window.removeEventListener("scroll", this.infiniteScroll);
   }
 
-  getData = () => {
-    const { startNumber, endNumber, feeds } = this.state;
-    fetch("/data/mainData.json") //백이랑 연결할 때 여기에 붙임
+  getfeedData = () => {
+    fetch("http://192.168.0.25:8080/board/main")
       .then((result) => result.json())
       .then((result) => {
-        //console.log(result);
+        this.setState({
+          feeds: result.board_list,
+        });
+      });
+  };
+
+  getData = () => {
+    const { startNumber, endNumber, feeds } = this.state;
+    fetch("http://192.168.0.25:8080/board/main")
+      .then((result) => result.json())
+      .then((result) => {
+        console.log(result);
         const writeFeeds = result.feeds.slice(startNumber, endNumber);
         this.setState({
           feeds: [...feeds, ...writeFeeds],
@@ -76,45 +88,20 @@ class Main extends React.Component {
   };
 
   render() {
+    const { feeds } = this.state;
     return (
       <div className="Main">
         <div className="headerLine">
-          <div className="header">
-            <ul>
-              <li>
-                <div>
-                  <Link to="/" className="today active">
-                    오늘
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <div>
-                  <Link to="/mainDetail" className="new">
-                    신규
-                  </Link>
-                </div>
-              </li>
-
-              <li>
-                <a href="https://store.kakaofriends.com/kr/index?tab=hot">
-                  <div className="hot">
-                    <div>인기</div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="https://store.kakaofriends.com/kr/basket/products">
-                  <div className="my">
-                    <div>마이</div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <div className="header"></div>
         </div>
-        <Feeds feeds={this.state.feeds} />
+        {feeds.map((feed) => {
+          return (
+            <>
+              <Feeds feed={feed} key={feed.id} />
+              <MainReply feed={feed} key={feed.id} />
+            </>
+          );
+        })}
       </div>
     );
   }
