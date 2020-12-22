@@ -3,11 +3,13 @@
   height: 401px;
   margin-top: 18px;
   text-decoration: none;
+
   img {
     width: 275px;
     height: 275px;
     border-radius: 1%;
   }
+
   .ProductText {
     display: flex;
     justify-content: space-between;
@@ -20,6 +22,7 @@
       margin-top: 10px;
       color: #777777;
     }
+
     button {
       width: 30px;
       height: 30px;
@@ -30,6 +33,7 @@
       cursor: pointer;
       overflow: hidden;
       outline: none;
+
       img {
         width: 20px;
         height: 20px;
@@ -37,6 +41,7 @@
       }
     }
   }
+
   .ProductPrice {
     width: 275px;
     height: 20px;

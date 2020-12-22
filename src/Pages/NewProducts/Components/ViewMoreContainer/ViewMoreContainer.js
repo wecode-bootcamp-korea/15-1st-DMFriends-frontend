@@ -7,7 +7,7 @@ class ViewMoreContainer extends Component {
     return (
       <div className="ViewMoreContainer">
         <div className="ViewMoreBar">
-          <button to="/NewProducts" className="goToNewBtn">
+          <button to="/Category" className="goToNewBtn">
             <span>더 보기</span>
           </button>
         </div>

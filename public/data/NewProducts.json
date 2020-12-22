@@ -53,73 +53,73 @@
   "SliderData": [
     {
       "id": 1,
-      "mainText": "HOT 데뷔",
-      "subText": "헬로 춘식이",
+      "mainText": "신상 가방나왔어요~",
+      "subText": "여성분들 주목!",
       "pageNum": "1 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20201217081237_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1559563458-527698bf5295?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
     },
     {
       "id": 2,
-      "mainText": "세균 걱정 이제 그만",
-      "subText": "죠르디가 소독해줄게",
+      "mainText": "김보성도 울고갈 터프가이 선글라스",
+      "subText": "남성분들 주목!",
       "pageNum": "2 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20201209185018_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1501612164070-9919a55f7563?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80"
     },
     {
       "id": 3,
-      "mainText": "이 집 팔로우 잘하네!",
-      "subText": "New 베이비필로우",
+      "mainText": "긴말이 필요없는 명품",
+      "subText": "주머니 두둑하신분들 주목!",
       "pageNum": "3 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20201211171058_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1495704907664-81f74a7efd9b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
     },
     {
       "id": 4,
-      "mainText": "우리집은 똑똑해",
-      "subText": "카카오프렌즈 스마트 홈!",
+      "mainText": "앉으면 바로 잠드는 소파",
+      "subText": "주부님들 주목!",
       "pageNum": "4 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/new_store/prod/main_tab/banner/banner_20201124140521_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1506&q=80"
     },
     {
       "id": 5,
-      "mainText": "HOT 데뷔",
-      "subText": "헬로 춘식이",
+      "mainText": "무조건 잘나오는 카메라",
+      "subText": "인스타하시는분들 주목!",
       "pageNum": "5 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20201217081237_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1602525653218-cac7c9e38807?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
     },
     {
       "id": 6,
-      "mainText": "세균 걱정 이제 그만",
-      "subText": "죠르디가 소독해줄게",
+      "mainText": "사양끝내주는 노트북",
+      "subText": "개발자분들 주목!",
       "pageNum": "6 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20201209185018_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
     },
     {
       "id": 7,
-      "mainText": "이 집 팔로우 잘하네!",
-      "subText": "New 베이비필로우",
+      "mainText": "이 집 농구화 잘빠졌네",
+      "subText": "농구하시는분들 주목!",
       "pageNum": "7 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20201211171058_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1582229911941-ad25e99c9ead?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1780&q=80"
     },
     {
       "id": 8,
-      "mainText": "우리집은 똑똑해",
-      "subText": "카카오프렌즈 스마트 홈!",
+      "mainText": "운동해보아요",
+      "subText": "헬스하시는분들 주목!!",
       "pageNum": "8 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/new_store/prod/main_tab/banner/banner_20201124140521_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80"
     },
     {
       "id": 9,
-      "mainText": "HOT 데뷔",
-      "subText": "헬로 춘식이",
+      "mainText": "신상옷 나왔어요~",
+      "subText": "여성분들 주목!",
       "pageNum": "9 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20201217081237_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/flagged/photo-1570619194043-8f6bb6db46bf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
     },
     {
       "id": 10,
-      "mainText": "세균 걱정 이제 그만",
-      "subText": "죠르디가 소독해줄게",
+      "mainText": "명품벨트 신상",
+      "subText": "간지난다...",
       "pageNum": "10 / 10",
-      "imgUrl": "https://t1.kakaocdn.net/friends/prod/main_tab/banner/banner_20201209185018_mobile_kr.jpg?type=thumb&opt=R375x211@2xa"
+      "imgUrl": "https://images.unsplash.com/photo-1585856331452-87ea5a04c21c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
     }
   ],
   "UpdateData": [
