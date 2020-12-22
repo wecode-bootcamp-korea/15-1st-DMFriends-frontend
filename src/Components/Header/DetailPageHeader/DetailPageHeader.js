@@ -1,15 +1,27 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import "./DetailPageHeader.scss";
-import * as configs from "../../../config.js";
+import * as configs from "../../../config";
+import SideMenu from "../../SideMenu/SideMenu";
+import "../DetailPageHeader/DetailPageHeader.scss";
 
 class DetailPageHeader extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showSideMenu: false,
+      showMenu: false,
+    };
+  }
+
   goToPrev = () => {
     this.props.history.goBack();
   };
 
   goToCategory = () => {
-    this.state.history.push("/Category");
+    this.setState({
+      showSideMenu: true,
+      showMenu: true,
+    });
   };
 
   goToMain = () => {
@@ -17,17 +29,26 @@ class DetailPageHeader extends Component {
   };
 
   goToSearch = () => {
-    this.state.history.push("/Search");
+    this.props.history.push("/Search");
   };
 
   goToCart = () => {
-    this.state.history.push("/CartList");
+    this.props.history.push("/CartList");
+  };
+
+  hideSideMenu = () => {
+    this.setState({
+      showMenu: false,
+    });
   };
 
   render() {
     const { goToMain, goToPrev, goToSearch, goToCategory, goToCart } = this;
+    const { showSideMenu, showMenu } = this.state;
     return (
       <div className="DetailPageHeader">
+        {showSideMenu && <SideMenu showMenu={showMenu} hideSideMenu={this.hideSideMenu} />}
+        <div className={showMenu ? "overLay active" : "overLay"} onClick={this.hideSideMenu}></div>
         <div className="headerWrap">
           <div>
             <button onClick={goToPrev}>
@@ -40,7 +61,7 @@ class DetailPageHeader extends Component {
               <img src={configs.toHomeBtnImg} alt="toHomeBtnImg" />
             </button>
           </div>
-          <span>제품 상세</span>
+          <img src="/images/logoImage/DM_LOGO.png" alt="logo" />
           <div>
             <button onClick={goToSearch}>
               <img src={configs.searchBtnImg} alt="searchBtnImg" />

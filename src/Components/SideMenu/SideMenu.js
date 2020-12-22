@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import Menu from "./Menu";
+import Menu from "./Menu/Menu";
+import Category from "./Category/Category";
 import "./SideMenu.scss";
 
 class SideMenu extends React.Component {
@@ -8,6 +9,7 @@ class SideMenu extends React.Component {
     super();
     this.state = {
       menuList: [],
+      dropDownMenu: false,
     };
   }
 
@@ -22,22 +24,19 @@ class SideMenu extends React.Component {
       });
   }
 
-  // showSideMenu = () => {
-  //   this.setState({
-  //     showMenu: false,
-  //   });
-  // };
+  showDropDownMenu = (e) => {
+    e.preventDefault();
 
-  // hideSideMenu = () => {
-  //   this.setState({
-  //     showMenu: true,
-  //   });
-  // };
+    const { dropDownMenu } = this.state;
+    this.setState({
+      dropDownMenu: !dropDownMenu,
+    });
+  };
 
   render() {
-    const { menuList } = this.state;
+    const { menuList, dropDownMenu } = this.state;
     const { showMenu } = this.props;
-    console.log(this.props);
+    console.log(this.state);
     return (
       <div className="SideMenu">
         <div className="menuFrame">
@@ -55,7 +54,16 @@ class SideMenu extends React.Component {
             </article>
             <ul>
               {menuList.map((menu) => {
-                return <Menu menu={menu} key={menu.id} />;
+                if (menu.id === 3) {
+                  return (
+                    <>
+                      <Menu menu={menu} key={menu.id} id={menu.id} onClick={this.showDropDownMenu} />
+                      {dropDownMenu && <Category />}
+                    </>
+                  );
+                } else {
+                  return <Menu menu={menu} key={menu.id} id={menu.id} />;
+                }
               })}
             </ul>
             <div className="loginIcon">

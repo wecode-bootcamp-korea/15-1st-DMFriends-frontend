@@ -10,7 +10,7 @@ import Signup from "./Pages/Signup/Signup";
 import Category from "./Pages/Category/Category";
 import NewProducts from "./Pages/NewProducts/NewProducts";
 import SideMenu from "./Components/SideMenu/SideMenu";
-import DetailPageHeader from "./Components/Header/DetailPageHeader";
+import DetailPageHeader from "./Components/Header/DetailPageHeader/DetailPageHeader";
 
 class Routes extends React.Component {
   render() {
