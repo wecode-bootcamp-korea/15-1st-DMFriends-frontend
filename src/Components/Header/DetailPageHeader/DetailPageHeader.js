@@ -45,6 +45,7 @@ class DetailPageHeader extends Component {
   render() {
     const { goToMain, goToPrev, goToSearch, goToCategory, goToCart } = this;
     const { showSideMenu, showMenu } = this.state;
+
     return (
       <div className="DetailPageHeader">
         {showSideMenu && <SideMenu showMenu={showMenu} hideSideMenu={this.hideSideMenu} />}

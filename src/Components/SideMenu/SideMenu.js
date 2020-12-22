@@ -36,7 +36,7 @@ class SideMenu extends React.Component {
   render() {
     const { menuList, dropDownMenu } = this.state;
     const { showMenu } = this.props;
-    console.log(this.state);
+
     return (
       <div className="SideMenu">
         <div className="menuFrame">
