@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Feeds from "./feeds/Feeds";
-import MainReply from "./mainReply/MainReply";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Main.scss";
@@ -46,9 +45,10 @@ class Main extends React.Component {
 
   getData = () => {
     const { startNumber, endNumber, feeds } = this.state;
-    fetch("/data/mainData.json")
+    fetch("/data/mainData.json") //백이랑 연결할 때 여기에 붙임
       .then((result) => result.json())
       .then((result) => {
+        //console.log(result);
         const writeFeeds = result.feeds.slice(startNumber, endNumber);
         this.setState({
           feeds: [...feeds, ...writeFeeds],
@@ -114,14 +114,7 @@ class Main extends React.Component {
             </ul>
           </div>
         </div>
-        {this.state.feeds.map((feed) => {
-          return (
-            <>
-              <Feeds feed={feed} key={feed.id} />
-              <MainReply feed={feed} key={feed.id} />
-            </>
-          );
-        })}
+        <Feeds feeds={this.state.feeds} />
       </div>
     );
   }

@@ -1,240 +1,248 @@
 @import "../../styles/common.scss";
 
-.Main {
-  .mainReply {
-    margin-top: 7px;
-    padding: 0px 20px 0px;
-    max-width: 640px;
-    margin: 0px auto;
-    width: 640px;
+* {
+  box-sizing: border-box;
 
-    .footerReply {
+  .Main {
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .headerLine {
       display: flex;
-      justify-content: flex-start;
-      color: rgb(154, 154, 158);
-      font-size: 14px;
+      justify-content: center;
+      width: 100%;
 
-      .footerReplyLike {
-        font-size: 14px;
+      s p {
+        line-height: 1.6;
       }
 
-      .footerReplyCount {
-        margin-left: 7px;
-      }
-    }
-
-    .footerReplyContents {
-      display: flex;
-      justify-content: flex-start;
-      line-height: 1.43;
-      letter-spacing: -0.22px;
-      margin-top: 12px;
-      height: 20px;
-      line-height: 1.43;
-      white-space: pre-line;
-
-      .footerReplyId {
-        font-weight: bolder;
-        font-size: 14px;
-        margin-right: 7px;
+      a {
+        text-decoration: none;
       }
 
-      .footerReplyContent {
-        font-size: 14px;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
       }
-    }
 
-    .replyBox {
-      padding: 12px 59px 12px 14px;
-      border-radius: 0px 24px 24px;
-      height: 44px;
-      background-color: #f0f1f4;
-      margin-top: 16px;
-
-      .footerReplyInput {
-        border: none;
-        background-color: #f0f1f4;
-        font-size: 14px;
-        color: #9a9a9e;
+      li {
+        float: left;
+        width: 160px;
       }
-    }
-  }
 
-  .headerLine {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    s p {
-      line-height: 1.6;
-    }
+      li a {
+        //선택하지않은 메뉴
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        background-color: #fff;
+      }
 
-    a {
-      text-decoration: none;
-    }
+      //커서 올리면 변함
+      li a:hover:not(.active) {
+        border-bottom: 4px solid pink;
+        // margin-top: -4px;
+      }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    li {
-      float: left;
-      width: 160px;
-    }
-
-    li a {
-      //선택하지않은 메뉴
-      display: block;
-      color: black;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      background-color: #fff;
-    }
-
-    //커서 올리면 변함
-    li a:hover:not(.active) {
-      border-bottom: 4px solid pink;
-    }
-
-    .header {
-      height: 44px;
-      width: 640px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      border-bottom: 1px solid #f0f1f4;
-      position: fixed;
-      // background-color: #fff;
-      z-index: 99999;
-    }
-
-    .active {
-      //선택한 메뉴
-      background-color: #fff;
-      color: black;
-      font-weight: bold;
-      border-bottom: 4px solid black;
-    }
-  }
-
-  .feed {
-    padding: 65px 20px 15px;
-    max-width: 640px;
-    margin: 0px auto;
-    width: 640px;
-
-    .mainHeader {
-      font-size: 16px;
-      margin-bottom: 16px;
-
-      .headerInfoBox {
+      .header {
+        height: 44px;
+        width: 640px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: center;
+        border-bottom: 1px solid #f0f1f4;
+        position: fixed;
+        background-color: #fff;
+        z-index: 99999;
+      }
 
-        .headerInfoImgBox {
-          width: 40px;
-          height: 40px;
-          margin-right: 8px;
+      .active {
+        //선택한 메뉴
+        background-color: #fff;
+        color: black;
+        font-weight: bold;
+        border-bottom: 4px solid black;
+      }
+    }
 
-          .headerInfoImg {
-            height: 40px;
-            width: 40px;
-            overflow: hidden;
-          }
-        }
+    .feed {
+      padding: 65px 20px 30px;
+      max-width: 640px;
+      margin: 0px auto;
+      width: 640px;
 
-        .headerInfoText {
+      .mainHeader {
+        font-size: 16px;
+        margin-bottom: 16px;
+
+        .headerInfoBox {
           display: flex;
-          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
 
-          .headerInfoId {
-            margin-top: 3px;
-            font-size: 16px;
-            letter-spacing: -0.25px;
-            font-weight: bolder;
+          .headerInfoImgBox {
+            width: 40px;
+            height: 40px;
+            margin-right: 8px;
+
+            .headerInfoImg {
+              height: 40px;
+              width: 40px;
+              overflow: hidden;
+            }
           }
 
-          .headerInfoTime {
-            font-size: 13px;
-            line-height: 1.6;
+          .headerInfoText {
+            display: flex;
+            flex-direction: column;
+
+            .headerInfoId {
+              margin-top: 3px;
+              font-size: 16px;
+              letter-spacing: -0.25px;
+              font-weight: bolder;
+            }
+
+            .headerInfoTime {
+              font-size: 13px;
+              // letter-spacing: -0.2px;
+              line-height: 1.6;
+            }
           }
         }
       }
-    }
 
-    .feedImg {
-      width: 600px;
-    }
+      .feedImg {
+        width: 600px;
+      }
 
-    .feedIconBox {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-
-      .feedIconLeft {
+      .feedIconBox {
         display: flex;
-        justify-content: flex-start;
-
-        .likeIcon {
-          height: 27px;
-          width: 27px;
-        }
-
-        .replyIcon {
-          height: 27px;
-          width: 27px;
-          margin-left: 13px;
-        }
-      }
-
-      .feedIconRight {
-        display: flex;
-        justify-content: flex-start;
-
-        .feedShareBtn {
-          @include btn_mix();
-        }
-
-        .shareIcon {
-          background-color: #fff;
-          height: 27px;
-          width: 27px;
-        }
-      }
-    }
-
-    .bodyContentsBox {
-      .goodBox {
-        margin-top: 12px;
-        display: flex;
-        justify-content: flex-start;
-
-        .good {
-          font-size: 14px;
-        }
-
-        .goodCount {
-          font-size: 14px;
-          font-weight: bold;
-          margin-left: 7px;
-        }
-      }
-
-      .bodyTitle {
-        font-size: 20px;
-        margin-top: 12px;
-        font-weight: bolder;
-        line-height: 1.2;
-      }
-
-      .bodyContents {
-        font-size: 14px;
+        justify-content: space-between;
         margin-top: 10px;
-        line-height: 1.4;
+
+        .feedIconLeft {
+          display: flex;
+          justify-content: flex-start;
+
+          .likeIcon {
+            height: 27px;
+            width: 27px;
+          }
+
+          .replyIcon {
+            height: 27px;
+            width: 27px;
+            margin-left: 13px;
+          }
+        }
+
+        .feedIconRight {
+          display: flex;
+          justify-content: flex-start;
+
+          .feedShareBtn {
+            @include btn_mix();
+          }
+
+          .shareIcon {
+            background-color: #fff;
+            height: 27px;
+            width: 27px;
+          }
+        }
+      }
+
+      .bodyContentsBox {
+        .goodBox {
+          margin-top: 12px;
+          display: flex;
+          justify-content: flex-start;
+
+          .good {
+            font-size: 14px;
+            // letter-spacing: -0.22px;
+          }
+
+          .goodCount {
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 7px;
+          }
+        }
+
+        .bodyTitle {
+          font-size: 20px;
+          margin-top: 12px;
+          font-weight: bolder;
+          line-height: 1.2;
+        }
+
+        .bodyContents {
+          font-size: 14px;
+          margin-top: 10px;
+          line-height: 1.4;
+        }
+      }
+
+      .mainReply {
+        margin-top: 7px;
+
+        .footerReply {
+          display: flex;
+          justify-content: flex-start;
+          color: rgb(154, 154, 158);
+          font-size: 14px;
+
+          .footerReplyLike {
+            font-size: 14px;
+          }
+
+          .footerReplyCount {
+            margin-left: 7px;
+          }
+        }
+
+        .footerReplyContents {
+          display: flex;
+          justify-content: flex-start;
+          line-height: 1.43;
+          letter-spacing: -0.22px;
+          margin-top: 12px;
+          height: 20px;
+          line-height: 1.43;
+          white-space: pre-line;
+
+          .footerReplyId {
+            font-weight: bolder;
+            font-size: 14px;
+            margin-right: 7px;
+          }
+
+          .footerReplyContent {
+            font-size: 14px;
+          }
+        }
+
+        .replyBox {
+          padding: 12px 59px 12px 14px;
+          border-radius: 0px 24px 24px;
+          height: 44px;
+          background-color: #f0f1f4;
+          margin-top: 16px;
+
+          .footerReplyInput {
+            border: none;
+            background-color: #f0f1f4;
+            font-size: 14px;
+            color: #9a9a9e;
+          }
+        }
       }
     }
   }
