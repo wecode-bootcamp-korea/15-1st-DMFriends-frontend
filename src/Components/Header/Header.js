@@ -13,8 +13,7 @@ class Header extends Component {
             </button>
           </div>
           <div className="CenterLogo">
-            <a href="/NewProducts">KAKAO FRIENDS</a>
-            <img src="images/taejinlim/DMlogo.PNG" alt="logo" />
+            <img src="images/taejinlim/DM_LOGO.png" alt="logo" />
           </div>
           <div className="SearchBox">
             <button className="SearchBtn">
