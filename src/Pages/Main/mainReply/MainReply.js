@@ -10,11 +10,11 @@ class MainReply extends Component {
         <section className="mainReply">
           <div className="footerReply">
             <div className="footerReplyLike">댓글</div>
-            <div className="footerReplyCount">{feed.footerReplyCount}개</div>
+            <div className="footerReplyCount">{feed.comment.content_num}개</div>
           </div>
           <div className="footerReplyContents">
-            <div className="footerReplyId">{feed.footerReplyId}</div>
-            <div className="footerReplyContent">{feed.footerReplyContent}</div>
+            <div className="footerReplyId">{feed.comment.writer}</div>
+            <div className="footerReplyContent">{feed.comment.content}</div>
           </div>
           <div className="replyBox">
             <input
