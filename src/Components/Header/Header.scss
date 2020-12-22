@@ -20,6 +20,7 @@
 
 .Header {
   @extend %FlexCenter;
+  position: fixed;
   width: 100vw;
   height: 47px;
 
@@ -47,6 +48,7 @@
     }
     .CenterLogo {
       @extend %FlexCenter;
+      position: relative;
       width: 147px;
       height: 47;
 
@@ -54,9 +56,15 @@
         width: 147px;
         height: 24px;
         text-align: center;
-        background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/mobile/new-logo-mo.png");
+        // background-image: url("https://t1.kakaocdn.net/friends/new_store/2.0/mobile/new-logo-mo.png");
         background-size: 147px 24px;
         color: transparent;
+      }
+
+      img {
+        position: absolute;
+        width: 147px;
+        height: 24px;
       }
     }
     .SearchBox {
