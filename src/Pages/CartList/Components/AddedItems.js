@@ -3,10 +3,10 @@ import * as configs from "../../../config";
 
 class AddedItems extends Component {
   render() {
-    const { id, name, price, quantity, image_url, checked, deleteProduct } = this.props;
+    const { id, name, price, quantity, image_url, checked, deleteProduct, idx } = this.props;
     return (
       <div className="basketItem" id={id}>
-        <input type="checkbox" checked={checked} />
+        <input type="checkbox" checked={checked} onClick={() => this.handleCheckedBox(idx)} />
         <label>
           <span></span>
         </label>

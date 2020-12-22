@@ -8,7 +8,6 @@
     height: 44px;
     margin: 0 auto;
     .mainTapList {
-      position: fixed;
       display: flex;
       justify-content: space-around;
       height: 44px;
@@ -54,7 +53,6 @@
     .totalItem {
       @include flexSB;
       align-items: center;
-      position: fixed;
       width: 640px;
       height: 55px;
       margin: 0 auto;

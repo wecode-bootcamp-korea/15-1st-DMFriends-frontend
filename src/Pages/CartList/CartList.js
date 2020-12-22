@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import AddedItems from "./Components/AddedItems";
 import "./CartList.scss";
 import * as configs from "../../config";
-import ProductDetail from "../ProductDetail/ProductDetail";
 
 class CartList extends Component {
   constructor() {
     super();
     this.state = {
       cartData: [],
+      eachCheckBox: true,
       checkAllProducts: true,
     };
   }
@@ -21,6 +21,20 @@ class CartList extends Component {
         this.setState({ cartData: res.CartList });
       });
   }
+
+  handleCheckedBox = (idx) => {
+    this.setState(
+      {
+        [`check${idx}`]: !this.state[`check${idx}`],
+      },
+      // () => {
+      //   const { check0, check1, check2, check3 } = this.state;
+      //   this.setState({
+      //     checkAllBoxes: !this.checkAllBoxes,
+      //   });
+      // },
+    );
+  };
 
   deleteProduct = (id) => {
     const newdata = this.state.cartData.filter((el) => el.id !== id);
@@ -38,8 +52,6 @@ class CartList extends Component {
         return acc + Number(cur.price * cur.quantity);
       }, 0)
       .toLocaleString();
-    // console.log(this.state.cartData.filter((name) => name.length > 0));
-    console.log(this.state.cartData);
     return (
       <>
         <section className="CartList">
@@ -89,6 +101,8 @@ class CartList extends Component {
                       quantity={el.quantity}
                       image_url={el.image_url}
                       deleteProduct={this.deleteProduct}
+                      checked={this.state.eachCheckBox}
+                      onClick={this.handleCheckedBox}
                     />
                   );
                 })}
