@@ -3,9 +3,43 @@ import { Link } from "react-router-dom";
 import AddedItems from "./Components/AddedItems";
 import "./CartList.scss";
 import * as configs from "../../config";
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 class CartList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      cartData: [],
+      checkAllProducts: true,
+    };
+  }
+
+  componentDidMount() {
+    fetch("./data/CartList.json")
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ cartData: res.CartList });
+      });
+  }
+
+  deleteProduct = (id) => {
+    const newdata = this.state.cartData.filter((el) => el.id !== id);
+    this.setState({ cartData: newdata });
+  };
+
+  deleteAllProduct = () => {
+    this.setState({ cartData: [] });
+  };
+
   render() {
+    const { cartData } = this.state;
+    let totalPrice = this.state.cartData
+      .reduce((acc, cur) => {
+        return acc + Number(cur.price * cur.quantity);
+      }, 0)
+      .toLocaleString();
+    // console.log(this.state.cartData.filter((name) => name.length > 0));
+    console.log(this.state.cartData);
     return (
       <>
         <section className="CartList">
@@ -16,7 +50,7 @@ class CartList extends Component {
               <Link>최근 본</Link>
               <Link>내 활동</Link>
               <Link className="selected">
-                장바구니<button className="numOfCart">1</button>
+                장바구니<button className="numOfCart">{cartData.length}</button>
               </Link>
               <Link>주문내역</Link>
             </div>
@@ -24,41 +58,67 @@ class CartList extends Component {
           <div className="ItemList">
             <div className="totalItem">
               <div className="selectItems">
-                <input type="checkbox"></input>
-                <span>전체</span>
+                <input
+                  type="checkbox"
+                  id="checkAllProducts"
+                  checked={this.state.checkAllProducts}
+                  onChange={this.handleAllCheckBoxes}
+                />
+                <label htmlFor="checkAllProducts">
+                  <span></span>
+                  전체
+                </label>
+                <span>{cartData.length}</span>
               </div>
               <div className="removeItems">
-                1개 선택
-                <img className="removeBtn" src={configs.trashCan} alt="removeBtn" />
+                ?개 선택
+                <img onClick={this.deleteAllProduct} className="removeBtn" src={configs.trashCan} alt="removeBtn" />
               </div>
             </div>
           </div>
-          <AddedItems />
-          <div className="payment">
-            <div className="shipping">
-              <span>배송국가</span>
-              <select>
-                <option value="한국" selected>
-                  한국
-                </option>
-              </select>
+          <div className="AddedItems">
+            <div className="allItemContainer">
+              {cartData &&
+                cartData.map((el, idx) => {
+                  return (
+                    <AddedItems
+                      key={idx}
+                      id={el.id}
+                      name={el.name}
+                      price={el.price}
+                      quantity={el.quantity}
+                      image_url={el.image_url}
+                      deleteProduct={this.deleteProduct}
+                    />
+                  );
+                })}
             </div>
-            <div>
-              <div>총 주문금액</div>
-              <div>39,000원</div>
-            </div>
-            <div>
-              <div>배송비</div>
-              <div>무료</div>
-            </div>
-            <div className="totalPrice">
-              <div>총 결제금액</div>
-              <div className="totalPrice2">39,000원</div>
+            <div className="payment">
+              <div className="shipping">
+                <span>배송국가</span>
+                <select>
+                  <option value="한국" selected>
+                    한국
+                  </option>
+                </select>
+              </div>
+              <div>
+                <div>총 주문금액</div>
+                <div>{totalPrice.toLocaleString()}원</div>
+              </div>
+              <div>
+                <div>배송비</div>
+                <div>무료</div>
+              </div>
+              <div className="totalPrice">
+                <div>총 결제금액</div>
+                <div className="totalPrice2">{totalPrice.toLocaleString()}원</div>
+              </div>
             </div>
           </div>
         </section>
         <button className="goToPay">
-          <span>39,000원 주문 하기</span>
+          <span>{totalPrice}원 주문 하기</span>
         </button>
       </>
     );
