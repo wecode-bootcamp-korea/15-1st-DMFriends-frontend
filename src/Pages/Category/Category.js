@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import Header from "../../Components/Header/Header";
+import ProductDetail from "../ProductDetail/ProductDetail";
 import ImgContainer from "./Component/ImgContainer/ImgContainer";
 import ProductCategory from "./Component/ProductCategory/ProductCategory";
 import ProductsHeader from "./Component/ProductsHeader/ProductsHeader";
@@ -46,9 +46,9 @@ class Category extends Component {
     const { isHidden, totalCount, productList } = this.state;
     return (
       <>
+        <ProductDetail />
         <div className="Category">
           <div className="CateContainer">
-            {/* <header></header> componet 사용예정 */}
             <ImgContainer />
             <ProductCategory />
             <ProductsHeader toggleHidden={this.toggleHidden} totalCount={totalCount} />
