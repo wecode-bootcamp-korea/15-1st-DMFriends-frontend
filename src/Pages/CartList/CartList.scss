@@ -18,9 +18,7 @@
       background-color: #f8f8f8;
 
       a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexCenter;
         width: 145px;
         margin: 0 4.5px;
         text-decoration: none;
@@ -32,9 +30,7 @@
           color: black;
           font-weight: bold;
           .numOfCart {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flexCenter;
             width: 18px;
             height: 18px;
             margin-left: 2px;
@@ -55,8 +51,7 @@
     margin: 0 auto;
 
     .totalItem {
-      display: flex;
-      justify-content: space-between;
+      @include flexSB;
       align-items: center;
       position: fixed;
       width: 640px;
@@ -180,8 +175,7 @@
     padding: 40px 20px 123px;
     margin: 0 auto;
     .shipping {
-      display: flex;
-      justify-content: space-between;
+      @include flexSB;
       height: 30px;
       margin-bottom: 23px;
       select {
@@ -193,8 +187,7 @@
       }
     }
     div {
-      display: flex;
-      justify-content: space-between;
+      @include flexSB;
       height: 30px;
       font-size: 16px;
     }

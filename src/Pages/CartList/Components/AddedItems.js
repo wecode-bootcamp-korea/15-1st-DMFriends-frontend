@@ -7,7 +7,7 @@ class AddedItems extends Component {
       <div className="AddedItems">
         <div className="allItemContainer">
           <div className="basketItem">
-            <input type=""></input>
+            <input></input>
             <div className="itemImg">
               <img />
             </div>
