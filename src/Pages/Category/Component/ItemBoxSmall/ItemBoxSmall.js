@@ -16,7 +16,7 @@ class ItemBoxSmall extends Component {
           </button>
         </div>
         <div className="ProductPrice">
-          <p>{price}</p>
+          <p>{Number(price).toLocaleString()}원</p>
         </div>
       </Link>
     );

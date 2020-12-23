@@ -20,6 +20,16 @@
       height: 19px;
       font-size: 15px;
       margin: 10px 10px;
+      color: gray;
+    }
+  }
+
+  div:hover {
+    background-color: #f7f7f7;
+
+    span {
+      color: #000000;
+      font-weight: bold;
     }
   }
 }
