@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProductDetail from "../ProductDetail/ProductDetail";
+import DetailPageHeader from "../../Components/Header/DetailPageHeader/DetailPageHeader";
 import ImgContainer from "./Component/ImgContainer/ImgContainer";
 import ProductCategory from "./Component/ProductCategory/ProductCategory";
 import ProductsHeader from "./Component/ProductsHeader/ProductsHeader";
@@ -47,9 +47,9 @@ class Category extends Component {
 
     return (
       <>
-        <ProductDetail />
         <div className="Category">
           <div className="CateContainer">
+            <DetailPageHeader />
             <ImgContainer />
             <ProductCategory changeOrder={this.changeOrder} />
             <ProductsHeader toggleHidden={this.toggleHidden} totalCount={totalCount} />
