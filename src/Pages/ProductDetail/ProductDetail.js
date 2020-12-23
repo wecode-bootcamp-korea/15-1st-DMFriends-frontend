@@ -5,7 +5,7 @@ import DetailPageContents from "./Components/DetailPageContents";
 import ProductInfo from "./Components/ProductInfo";
 import Shipping from "./Components/Shipping";
 import Gethelp from "./Components/GetHelp";
-import ProductReview from "./Components/ProductReview";
+import ProductReview from "./Components/ProductReview/ProductReview";
 import Recommended from "./Components/Recommended";
 import RecentlyViewed from "./Components/RecentlyViewed";
 import BottomBar from "./Components/BottomBar";

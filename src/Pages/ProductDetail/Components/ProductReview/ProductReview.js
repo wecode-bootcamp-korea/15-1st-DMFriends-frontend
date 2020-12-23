@@ -14,6 +14,17 @@ export default class ProductReview extends Component {
     };
   }
 
+  componentDidMount() {
+    fetch("data/ProductReview.json")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        this.setState({
+          reviews: res.reviewData,
+        });
+      });
+  }
+
   openReviewModal = () => {
     this.setState({ isReviewModalOpen: true }, () => {
       document.body.style.overflow = "hidden";

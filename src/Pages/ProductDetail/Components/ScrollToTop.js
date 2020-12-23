@@ -7,16 +7,16 @@ export default class scrollToTop extends Component {
     this.hide = React.createRef();
   }
 
-  componentDidMount = () => {
-    window.addEventListener("scroll", () => {
-      let scrollLocation = document.documentElement.scrollTop;
-      if (scrollLocation >= 850) {
-        this.hide.current.className = "scrollToTop";
-      } else {
-        this.hide.current.className = "scrollHidden";
-      }
-    });
-  };
+  // componentDidMount = () => {
+  //   window.addEventListener("scroll", () => {
+  //     let scrollLocation = document.documentElement.scrollTop;
+  //     if (scrollLocation >= 850) {
+  //       this.hide.current.className = "scrollToTop";
+  //     } else {
+  //       this.hide.current.className = "scrollHidden";
+  //     }
+  //   });
+  // };
 
   scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -26,7 +26,7 @@ export default class scrollToTop extends Component {
     return (
       <button
         ref={this.hide}
-        className="scrollHidden"
+        className="scrollToTop"
         onClick={() => {
           this.scrollToTop();
         }}
