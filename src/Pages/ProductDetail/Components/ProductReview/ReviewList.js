@@ -49,21 +49,21 @@ class ReviewList extends Component {
               return (
                 <li key={idx}>
                   <div>
-                    <div className="userName">{item.userName}</div>
+                    <div className="userName">{item.member_id}</div>
                     <div className="userReviewRate">
                       <ReactStars
                         className="ReactStars"
                         count={5}
-                        value={item.rateValue}
+                        value={item.star_rating}
                         size={18}
                         half={true}
                         edit={false}
                         color1={"#D5D7E0"}
                         color2={"#FF6582"}
                       />
-                      <p>{item.date}</p>
+                      <p>{item.created_at}</p>
                     </div>
-                    <p className="userReviewComment">{item.comment}</p>
+                    <p className="userReviewComment">{item.content}</p>
                   </div>
                   <div className="reviewLike">
                     <button onClick={openModal}>좋아요</button>
