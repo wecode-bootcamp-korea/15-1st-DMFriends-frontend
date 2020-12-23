@@ -3,11 +3,11 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import ImgContainer from "./Component/ImgContainer/ImgContainer";
 import ProductCategory from "./Component/ProductCategory/ProductCategory";
 import ProductsHeader from "./Component/ProductsHeader/ProductsHeader";
+import ProductListHidden from "./Component/ProductListHidden/ProductListHidden";
 import ProductCardGrid from "./Component/ProductCardGrid/ProductCardGrid";
 import PageNumContainer from "./Component/PageNumContainer/PageNumContainer";
 import Footer from "../../Components/Footer/Footer";
 import "./Category.scss";
-import ProductListHidden from "./Component/ProductListHidden/ProductListHidden";
 
 class Category extends Component {
   constructor() {
@@ -20,7 +20,7 @@ class Category extends Component {
   }
   //filter
   changeOrder = (option = "") => {
-    fetch("http://192.168.0.27:8000/product/category" + option)
+    fetch("http://192.168.0.27:8000/product/category/all" + option)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -31,7 +31,7 @@ class Category extends Component {
   };
 
   componentDidMount() {
-    fetch("http://192.168.0.27:8000/product/category?category=7&sort=created_at")
+    fetch("http://192.168.0.27:8000/product/category/all?category=7&sort=created_at")
       .then((res) => res.json())
       .then((res) => this.setState({ productList: res.result }));
   }
@@ -44,13 +44,14 @@ class Category extends Component {
 
   render() {
     const { isHidden, totalCount, productList } = this.state;
+
     return (
       <>
         <ProductDetail />
         <div className="Category">
           <div className="CateContainer">
             <ImgContainer />
-            <ProductCategory />
+            <ProductCategory changeOrder={this.changeOrder} />
             <ProductsHeader toggleHidden={this.toggleHidden} totalCount={totalCount} />
             {!isHidden && <ProductListHidden changeOrder={this.changeOrder} />}
             <ProductCardGrid productList={productList} />

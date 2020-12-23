@@ -3,19 +3,21 @@ import "./ProductCategory.scss";
 
 class ProductCategory extends Component {
   render() {
+    const { changeOrder } = this.props;
+
     return (
       <div className="ProductCategory">
         <div className="ListOne">
-          <button>전체</button>
+          <button onClick={() => changeOrder("?category=7&sort=created_at")}>전체</button>
         </div>
         <div className="ListTwo">
-          <button>쿠션/방석</button>
+          <button onClick={() => changeOrder("?subcategory=1&sort=created_at")}>쿠션/방석</button>
         </div>
         <div className="ListThree">
-          <button>컵/텀블러</button>
+          <button onClick={() => changeOrder("?subcategory=2&sort=created_at")}>컵/텀블러</button>
         </div>
         <div className="ListFour">
-          <button>주방용품</button>
+          <button onClick={() => changeOrder("?subcategory=3&sort=created_at")}>주방용품</button>
         </div>
         <div className="ListFive">
           <button>미용/욕실용품</button>

@@ -4,6 +4,7 @@ import "./ProductListHidden.scss";
 class ProductListHidden extends Component {
   render() {
     const { changeOrder } = this.props;
+
     return (
       <div className="ProductListHidden">
         <div className="NewItem">
