@@ -17,7 +17,6 @@ class SideMenu extends React.Component {
     fetch("/data/SideMenu.json")
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         this.setState({
           menuList: res.menu,
         });
