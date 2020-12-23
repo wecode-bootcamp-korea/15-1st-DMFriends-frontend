@@ -3,9 +3,7 @@ import Feeds from "./feeds/Feeds";
 import MainReply from "./mainReply/MainReply";
 import { withRouter } from "react-router-dom";
 import "./Main.scss";
-import { API } from "../../config";
-
-// const API = "http://192.168.0.25:8080/";
+import { mainAPI } from "../../config";
 
 class Main extends React.Component {
   state = {
@@ -24,7 +22,7 @@ class Main extends React.Component {
   }
 
   getfeedData = () => {
-    fetch(`${API}/board/main`)
+    fetch(`${mainAPI}/board/main`)
       .then((result) => result.json())
       .then((result) => {
         this.setState({
@@ -35,7 +33,7 @@ class Main extends React.Component {
 
   getData = () => {
     const { startNumber, endNumber, feeds } = this.state;
-    fetch(`${API}/board/main`)
+    fetch(`${mainAPI}/board/main`)
       .then((result) => result.json())
       .then((result) => {
         console.log(result);
