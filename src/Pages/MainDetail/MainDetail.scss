@@ -3,7 +3,7 @@
 * {
   box-sizing: border-box;
 
-  .Main {
+  .MainDetail {
     body {
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -75,6 +75,7 @@
       max-width: 640px;
       margin: 0px auto;
       width: 640px;
+      border-bottom: 1px solid $hr-gray;
 
       .mainHeader {
         font-size: 16px;
@@ -110,7 +111,6 @@
 
             .headerInfoTime {
               font-size: 13px;
-              // letter-spacing: -0.2px;
               line-height: 1.6;
             }
           }
@@ -166,7 +166,6 @@
 
           .good {
             font-size: 14px;
-            // letter-spacing: -0.22px;
           }
 
           .goodCount {
@@ -235,12 +234,29 @@
           height: 44px;
           background-color: #f0f1f4;
           margin-top: 16px;
+          display: flex;
+          justify-content: space-between;
 
           .footerReplyInput {
             border: none;
             background-color: #f0f1f4;
             font-size: 14px;
-            color: #9a9a9e;
+          }
+
+          .footerReplyBtn {
+            position: relative;
+            height: 28px;
+            width: 28px;
+            top: -4px;
+            right: -43px;
+
+            .replyBtn {
+              position: absolute;
+              height: 28px;
+              width: 28px;
+              top: -2px;
+              right: -2px;
+            }
           }
         }
       }

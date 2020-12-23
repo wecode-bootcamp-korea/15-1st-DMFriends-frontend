@@ -117,8 +117,15 @@
         }
       }
 
-      .feedImg {
+      .feedImgMiniBox {
         width: 600px;
+        height: 600px;
+        overflow: hidden;
+
+        .feedImg {
+          width: 600px;
+          height: auto;
+        }
       }
 
       .feedIconBox {

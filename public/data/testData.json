@@ -1,0 +1,25 @@
+{
+  "board_list": [
+    {
+      "board_id": 3,
+      "board_images": [
+        "https://wecode.co.kr/static/media/song.eddbf8f7.png",
+        "https://images.unsplash.com/photo-1493612276216-ee3925520721?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1300&q=80",
+        "https://images.unsplash.com/photo-1514580426463-fd77dc4d0672?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=930&q=80"
+      ],
+      "board_likes": 1,
+      "comment": [
+        {
+          "comment_num": 2,
+          "content": "화이팅이에요?",
+          "writer": "승연"
+        }
+      ],
+      "content": "사람들은 자신의 꿈의 크기까지만 성장할 수 있습니다. <br> 세상을 변화 시키는, 꿈을 꾸는 사람이 되어요!",
+      "created_at": "2020-12-10T15:00:40Z",
+      "theme": "Daily Story",
+      "title": "꿈을 꾸는 사람",
+      "uploader": "송은우"
+    }
+  ]
+}

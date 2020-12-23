@@ -2,34 +2,11 @@ import React, { Component } from "react";
 import Feeds from "./feeds/Feeds";
 // import MainReply from "./mainReply/MainReply";
 import { withRouter } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Main.scss";
 
 class Main extends React.Component {
   state = {
-    mainNav: [
-      {
-        menuSrc: "https://store.kakaofriends.com/kr/index",
-        nenuCassName: "today",
-        menuName: "오늘",
-        cmtLike: false,
-      },
-      {
-        menuSrc: "https://store.kakaofriends.com/kr/index?tab=hot",
-        nenuCassName: "new",
-        menuName: "신규",
-      },
-      {
-        menuSrc: "https://store.kakaofriends.com/kr/index?tab=hot",
-        nenuCassName: "hot",
-        menuName: "인기",
-      },
-      {
-        menuSrc: "https://store.kakaofriends.com/kr/basket/products",
-        nenuCassName: "my",
-        menuName: "마이",
-      },
-    ],
     feeds: [],
     startNumber: 1,
     endNumber: 2,
@@ -46,6 +23,7 @@ class Main extends React.Component {
   }
 
   getfeedData = () => {
+    //이건가? 피드데이터 받아ㅗ은게 받아올때!!
     fetch("http://192.168.0.25:8080/board/main")
       .then((result) => result.json())
       .then((result) => {
@@ -94,7 +72,7 @@ class Main extends React.Component {
         <div className="headerLine">
           <div className="header"></div>
         </div>
-        {feeds.map((feed) => {
+        {feeds.map((feed, id) => {
           return (
             <>
               <Feeds feed={feed} key={feed.id} />
