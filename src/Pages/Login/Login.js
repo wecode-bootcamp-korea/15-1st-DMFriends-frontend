@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import API from "../../config";
-import Nav from "../../Components/Nav/Nav";
+import { API } from "../../config";
 import "./Login.scss";
 
 class Login extends React.Component {
@@ -32,7 +31,7 @@ class Login extends React.Component {
       .then((response) => response.json())
       .then((result) => {
         if (result.message === "SUCCESS_LOGIN") {
-          localStorage.setItem("Token", result.token);
+          alert("로그인 성공!");
           this.props.history.push("/");
         } else {
           alert("회원정보를 찾을 수 없습니다.");
@@ -42,9 +41,9 @@ class Login extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="Login">
-        <Nav />
         <div className="loginMain">
           <div className="logo">
             <span>동묘앞프렌즈 하나로 충분합니다.</span>

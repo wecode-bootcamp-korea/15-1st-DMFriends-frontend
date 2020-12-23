@@ -78,7 +78,7 @@ class Signup extends React.Component {
       emailAlert: checkEmail ? true : false,
     });
 
-    fetch(`${API}/user/echeck`, {
+    fetch(`${API}/user/email-check`, {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -108,15 +108,16 @@ class Signup extends React.Component {
   isValidCode = (e) => {
     e.preventDefault();
 
-    fetch(`${API}/user/vcode`, {
+    fetch(`${API}/user/verification`, {
       method: "POST",
       body: JSON.stringify({
+        email: this.state.email,
         random_token: this.state.validationCode,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
-        result.code === "CORRECT" && alert("인증번호가 확인되었습니다.");
+        result.code === "ACCEPT" && alert("인증번호가 확인되었습니다.");
         this.setState({ validCode: true });
       });
   };
@@ -134,13 +135,15 @@ class Signup extends React.Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        result.message === "SUCCESS" && this.props.history.push("/");
+        result.message === "SUCCESS" && alert("성공적으로 가입되었습니다.");
+        this.props.history.push("/Login");
       });
   };
 
   render() {
     const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, validCode } = this.state;
     const checkAllValueBtn = emailAlert && pwAlert;
+    console.log(this.state);
 
     return (
       <div className="Signup">
