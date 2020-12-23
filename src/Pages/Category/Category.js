@@ -33,7 +33,7 @@ class Category extends Component {
   componentDidMount() {
     fetch("http://192.168.0.27:8000/product/category/all?category=7&sort=created_at")
       .then((res) => res.json())
-      .then((res) => this.setState({ productList: res.result }));
+      .then((res) => this.setState({ productList: res.result, totalCount: res.result.length }));
   }
 
   toggleHidden = () => {
