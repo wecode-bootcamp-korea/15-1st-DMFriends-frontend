@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Feeds.scss";
-import ShareModal from "../shareModal/ShareModal";
+// import ShareModal from "../shareModal/ShareModal";
 // import "~slick-carousel/slick/slick.css";
 // import "~slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";

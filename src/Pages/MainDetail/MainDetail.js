@@ -2,10 +2,34 @@ import React, { Component } from "react";
 import Feeds from "./feeds/Feeds";
 import MainReply from "./mainReply/MainReply";
 import { withRouter } from "react-router-dom";
-import "./MainDetail.scss";
+import { Link } from "react-router-dom";
+import "./Main.scss";
 
 class MainDetail extends React.Component {
   state = {
+    mainNav: [
+      {
+        menuSrc: "https://store.kakaofriends.com/kr/index",
+        nenuCassName: "today",
+        menuName: "오늘",
+        cmtLike: false,
+      },
+      {
+        menuSrc: "https://store.kakaofriends.com/kr/index?tab=hot",
+        nenuCassName: "new",
+        menuName: "신규",
+      },
+      {
+        menuSrc: "https://store.kakaofriends.com/kr/index?tab=hot",
+        nenuCassName: "hot",
+        menuName: "인기",
+      },
+      {
+        menuSrc: "https://store.kakaofriends.com/kr/basket/products",
+        nenuCassName: "my",
+        menuName: "마이",
+      },
+    ],
     feeds: [],
     startNumber: 1,
     endNumber: 2,
@@ -66,7 +90,7 @@ class MainDetail extends React.Component {
   render() {
     const { feeds } = this.state;
     return (
-      <div className="Main">
+      <div className="MainDetail">
         <div className="headerLine">
           <div className="header"></div>
         </div>
