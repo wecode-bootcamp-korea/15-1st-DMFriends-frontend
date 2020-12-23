@@ -14,9 +14,13 @@ class Nav extends Component {
   }
 
   showUnderLine = (index) => {
-    this.setState({
-      [`underLine${index}`]: !this.state[`underLine${index}`],
-    });
+    for (let i = 1; i < 5; i++) {
+      if (`underLine${i}` === `underLine${index}`) {
+        this.setState({
+          [`underLine${index}`]: !this.state[`underLine${index}`],
+        });
+      }
+    }
   };
 
   render() {

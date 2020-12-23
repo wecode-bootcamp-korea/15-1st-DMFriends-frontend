@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import API from "../../config";
+import Nav from "../../Components/Nav/Nav";
 import "./Login.scss";
 
 class Login extends React.Component {
@@ -43,6 +44,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="Login">
+        <Nav />
         <div className="loginMain">
           <div className="logo">
             <span>동묘앞프렌즈 하나로 충분합니다.</span>
