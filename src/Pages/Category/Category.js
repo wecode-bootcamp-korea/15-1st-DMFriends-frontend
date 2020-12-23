@@ -31,7 +31,7 @@ class Category extends Component {
   };
 
   componentDidMount() {
-    fetch("http://192.168.0.27:8000/product/category/all?category=7&sort=created_at")
+    fetch("http://192.168.0.27:8000/product/category/all?category=1&sort=created_at")
       .then((res) => res.json())
       .then((res) => this.setState({ productList: res.result, totalCount: res.result.length }));
   }
@@ -47,9 +47,9 @@ class Category extends Component {
 
     return (
       <>
+        <DetailPageHeader />
         <div className="Category">
           <div className="CateContainer">
-            <DetailPageHeader />
             <ImgContainer />
             <ProductCategory changeOrder={this.changeOrder} />
             <ProductsHeader toggleHidden={this.toggleHidden} totalCount={totalCount} />

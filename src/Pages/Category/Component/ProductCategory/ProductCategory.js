@@ -8,7 +8,7 @@ class ProductCategory extends Component {
     return (
       <div className="ProductCategory">
         <div className="ListOne">
-          <button onClick={() => changeOrder("?category=7&sort=created_at")}>전체</button>
+          <button onClick={() => changeOrder("?category=1&sort=created_at")}>전체</button>
         </div>
         <div className="ListTwo">
           <button onClick={() => changeOrder("?subcategory=2&sort=created_at")}>컵/텀블러</button>
