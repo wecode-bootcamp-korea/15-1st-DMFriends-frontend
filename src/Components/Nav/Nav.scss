@@ -1,0 +1,31 @@
+@import "../../styles/common.scss";
+
+.Nav {
+  @include flexCenter;
+  position: fixed;
+  top: 47px;
+  background-color: white;
+
+  ul {
+    @include flexCenter;
+    width: 640px;
+    height: 47px;
+    border-bottom: $greyBorder;
+    z-index: 0;
+
+    li {
+      @include flexCenter;
+      width: 150px;
+      height: 100%;
+
+      &.active {
+        border-bottom: 4px solid black;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
