@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import Feeds from "../Main/feeds/Feeds";
+import Feeds from "../../Pages/Main/feeds/Feeds";
 import { withRouter } from "react-router-dom";
 import "./MainDetail.scss";
+import "../Main/Main.scss";
+import { mainAPI } from "../../config";
 
-class MainDetail extends React.Component {
+class MainDetail extends Component {
   state = {
     feeds: [],
     startNumber: 1,
@@ -12,19 +14,17 @@ class MainDetail extends React.Component {
 
   componentDidMount() {
     this.getfeedData();
-    // this.getData();
-    // window.addEventListener("scroll", this.infiniteScroll);
+    window.addEventListener("scroll", this.infiniteScroll);
   }
 
   componentWillUnmount() {
-    // window.removeEventListener("scroll", this.infiniteScroll);
+    window.removeEventListener("scroll", this.infiniteScroll);
   }
 
   getfeedData = () => {
-    fetch("http://192.168.0.25:8080/board/main")
+    fetch(`${mainAPI}/board/main`)
       .then((result) => result.json())
       .then((result) => {
-        console.log("0: " + result.board_list);
         this.setState({
           feeds: result.board_list,
         });
@@ -33,10 +33,10 @@ class MainDetail extends React.Component {
 
   getData = () => {
     const { startNumber, endNumber, feeds } = this.state;
-    fetch("http://192.168.0.25:8080/board/main")
+    fetch(`${mainAPI}/board/main`)
       .then((result) => result.json())
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         const writeFeeds = result.feeds.slice(startNumber, endNumber);
         this.setState({
           feeds: [...feeds, ...writeFeeds],
@@ -47,7 +47,6 @@ class MainDetail extends React.Component {
   infiniteScroll = () => {
     const { documentElement, body } = document;
     const { endNumber } = this.state;
-
     const scrollHeight = Math.max(documentElement.scrollHeight, body.scrollHeight);
     const scrollTop = Math.max(documentElement.scrollTop, body.scrollTop);
     const clientHeight = documentElement.clientHeight;
@@ -64,19 +63,32 @@ class MainDetail extends React.Component {
 
   render() {
     const { feeds } = this.state;
-    console.log(feeds);
     return (
       <div className="MainDetail">
+        <p>abc</p>
         <div className="headerLine">
           <div className="header"></div>
         </div>
+        <Feeds />
         {feeds.map((feed, id) => {
           return (
             <>
               <Feeds feed={feed} key={feed.id} />
+              <div className="replyBox">
+                <input
+                  className="footerReplyInput"
+                  type="text"
+                  placeholder="댓글을 달아주세요."
+                  onKeyPress={this.appKeyPress}
+                ></input>
+                <button className="footerReplyBtn" onClick={this.addReple}>
+                  <img className="replyBtn" src="images/chaebinhan/MainDetail/reply.png" alt="댓글달기 버튼" />
+                </button>
+              </div>
             </>
           );
         })}
+        <p>a</p>
       </div>
     );
   }

@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Feeds from "./feeds/Feeds";
 // import MainReply from "./mainReply/MainReply";
 import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
 import "./Main.scss";
 
-class Main extends React.Component {
+class Main extends Component {
   state = {
     feeds: [],
     startNumber: 1,
