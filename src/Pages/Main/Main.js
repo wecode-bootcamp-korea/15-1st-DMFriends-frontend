@@ -47,7 +47,6 @@ class Main extends React.Component {
   infiniteScroll = () => {
     const { documentElement, body } = document;
     const { endNumber } = this.state;
-
     const scrollHeight = Math.max(documentElement.scrollHeight, body.scrollHeight);
     const scrollTop = Math.max(documentElement.scrollTop, body.scrollTop);
     const clientHeight = documentElement.clientHeight;

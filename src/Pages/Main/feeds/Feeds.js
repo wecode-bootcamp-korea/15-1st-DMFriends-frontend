@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Feeds.scss";
 import Slider from "react-slick";
 import "../Main.scss";
+import { mainAPI } from "../../../config";
 
 class Feeds extends Component {
   constructor() {
@@ -21,10 +22,18 @@ class Feeds extends Component {
 
   changeHeart = () => {
     const { feed } = this.props;
+    feed.if_i_liked = !feed.if_i_liked;
+    fetch(`${mainAPI}/board/main?id={feed.id}&if_i_liked={feed.if_i_liked}`)
+      .then((result) => result.json())
+      .then((result) => {
+        this.setState({
+          feeds: result.board_list,
+        });
+      });
 
-    this.setState({
-      feed: feed,
-    });
+    // this.setState({
+    //   feed: feed,
+    // });
   };
 
   render() {
@@ -68,7 +77,7 @@ class Feeds extends Component {
               <img
                 className="likeIcon"
                 onClick={this.changeHeart}
-                src={feed.board_likes ? "images/chaebinhan/Main/heart.png" : "images/chaebinhan/Main/like-black.png"}
+                src={feed.if_i_liked ? "images/chaebinhan/Main/heart.png" : "images/chaebinhan/Main/like-black.png"}
                 alt="like"
                 value={feed.id}
               />
