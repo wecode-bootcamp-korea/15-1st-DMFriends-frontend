@@ -7,8 +7,8 @@ class MainNav extends Component {
 
     return (
       <>
-        {mainNav.map((mainNav) => (
-          <div className="headerLine">
+        {mainNav.map((mainNav, idx) => (
+          <div className="headerLine" key={idx}>
             <div className="header">
               <ul>
                 <li>

@@ -22,7 +22,7 @@ class MainReply extends Component {
               type="text"
               placeholder="댓글을 달아주세요."
               onKeyPress={this.appKeyPress}
-            ></input>
+            />
           </div>
         </section>
       </div>

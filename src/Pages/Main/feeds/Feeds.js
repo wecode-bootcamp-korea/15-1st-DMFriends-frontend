@@ -10,12 +10,10 @@ class Feeds extends Component {
 
   modalOn = (e) => {
     const id = e.currentTarget.getAttribute("value");
-    const modal = document.getElementsByClassName("myModal")[id];
-    const btn = document.getElementsByClassName("feedShareBtn")[id];
-    const span = document.getElementsByClassName("close")[id];
-    btn.onclick = function () {
-      modal.style.display = "block";
-    };
+    const modal = document.getElementById(id);
+    const span = modal.getElementsByClassName("close")[0];
+
+    modal.style.display = "block";
 
     span.onclick = function () {
       modal.style.display = "none";
@@ -28,13 +26,11 @@ class Feeds extends Component {
     };
   };
 
-  changeHeart = (e) => {
-    const feedArr = this.props;
-    const currentLike = feedArr.feed.feedLike;
-    feedArr.feed.feedLike = !currentLike;
+  changeHeart = () => {
+    const { feed } = this.props;
 
     this.setState({
-      feed: feedArr,
+      feed: feed,
     });
   };
 
@@ -65,8 +61,8 @@ class Feeds extends Component {
           <section className="mainFeed">
             <div className="feedImgBox">
               <Slider {...settings}>
-                {feed.board_images.map((img) => (
-                  <div className="feedImgMiniBox">
+                {feed.board_images.map((img, idx) => (
+                  <div className="feedImgMiniBox" key={idx}>
                     <img className="feedImg" src={img} alt="profile" />
                   </div>
                 ))}
@@ -95,7 +91,7 @@ class Feeds extends Component {
                 <img className="shareIcon" src="images\chaebinhan\Main\share-black.png" alt="reply" />
               </button>
             </div>
-            <div id="myModal" className="myModal">
+            <div id={feed.id} className="myModal" value={feed.id}>
               <div className="modal-content">
                 <div className="modalSectionHight">
                   <div className="shareText">공유하기</div>
@@ -104,7 +100,9 @@ class Feeds extends Component {
                     <img className="shareIconItem" src="images\chaebinhan\Main\sns-facebook-60.png" alt="facebook" />
                     <img className="shareIconItem" src="images\chaebinhan\Main\sns-url-60.png" alt="share" />
                   </div>
-                  <div className="close">닫기</div>
+                  <div className="close" value={feed.id}>
+                    닫기
+                  </div>
                 </div>
               </div>
             </div>
