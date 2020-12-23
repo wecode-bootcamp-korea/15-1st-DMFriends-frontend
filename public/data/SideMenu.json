@@ -1,0 +1,58 @@
+{
+  "menu": [
+    {
+      "id": 0,
+      "name": "장바구니 내역",
+      "path": "Checkbox",
+      "content": "내용내용"
+    },
+    {
+      "id": 1,
+      "name": "주문•배송 내역",
+      "path": "Checkbox",
+      "content": "내용내용"
+    },
+    {
+      "id": 2,
+      "name": "캐릭터",
+      "path": "#",
+      "content": "내용내용"
+    },
+    {
+      "id": 3,
+      "name": "카테고리",
+      "path": "#",
+      "content": "내용내용"
+    },
+    {
+      "id": 4,
+      "name": "공지사항",
+      "path": "#",
+      "content": "내용내용"
+    },
+    {
+      "id": 5,
+      "name": "고객센터",
+      "path": "#",
+      "content": "내용내용"
+    },
+    {
+      "id": 6,
+      "name": "기프트카드 조회•환불",
+      "path": "#",
+      "content": "내용내용"
+    },
+    {
+      "id": 7,
+      "name": "브랜드 스토리",
+      "path": "#",
+      "content": "내용내용"
+    },
+    {
+      "id": 8,
+      "name": "매장안내",
+      "path": "#",
+      "content": "내용내용"
+    }
+  ]
+}

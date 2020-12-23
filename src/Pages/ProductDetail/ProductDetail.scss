@@ -5,6 +5,7 @@
   width: 100%;
   height: 675px;
   margin: 47px auto 0px;
+  z-index: 5;
 
   .imgWrap {
     @extend %flex-jus-center;
