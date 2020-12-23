@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import Feeds from "./feeds/Feeds";
 import MainReply from "./mainReply/MainReply";
 import { withRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
 import "./Main.scss";
+import { API } from "../../config";
+
+// const API = "http://192.168.0.25:8080/";
 
 class Main extends React.Component {
   state = {
@@ -14,7 +16,6 @@ class Main extends React.Component {
 
   componentDidMount() {
     this.getfeedData();
-    // this.getData();
     window.addEventListener("scroll", this.infiniteScroll);
   }
 
@@ -23,8 +24,7 @@ class Main extends React.Component {
   }
 
   getfeedData = () => {
-    //이건가? 피드데이터 받아ㅗ은게 받아올때!!
-    fetch("http://192.168.0.25:8080/board/main?로그인정보={저장된로그인정보어딘진모르겟지만}")
+    fetch(`${API}/board/main`)
       .then((result) => result.json())
       .then((result) => {
         this.setState({
@@ -35,7 +35,7 @@ class Main extends React.Component {
 
   getData = () => {
     const { startNumber, endNumber, feeds } = this.state;
-    fetch("http://192.168.0.25:8080/board/main")
+    fetch(`${API}/board/main`)
       .then((result) => result.json())
       .then((result) => {
         console.log(result);
@@ -55,7 +55,6 @@ class Main extends React.Component {
     const clientHeight = documentElement.clientHeight;
 
     if (scrollTop + clientHeight >= scrollHeight) {
-      //스크롤탑과 클라이언트 높이의 값이 스크롤 높이보다 크거나 같을 때
       this.setState({
         startNumber: endNumber,
         endNumber: endNumber + 2,

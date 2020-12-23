@@ -20,4 +20,4 @@ export const menuBtnImg =
 
 export default configs;
 
-export const API = "http://192.168.0.46:8000";
+export const API = "http://192.168.0.25:8080"; //"http://192.168.0.25:8080/board/main"
