@@ -11,36 +11,35 @@ export default class DetailPageProductImg extends Component {
     };
   }
 
+  // componentDidMount() {
+  //   fetch("data/ProductDetail.json")
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       this.setState({
+  //         data: res.slideImgData,
+  //       });
+  //     });
+  // }
+
   componentDidMount() {
-    fetch("data/ProductDetail.json")
+    fetch(`http://192.168.0.27:8000/product/detail/1`)
       .then((res) => res.json())
       .then((res) => {
-        this.setState({
-          data: res.slideImgData,
-        });
+        this.setState({ data: res.result[0] });
       });
   }
 
-  // componentDidMount() {
-  //   fetch(`http://192.168.0.27:8000/product/detail/1`)
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       // console.log("결과: ", res.result[0]);
-  //       // console.log(this.state.res);
-  //       this.setState({ data: res.result });
-  //     });
-  // }
   render() {
     const { data } = this.state;
     return (
       <div className="DetailPageProductImg">
         <div className="imgWrap">
           <Slider {...settings}>
-            {data &&
-              data.map((item, idx) => {
+            {data.images_slider &&
+              data.images_slider.map((item, idx) => {
                 return (
                   <div key={idx} id={item.id}>
-                    <img className="slideImg" src={item.src} alt={item.alt} />
+                    <img className="slideImg" src={item} alt="productImg" />
                   </div>
                 );
               })}
@@ -48,7 +47,7 @@ export default class DetailPageProductImg extends Component {
         </div>
         <div className="productNameAndPrice">
           <div className="productName">{data.name}</div>
-          <div className="productPrice">{data.price}원</div>
+          <div className="productPrice">{Number(data.price).toLocaleString()}원</div>
           <div className="productReviewStar">
             <div className="ReviewStarImg">
               <ReactStars
@@ -62,7 +61,7 @@ export default class DetailPageProductImg extends Component {
                 color2={"#FF6582"}
               />
             </div>
-            <span className="totalCount">(1)</span>
+            <span className="totalCount">({data.star_rating})</span>
           </div>
           <ul className="shareLinks">
             <li>

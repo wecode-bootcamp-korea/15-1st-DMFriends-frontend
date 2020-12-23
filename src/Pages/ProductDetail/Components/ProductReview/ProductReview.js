@@ -14,16 +14,26 @@ export default class ProductReview extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch("data/ProductReview.json")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
-        this.setState({
-          reviews: res.reviewData,
-        });
-      });
-  }
+  // componentDidMount() {
+  //   fetch("data/ProductReview.json")
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       console.log(res);
+  //       this.setState({
+  //         reviews: res.reviewData,
+  //       });
+  //     });
+  // }
+
+  // componentDidMount() {
+  //   fetch("http://192.168.0.27:8000/product/detail/119")
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       this.setState({
+  //         reviews: res.reviewData,
+  //       });
+  //     });
+  // }
 
   openReviewModal = () => {
     this.setState({ isReviewModalOpen: true }, () => {
