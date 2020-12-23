@@ -14,13 +14,9 @@ class Nav extends Component {
   }
 
   showUnderLine = (index) => {
-    for (let i = 1; i < 5; i++) {
-      if (`underLine${i}` === `underLine${index}`) {
-        this.setState({
-          [`underLine${index}`]: !this.state[`underLine${index}`],
-        });
-      }
-    }
+    this.setState({
+      [`underLine${index}`]: !this.state[`underLine${index}`],
+    });
   };
 
   render() {
@@ -42,7 +38,7 @@ class Nav extends Component {
             </Link>
           </li>
           <li className={underLine4 && "active"}>
-            <Link to="/" onClick={() => this.showUnderLine(4)}>
+            <Link to="/CartList" onClick={() => this.showUnderLine(4)}>
               마이
             </Link>
           </li>
