@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import DetailPageHeader from "../../Components/Header/DetailPageHeader/DetailPageHeader";
 import Nav from "../../Components/Nav/Nav";
 import AddedItems from "./Components/AddedItems";
 import "./CartList.scss";
@@ -64,8 +65,8 @@ class CartList extends Component {
       .toLocaleString();
     return (
       <>
+        <DetailPageHeader />
         <section className="CartList">
-          {/* Header */}
           <Nav />
           <div className="MyPageHeadTapWrap">
             <div className="mainTapList">
