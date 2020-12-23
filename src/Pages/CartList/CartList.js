@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Nav from "../../Components/Nav/Nav";
 import AddedItems from "./Components/AddedItems";
 import "./CartList.scss";
 import * as configs from "../../config";
@@ -14,10 +15,19 @@ class CartList extends Component {
     };
   }
 
+  // componentDidMount() {
+  //   fetch("./data/CartList.json")
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       this.setState({ cartData: res.CartList });
+  //     });
+  // }
+
   componentDidMount() {
-    fetch("./data/CartList.json")
+    fetch("192.168.0.27:8000/order/cart")
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         this.setState({ cartData: res.CartList });
       });
   }
@@ -56,7 +66,7 @@ class CartList extends Component {
       <>
         <section className="CartList">
           {/* Header */}
-          {/* Main tab wrap */}
+          <Nav />
           <div className="MyPageHeadTapWrap">
             <div className="mainTapList">
               <Link>최근 본</Link>
