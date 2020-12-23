@@ -24,11 +24,11 @@ class CartList extends Component {
   // }
 
   componentDidMount() {
-    fetch("192.168.0.27:8000/order/cart")
+    fetch("http://192.168.0.27:8000/order/cart")
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        this.setState({ cartData: res.CartList });
+        this.setState({ cartData: res.result });
       });
   }
 
@@ -93,7 +93,7 @@ class CartList extends Component {
                 <span>{cartData.length}</span>
               </div>
               <div className="removeItems">
-                ?개 선택
+                전체 삭제
                 <img onClick={this.deleteAllProduct} className="removeBtn" src={configs.trashCan} alt="removeBtn" />
               </div>
             </div>
