@@ -1,0 +1,66 @@
+%FlexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ProductCardGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 20px;
+  width: 100%;
+  height: auto;
+
+  .Product {
+    width: 255px;
+    height: 381px;
+    text-decoration: none;
+
+    img {
+      width: 255px;
+      height: 255px;
+      border-radius: 1%;
+    }
+
+    .ProductText {
+      @extend %FlexBetween;
+      width: 255px;
+      height: 35px;
+
+      span {
+        width: 220px;
+        height: 20px;
+        margin-top: 10px;
+        color: #777777;
+      }
+
+      button {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+        border: none;
+        background-color: Transparent;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+
+        img {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .ProductPrice {
+      width: 275px;
+      height: 20px;
+
+      p {
+        color: #000000;
+        font-size: 17px;
+        font-weight: bold;
+      }
+    }
+  }
+}
