@@ -27,7 +27,11 @@ class Header extends Component {
     return (
       <header className="Header">
         {showSideMenu && <SideMenu showMenu={showMenu} hideSideMenu={this.hideSideMenu} />}
+<<<<<<< HEAD
         <div className={showMenu ? "overLay active" : "overLay"} onClick={this.hideSideMenu}></div>
+=======
+        <div className={showMenu ? “overLay active” : “overLay”} onClick={this.hideSideMenu}></div>
+>>>>>>> master
         <div className="HeaderContainer">
           <div className="HamburgerBox">
             <button className="HamBtn" onClick={this.goToCategory}>
@@ -35,7 +39,11 @@ class Header extends Component {
             </button>
           </div>
           <div className="CenterLogo">
+<<<<<<< HEAD
             <img src="images/chaebinhan/Main/DM_LOGO.png" alt="logo" />
+=======
+            <img src="images/taejinlim/DM_LOGO.png" alt="logo" />
+>>>>>>> master
           </div>
           <div className="SearchBox">
             <button className="SearchBtn">
