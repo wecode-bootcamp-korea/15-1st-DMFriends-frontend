@@ -6,8 +6,6 @@
 .SideMenu {
   width: 0;
   .menuFrame {
-    width: 400px;
-    height: 414px;
     background-color: white;
     transition: all 0.3s;
 
@@ -17,7 +15,7 @@
       position: fixed;
       top: 0;
       left: -400px;
-      z-index: 999;
+      z-index: 10;
       overflow-y: scroll;
       transition: all 0.3s;
       background-color: white;
@@ -26,13 +24,33 @@
       &.active {
         left: 0;
         transition: all 0.3s;
+        z-index: 999;
+
+        .christmas {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 10px 0;
+          z-index: 999;
+
+          a {
+            img {
+              width: 368px;
+              height: 90px;
+              margin-top: 10px;
+            }
+          }
+        }
       }
 
       article {
         height: 50px;
         padding: 34px 25px;
+        z-index: 10;
 
         div {
+          width: 240px;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -49,25 +67,6 @@
           a:last-child {
             font-size: 13px;
           }
-        }
-      }
-      article:nth-child(2) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-
-        a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 380px;
-          height: 60px;
-          border-radius: 10px;
-          background-color: $kakaoYellow;
-          font-size: 19px;
-          font-weight: 700;
-          color: sandybrown;
         }
       }
 
@@ -108,7 +107,7 @@
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        .category {
+        .SmallList {
           width: 400px;
           height: 200px;
           padding: 16px 0 36px 24px;

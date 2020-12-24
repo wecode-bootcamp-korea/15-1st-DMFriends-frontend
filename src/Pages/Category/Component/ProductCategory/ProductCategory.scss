@@ -1,0 +1,115 @@
+%hundred {
+  width: 100%;
+  height: 100%;
+}
+
+%buttonStyle {
+  @extend %hundred;
+  border: 0 none;
+  outline: 0;
+  color: rgb(154, 154, 158);
+  background-color: transparent;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: -0.19px;
+  cursor: pointer;
+}
+
+.ProductCategory {
+  display: flex;
+  width: 100%;
+  height: 58px;
+  border-bottom: 1px solid #f2f2f2;
+
+  .ListOne {
+    width: 59.031px;
+    border-bottom: 1px solid #000000;
+
+    button {
+      color: #000000;
+      @extend %buttonStyle;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+  }
+
+  .ListTwo {
+    width: 94.453px;
+
+    button {
+      @extend %buttonStyle;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+  }
+  .ListThree {
+    width: 94.453px;
+
+    button {
+      @extend %buttonStyle;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+  }
+  .ListFour {
+    width: 88.063px;
+
+    button {
+      @extend %buttonStyle;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+  }
+  .ListFive {
+    width: 123.484px;
+
+    button {
+      @extend %buttonStyle;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+  }
+  .ListSix {
+    width: 123.484px;
+
+    button {
+      @extend %buttonStyle;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+  }
+  .ListSeven {
+    width: 77.75px;
+
+    button {
+      @extend %buttonStyle;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+  }
+  .ListEight {
+    width: 108.969px;
+
+    button {
+      @extend %buttonStyle;
+    }
+
+    button:hover {
+      color: #000000;
+    }
+  }
+}

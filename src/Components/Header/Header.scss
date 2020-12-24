@@ -1,0 +1,94 @@
+%FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%FlexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+%BtnForm {
+  border: none;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+.Header {
+  @extend %FlexCenter;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+
+  .overLay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 998;
+    &.active {
+      display: block;
+      height: 10000px;
+      transition: all 0.3s;
+    }
+  }
+  .HeaderContainer {
+    @extend %FlexBetween;
+    position: block;
+    top: 0;
+    width: 640px;
+    height: 47px;
+    background-color: white;
+    .HamburgerBox {
+      width: 80px;
+      height: 47px;
+      .HamBtn {
+        width: 30px;
+        height: 30px;
+        margin: 10px 0 0 15px;
+        @extend %BtnForm;
+        img {
+          width: 18px;
+          height: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+    .CenterLogo {
+      @extend %FlexCenter;
+      position: relative;
+      width: 147px;
+      height: 47;
+      img {
+        position: absolute;
+        width: 147px;
+        height: 24px;
+      }
+    }
+    .SearchBox {
+      width: 80px;
+      height: 47px;
+      .SearchBtn {
+        width: 30px;
+        height: 30px;
+        margin: 10px 0 0 8px;
+        @extend %BtnForm;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+      .TransBtn {
+        width: 30px;
+        height: 30px;
+        @extend %BtnForm;
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+%FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Category {
+  @extend %FlexCenter;
+  width: 100vw;
+  height: auto;
+  overflow-y: unset;
+  background-color: #ffffff;
+  display: block;
+  margin: 0 auto;
+  overflow-x: hidden;
+
+  .CateContainer {
+    display: block;
+    position: relative;
+    width: 1080px;
+    margin: 0 auto;
+    top: 47px;
+  }
+}
