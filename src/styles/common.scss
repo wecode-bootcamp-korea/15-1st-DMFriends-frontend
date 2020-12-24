@@ -1,4 +1,22 @@
 @import "reset";
+
+$theme-color: blue;
+$hr-gray: #e7e7e7;
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin btn_mix {
+  background-color: #fff;
+  border-color: #fff;
+  border-width: 0px;
+  outline: none;
+}
+
 * {
   box-sizing: border-box;
   font-family: “Apple SD Gothic Neo”, “helvetica neue”, Roboto, Helvetica, Arial, sans-serif;

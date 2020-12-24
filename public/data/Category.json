@@ -1,0 +1,244 @@
+{
+  "CategoryData": [
+    {
+      "id": 1,
+      "itemName": "노드그린필로소퍼",
+      "price": "268,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201215155055137_5714205029869_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 2,
+      "itemName": "춘식이 마우스패드",
+      "price": "5,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201214112034420_8809721507681_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 3,
+      "itemName": "춘식이 스티커세트(7p)",
+      "price": "3,500원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201214111920916_8809721507698_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 4,
+      "itemName": "죠르디 살균 무선충전기",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201208174154111_8809721506417_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 5,
+      "itemName": "무선 마이크_라이언",
+      "price": "59,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201120184826286_8809721505670_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 6,
+      "itemName": "커버교체마우스_라이언",
+      "price": "32,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201019152620206_8809721505656_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 7,
+      "itemName": "휴대용 살균기_라이언",
+      "price": "55,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201106162934490_8809721506196_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 8,
+      "itemName": "클래식 중지갑_라이언",
+      "price": "44,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201104185141520_8809721506059_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 9,
+      "itemName": "윙크베이비필로우_라이언",
+      "price": "12,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201208112324006_8809721507254_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 10,
+      "itemName": "라이언하우스_피규어달력",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201111154547830_8809721505274_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 11,
+      "itemName": "스마트공기청정기_어피치",
+      "price": "209,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201028153006283_8809681709231_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 12,
+      "itemName": "스마트가습기_어피치",
+      "price": "179,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201028152951078_8809681709248_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 13,
+      "itemName": "스마트램프_라이언",
+      "price": "189,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201028153023793_8809681709255_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 14,
+      "itemName": "구름폭신필로우_라이언",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201020152815054_8809721505908_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 15,
+      "itemName": "클래식 입체카드지갑_어피치",
+      "price": "27,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201104185228388_8809721506080_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 16,
+      "itemName": "구름폭신필로우_어피치",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201020152804391_8809721505915_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 17,
+      "itemName": "구름폭신필로우_무지",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201020152905998_8809721505922_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 18,
+      "itemName": "욕조 무선 가습기_라이언",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201023185321334_8809721505106_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 19,
+      "itemName": "듀얼 유선 가습기_라이언",
+      "price": "29,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201023185113079_8809721505083_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 20,
+      "itemName": "듀얼 유선 가습기_어피치",
+      "price": "29,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201023185216607_8809721505090_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 1,
+      "itemName": "노드그린필로소퍼",
+      "price": "268,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201215155055137_5714205029869_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 2,
+      "itemName": "춘식이 마우스패드",
+      "price": "5,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201214112034420_8809721507681_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 3,
+      "itemName": "춘식이 스티커세트(7p)",
+      "price": "3,500원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201214111920916_8809721507698_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 4,
+      "itemName": "죠르디 살균 무선충전기",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201208174154111_8809721506417_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 5,
+      "itemName": "무선 마이크_라이언",
+      "price": "59,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201120184826286_8809721505670_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 6,
+      "itemName": "커버교체마우스_라이언",
+      "price": "32,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201019152620206_8809721505656_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 7,
+      "itemName": "휴대용 살균기_라이언",
+      "price": "55,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201106162934490_8809721506196_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 8,
+      "itemName": "클래식 중지갑_라이언",
+      "price": "44,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201104185141520_8809721506059_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 9,
+      "itemName": "윙크베이비필로우_라이언",
+      "price": "12,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201208112324006_8809721507254_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 10,
+      "itemName": "라이언하우스_피규어달력",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201111154547830_8809721505274_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 11,
+      "itemName": "스마트공기청정기_어피치",
+      "price": "209,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201028153006283_8809681709231_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 12,
+      "itemName": "스마트가습기_어피치",
+      "price": "179,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201028152951078_8809681709248_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 13,
+      "itemName": "스마트램프_라이언",
+      "price": "189,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201028153023793_8809681709255_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 14,
+      "itemName": "구름폭신필로우_라이언",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201020152815054_8809721505908_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 15,
+      "itemName": "클래식 입체카드지갑_어피치",
+      "price": "27,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201104185228388_8809721506080_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 16,
+      "itemName": "구름폭신필로우_어피치",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201020152804391_8809721505915_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 17,
+      "itemName": "구름폭신필로우_무지",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201020152905998_8809721505922_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 18,
+      "itemName": "욕조 무선 가습기_라이언",
+      "price": "39,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201023185321334_8809721505106_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 19,
+      "itemName": "듀얼 유선 가습기_라이언",
+      "price": "29,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201023185113079_8809721505083_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    },
+    {
+      "id": 20,
+      "itemName": "듀얼 유선 가습기_어피치",
+      "price": "29,000원",
+      "imgUrl": "https://t1.daumcdn.net/friends/prod/product/20201023185216607_8809721505090_AW_00.jpg?type=thumb&opt=R255x255@2xa"
+    }
+  ]
+}

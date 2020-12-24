@@ -6,19 +6,30 @@ class Nav extends Component {
   constructor() {
     super();
     this.state = {
+<<<<<<< HEAD
       underLine1: true,
       underLine2: false,
+=======
+      underLine1: false,
+      underLine2: true,
+>>>>>>> master
       underLine3: false,
       underLine4: false,
     };
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   showUnderLine = (index) => {
     this.setState({
       [`underLine${index}`]: !this.state[`underLine${index}`],
     });
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   render() {
     const { underLine1, underLine2, underLine3, underLine4 } = this.state;
     return (
@@ -47,5 +58,8 @@ class Nav extends Component {
     );
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 export default Nav;

@@ -1,0 +1,78 @@
+%FlexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%FlexBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ProductsHeader {
+  @extend %FlexCenter;
+  width: 100%;
+  height: 86px;
+
+  .HeaderText {
+    @extend %FlexBetween;
+    width: 100%;
+    height: 45px;
+
+    .HeaderLeft {
+      @extend %FlexBetween;
+      width: 891px;
+      height: 30px;
+      margin-top: 7px;
+
+      .HeaderAmount {
+        width: 61.094px;
+        height: 24px;
+        margin-top: 9px;
+
+        .LeftAmount {
+          font-size: 16px;
+        }
+        .LeftNumber {
+          font-weight: bold;
+          font-size: 15px;
+        }
+        .LeftText {
+          font-size: 16px;
+        }
+      }
+      img {
+        width: 20px;
+        height: 20px;
+        margin: 6px 0 0 600px;
+        cursor: pointer;
+      }
+      .GlobalProducts {
+        width: 195px;
+        height: 24px;
+        margin-top: 9px;
+        color: #1e1e1e;
+      }
+    }
+    .HeaderRight {
+      position: relative;
+      width: 184px;
+      height: 43px;
+      border: 1px solid #e3e5e8;
+
+      span {
+        position: absolute;
+        width: 70px;
+        height: 24px;
+        color: #111111;
+        margin: 15px 0 0 15px;
+      }
+      img {
+        width: 18px;
+        height: 18px;
+        margin: 12px 0 0 150px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NewProducts {
+  width: 100vw;
+  height: 5000px;
+  position: relative;
+
+  article {
+    width: 100vw;
+    height: 1850px;
+  }
+
+  .SpaceContainer {
+    width: 100vw;
+    height: 52px;
+  }
+}
