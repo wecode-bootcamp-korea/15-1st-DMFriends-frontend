@@ -1,0 +1,44 @@
+{
+  "reviewData": [
+    {
+      "id": 0,
+      "likedNum": 4
+    },
+    {
+      "id": 1,
+      "likedNum": 543
+    },
+    {
+      "id": 2,
+      "likedNum": 2
+    },
+    {
+      "id": 3,
+      "likedNum": 63
+    },
+    {
+      "id": 4,
+      "likedNum": 100
+    },
+    {
+      "id": 5,
+      "likedNum": 99
+    },
+    {
+      "id": 6,
+      "likedNum": 78
+    },
+    {
+      "id": 7,
+      "likedNum": 24
+    },
+    {
+      "id": 8,
+      "likedNum": 43
+    },
+    {
+      "id": 9,
+      "likedNum": 1
+    }
+  ]
+}
