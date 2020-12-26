@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../SideMenu/SideMenu.scss";
 
-class Category extends React.Component {
+class SmallList extends React.Component {
   render() {
     return (
-      <ul className="category">
+      <ul className="SmallList">
         <li>
           <Link to="#">전체</Link>
           <Link to="#">토이</Link>
@@ -22,4 +23,4 @@ class Category extends React.Component {
   }
 }
 
-export default Category;
+export default SmallList;

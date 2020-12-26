@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import AgreementForm from "./components/AgreementForm";
+import { LoginAPI } from "../../config";
 import { API } from "../../config";
 import "./Signup.scss";
 
@@ -135,7 +136,7 @@ class Signup extends React.Component {
     })
       .then((response) => response.json())
       .then((result) => {
-        result.message === "SUCCESS" && alert("성공적으로 가입되었습니다.");
+        result.message === "SUCCESS" && alert("회원가입에 성공하셨습니다.");
         this.props.history.push("/Login");
       });
   };
