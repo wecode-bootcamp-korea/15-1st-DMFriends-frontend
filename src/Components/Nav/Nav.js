@@ -1,31 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Nav.scss";
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 class Nav extends Component {
   constructor() {
     super();
     this.state = {
-<<<<<<< HEAD
-      underLine1: true,
-      underLine2: false,
-=======
       underLine1: false,
       underLine2: true,
->>>>>>> master
       underLine3: false,
       underLine4: false,
     };
   }
 <<<<<<< HEAD
 
+<<<<<<< HEAD
+=======
   goToMain = () => {
     this.props.history.push("/");
   };
 
+>>>>>>> master
 =======
 >>>>>>> master
   showUnderLine = (index) => {
@@ -33,6 +27,10 @@ class Nav extends Component {
       [`underLine${index}`]: !this.state[`underLine${index}`],
     });
   };
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
   render() {
     const { underLine1, underLine2, underLine3, underLine4 } = this.state;
     return (
@@ -74,4 +72,8 @@ class Nav extends Component {
     );
   }
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 export default Nav;

@@ -144,6 +144,7 @@ class Signup extends React.Component {
   render() {
     const { emailAlert, pwAlert, nickName, policies, checkAllBoxes, validCode } = this.state;
     const checkAllValueBtn = emailAlert && pwAlert;
+    console.log(this.state);
 
     return (
       <div className="Signup">

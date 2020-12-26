@@ -31,7 +31,7 @@ class Login extends React.Component {
       .then((response) => response.json())
       .then((result) => {
         if (result.message === "SUCCESS_LOGIN") {
-          localStorage.setItem("Token", result.token);
+          alert("로그인 성공!");
           this.props.history.push("/");
         } else {
           alert("회원정보를 찾을 수 없습니다.");
@@ -41,6 +41,7 @@ class Login extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="Login">
         <div className="loginMain">
