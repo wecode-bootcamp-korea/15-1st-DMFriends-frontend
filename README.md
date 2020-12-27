@@ -29,6 +29,8 @@
 
 ## 🎥 영상
 
+ {% include 파일명.html id="https://youtu.be/r2SD8_ePyOI" %}
+
 ## 💿 개인 역할
 
 > front-end
