@@ -28,7 +28,7 @@
 ## 💁‍♀️ 구현 기능
 
 ## 🎥 영상
-[![클로닝 동영상]](https://youtu.be/r2SD8_ePyOI)
+![클로닝 동영상](https://youtu.be/r2SD8_ePyOI)
 
 ## 💿 개인 역할
 
